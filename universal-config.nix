@@ -10,6 +10,13 @@
   };
   users.defaultUserShell = pkgs.zsh;
 
+  fonts.packages = with pkgs; [
+    font-awesome
+    powerline-fonts
+	powerline-symbols
+	(nerdfonts.override {fonts = [ "NerdFontsSymbolsOnly" ];})
+  ];
+
   programs = {
     zsh = {
       enable = true;
@@ -30,7 +37,6 @@
   environment.systemPackages = with pkgs; [
     xclip
     alacritty
-    powerline-fonts
 
     python3
 	rustup

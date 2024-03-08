@@ -40,6 +40,7 @@ return {
 				"glsl",
 				"wgsl",
 				"templ",
+				"nix",
 			},
 			incremental_selection = {
 				enable = true,

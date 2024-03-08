@@ -44,6 +44,7 @@ return {
 				"html",
 				--"htmx",
 				"cssls",
+				"nil_ls",
 				--"clangd",
 				"templ",
 			},
