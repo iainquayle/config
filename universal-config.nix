@@ -18,8 +18,7 @@
       syntaxHighlighting.enable = true;
       ohMyZsh = {
         enable = true;
-	#plugins = [ { name = "tomkatv/powerlevel10k"; tags = [as:theme depth:1];} ];
-	theme = "zsh-powerlevel10k";
+        theme = "agnoster";
       };
     };
     neovim = {
@@ -31,7 +30,7 @@
   environment.systemPackages = with pkgs; [
     xclip
     alacritty
-    zplug
+    powerline-fonts
 
     python3
 	rustup
@@ -114,8 +113,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
