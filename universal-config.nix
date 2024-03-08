@@ -37,6 +37,7 @@
   environment.systemPackages = with pkgs; [
     xclip
     alacritty
+	dmenu
 
     python3
 	rustup
