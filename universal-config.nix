@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   users.users.iainq = {
     isNormalUser = true;
@@ -32,8 +31,18 @@
       enable = true;
       defaultEditor = true;
     };
+    steam = {
+	  enable = true;
+	  #package = pkgs.steam.override {
+	  #  withPrimus = true;
+      #  extraPkgs = with pkgs; [ bumblebee glxinfo ];
+	  #};
+	};
   };
 
+  #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  #xdg.portal.enable = true;
+  #services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
     xclip
     alacritty
@@ -49,12 +58,9 @@
     git
     gh
 
-    steam
     discord
     firefox
     ncspot
-
-    zsh-powerlevel10k
   ];
 
   networking.hostName = "nixos"; # Define your hostname.

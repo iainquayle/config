@@ -13,4 +13,5 @@ nvim/lazy-lock.json
 !.config/alacritty/*
 
 !universal-config.nix
+!nvidia-prime.nix
 
