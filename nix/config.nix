@@ -8,7 +8,6 @@
   };
   users.defaultUserShell = pkgs.zsh;
 
-
   programs = {
     zsh = {
       enable = true;
@@ -35,7 +34,7 @@
   #services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
     python3
-	rustup
+	cargo
 	go
 	gcc
 	#gcc-unwrapped
