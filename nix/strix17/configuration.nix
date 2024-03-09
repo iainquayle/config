@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  nixpkgs.config.allowUnfree = true;
+  boot.kernelPackages = pkgs.linuxPackages_6_6; #6 1 hangs on shutdown
 
   hardware.opengl = {
     enable = true;
@@ -10,6 +10,7 @@
     extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
   };
 
+  nixpkgs.config.allowUnfree = true;
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
@@ -21,6 +22,9 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
+  #environment.systemPackages = with pkgs; [ ];
+
+
   hardware.nvidia.prime = {
     #sync.enable = true;
     offload = {
@@ -31,8 +35,6 @@
     nvidiaBusId = "PCI:1:0:0";
   };
 
-  environment.systemPackages = with pkgs; [
-    cudatoolkit
-    linuxPackages.nvidia_x11
-  ];
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 }

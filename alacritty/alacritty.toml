@@ -1,0 +1,12 @@
+tabspaces = 4
+
+[font]
+size = 9 
+
+[shell]
+program = "/bin/zsh"
+
+[window]
+decorations = "None"
+opacity = 0.95
+startup_mode = "Maximized"

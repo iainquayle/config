@@ -4,17 +4,10 @@
     isNormalUser = true;
     description = "Iain Quayle";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    ];
+    packages = with pkgs; [ ];
   };
   users.defaultUserShell = pkgs.zsh;
 
-  fonts.packages = with pkgs; [
-    font-awesome
-    powerline-fonts
-	powerline-symbols
-	(nerdfonts.override {fonts = [ "NerdFontsSymbolsOnly" ];})
-  ];
 
   programs = {
     zsh = {
@@ -33,10 +26,6 @@
     };
     steam = {
 	  enable = true;
-	  #package = pkgs.steam.override {
-	  #  withPrimus = true;
-      #  extraPkgs = with pkgs; [ bumblebee glxinfo ];
-	  #};
 	};
   };
 
@@ -44,14 +33,11 @@
   #xdg.portal.enable = true;
   #services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
-    xclip
-    alacritty
-	dmenu
-
     python3
 	rustup
 	go
 	gcc
+	#gcc-unwrapped
     nodejs
     cmake
     gnumake
@@ -61,10 +47,17 @@
     discord
     firefox
     ncspot
+
+    xclip
+    alacritty
+	dmenu
+	tectonic
+	unzip
+	pavucontrol
+	#wicd
   ];
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.hostName = "idfk"; 
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Edmonton";
@@ -96,10 +89,8 @@
     };
   };
 
-  # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -108,13 +99,14 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
+
+  fonts.packages = with pkgs; [
+    font-awesome
+    powerline-fonts
+	powerline-symbols
+	(nerdfonts.override {fonts = [ "NerdFontsSymbolsOnly" ];})
+  ];
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -130,9 +122,6 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-  # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 }
