@@ -50,7 +50,6 @@
 
     xclip
     alacritty
-	dmenu
 	tectonic
 	unzip
 	pavucontrol
@@ -69,13 +68,19 @@
 
   services.picom = {
     enable = true;
-	#settings = {
-	#  blur = {
-	#    method = "gaussian";
-    #    size = 5;
-    #    deviation = 5;
-	#  };
-	#};
+	shadow = true;
+	fade = true;
+	fadeDelta = 5;
+	settings = {
+	  blur = {
+	    #method = "kernel";
+		#kern = "7,7,7";
+		#backend = "xrender";
+		#method = "kawase";
+		#strength = 5;
+	  };
+	  corner-radius = 15;
+	};
   };
   services.xserver = {
     enable = true;
@@ -85,14 +90,16 @@
       enable = true;
       extraPackages = with pkgs; [
         i3status
+		dmenu
       ];
+	  package = pkgs.i3-gaps;
     };
     desktopManager = {
       xterm.enable = false;
       xfce = {
         enable = true;
-	noDesktop = true;
-	enableXfwm = false;
+        noDesktop = true;
+        enableXfwm = false;
       };
     };
     displayManager = {

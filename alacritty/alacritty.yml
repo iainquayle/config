@@ -4,7 +4,15 @@
 window:
   decorations: "None"
   startup_mode: "Maximized"
-  opacity: 0.9
+  opacity: 0.35
+  padding:
+    x: 10
+    y: 10
+
+colors:
+  primary:
+    background: "0x40370a"
+    foreground: "0xe0e0e0"
 
 font:
   size: 8 
