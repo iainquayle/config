@@ -56,6 +56,9 @@
 	pavucontrol
 	#wicd
   ];
+  environment.shellAliases = {
+    cuda-env = "nix-shell ~/.config/nix/shells/cuda-fhs.nix";
+  };
 
   networking.hostName = "idfk"; 
   networking.networkmanager.enable = true;
@@ -64,7 +67,16 @@
 
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  services.picom.enable = true;
+  services.picom = {
+    enable = true;
+	#settings = {
+	#  blur = {
+	#    method = "gaussian";
+    #    size = 5;
+    #    deviation = 5;
+	#  };
+	#};
+  };
   services.xserver = {
     enable = true;
     layout = "us";
