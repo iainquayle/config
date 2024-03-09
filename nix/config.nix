@@ -26,6 +26,7 @@
     };
     steam = {
 	  enable = true;
+	  gamescopeSession.enable = true;
 	};
   };
 
@@ -43,6 +44,8 @@
     gnumake
     git
     gh
+	libGL
+	libGLU
 
     discord
     firefox
@@ -53,7 +56,7 @@
 	tectonic
 	unzip
 	pavucontrol
-	#wicd
+	pamixer
   ];
   environment.shellAliases = {
     cuda-env = "nix-shell ~/.config/nix/shells/cuda-fhs.nix";
@@ -76,8 +79,9 @@
 	    #method = "kernel";
 		#kern = "7,7,7";
 		#backend = "xrender";
-		#method = "kawase";
-		#strength = 5;
+		method = "dual_kawase";
+		strength = 5;
+		backend = "glx";
 	  };
 	  corner-radius = 15;
 	};
