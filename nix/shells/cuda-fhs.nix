@@ -1,6 +1,6 @@
 { pkgs ? import <nixpkgs> {} }:
 (pkgs.buildFHSUserEnv {
-  name = "pytorch-cuda-env";
+  name = "cuda-env";
   targetPkgs = pkgs: with pkgs; [
     cudatoolkit
 	linuxPackages.nvidia_x11
