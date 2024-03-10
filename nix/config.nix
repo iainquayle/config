@@ -59,6 +59,7 @@
   ];
   environment.shellAliases = {
     cuda-env = "nix-shell ~/.config/nix/shells/cuda-fhs.nix";
+	py-test = "python -m unittest -v";
   };
 
   networking.hostName = "idfk"; 
@@ -89,6 +90,7 @@
     enable = true;
     layout = "us";
     xkbVariant = "";
+	xkbOptions = "caps:escape";
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
