@@ -115,14 +115,22 @@
 
   services.printing.enable = true;
 
-  sound.enable = true;
+  sound.enable = false; #menat for ALSA only, using pipewire
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  #look into using wpctl for control
+  #remove pamixer then
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+	wireplumber.enable = true;
+  };
+
+  hardware.bluetooth = {
+    enable = true;
+	powerOnBoot = true;
   };
 
   fonts.packages = with pkgs; [
