@@ -54,8 +54,10 @@
     alacritty
 	tectonic
 	unzip
+
 	pavucontrol
 	pamixer
+	playerctl
   ];
   environment.shellAliases = {
     cuda-env = "nix-shell ~/.config/nix/shells/cuda-fhs.nix";
@@ -70,7 +72,7 @@
   i18n.defaultLocale = "en_CA.UTF-8";
 
   services.picom = {
-    enable = true;
+    enable = false;
 	shadow = true;
 	fade = true;
 	fadeDelta = 5;
@@ -79,9 +81,9 @@
 	    #method = "kernel";
 		#kern = "7,7,7";
 		#backend = "xrender";
-		method = "dual_kawase";
-		strength = 5;
-		backend = "glx";
+		#method = "dual_kawase";
+		#strength = 5;
+		#backend = "glx";
 	  };
 	  corner-radius = 15;
 	};
