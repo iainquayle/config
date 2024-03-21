@@ -15,6 +15,6 @@ colors:
     foreground: "0xe0e0e0"
 
 font:
-  size: 8 
+  size: 12 
 
 tabspaces: 4

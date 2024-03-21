@@ -4,7 +4,7 @@
     isNormalUser = true;
     description = "Iain Quayle";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
+    #packages = with pkgs; [ ];
   };
   users.defaultUserShell = pkgs.zsh;
 
@@ -17,6 +17,7 @@
       ohMyZsh = {
         enable = true;
         theme = "agnoster";
+        #theme = "jonathan";
       };
     };
     neovim = {
@@ -25,6 +26,7 @@
     };
     steam = {
 	  enable = true;
+	  #works but seems to break vac games
 	  gamescopeSession.enable = true;
 	};
   };
@@ -37,7 +39,6 @@
 	cargo
 	go
 	gcc
-	#gcc-unwrapped
     nodejs
     cmake
     gnumake
@@ -54,14 +55,21 @@
     alacritty
 	tectonic
 	unzip
+	psmisc
 
 	pavucontrol
 	pamixer
 	playerctl
+
+	lxappearance
+	feh
   ];
   environment.shellAliases = {
     cuda-env = "nix-shell ~/.config/nix/shells/cuda-fhs.nix";
 	py-test = "python -m unittest -v";
+	#perhaps make some toggle system
+	picom-kill = "killall picom";
+	#picom-start = "picom";
   };
 
   networking.hostName = "idfk"; 
@@ -72,10 +80,10 @@
   i18n.defaultLocale = "en_CA.UTF-8";
 
   services.picom = {
-    enable = false;
+    enable = true;
 	shadow = true;
 	fade = true;
-	fadeDelta = 5;
+	fadeDelta = 10;
 	settings = {
 	  blur = {
 	    #method = "kernel";
@@ -85,7 +93,7 @@
 		#strength = 5;
 		#backend = "glx";
 	  };
-	  corner-radius = 15;
+	  #corner-radius = 15;
 	};
   };
   services.xserver = {
@@ -103,15 +111,10 @@
     };
     desktopManager = {
       xterm.enable = false;
-      xfce = {
-        enable = true;
-        noDesktop = true;
-        enableXfwm = false;
-      };
+      xfce.enable = false;
     };
     displayManager = {
-      lightdm.enable = true;
-      defaultSession = "xfce+i3";
+      defaultSession = "none+i3";
     };
   };
 
@@ -142,6 +145,9 @@
 	(nerdfonts.override {fonts = [ "NerdFontsSymbolsOnly" ];})
   ];
 
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
