@@ -4,7 +4,6 @@
     isNormalUser = true;
     description = "Iain Quayle";
     extraGroups = [ "networkmanager" "wheel" ];
-    #packages = with pkgs; [ ];
   };
   users.defaultUserShell = pkgs.zsh;
 
@@ -26,9 +25,9 @@
     };
     steam = {
 	  enable = true;
-	  #works but seems to break vac games
 	  gamescopeSession.enable = true;
 	};
+	thunar.enable = true;
   };
 
   #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -44,6 +43,8 @@
     gnumake
     git
     gh
+	tectonic
+	#think these two can be removed since cuda env is used
 	libGL
 	libGLU
 
@@ -53,7 +54,6 @@
 
     xclip
     alacritty
-	tectonic
 	unzip
 	psmisc
 
@@ -67,9 +67,7 @@
   environment.shellAliases = {
     cuda-env = "nix-shell ~/.config/nix/shells/cuda-fhs.nix";
 	py-test = "python -m unittest -v";
-	#perhaps make some toggle system
-	picom-kill = "killall picom";
-	#picom-start = "picom";
+	#picom-toggle = "killall picom || picom";
   };
 
   networking.hostName = "idfk"; 
@@ -83,7 +81,7 @@
     enable = true;
 	shadow = true;
 	fade = true;
-	fadeDelta = 10;
+	fadeDelta = 8;
 	settings = {
 	  blur = {
 	    #method = "kernel";
@@ -93,7 +91,7 @@
 		#strength = 5;
 		#backend = "glx";
 	  };
-	  #corner-radius = 15;
+	  corner-radius = 15;
 	};
   };
   services.xserver = {
@@ -104,8 +102,10 @@
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
-        i3status
 		dmenu
+		rofi
+        i3status
+		i3lock
       ];
 	  package = pkgs.i3-gaps;
     };
@@ -123,8 +123,7 @@
   sound.enable = false; #menat for ALSA only, using pipewire
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  #look into using wpctl for control
-  #remove pamixer then
+  #disable wireplumber if using pamixer?
   services.pipewire = {
     enable = true;
     alsa.enable = true;
