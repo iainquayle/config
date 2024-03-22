@@ -24,10 +24,10 @@
       defaultEditor = true;
     };
     steam = {
-	  enable = true;
-	  gamescopeSession.enable = true;
-	};
-	thunar.enable = true;
+      enable = true;
+      gamescopeSession.enable = true;
+    };
+    thunar.enable = true;
   };
 
   #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -35,18 +35,18 @@
   #services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
     python3
-	cargo
-	go
-	gcc
+    cargo
+    go
+    gcc
     nodejs
     cmake
     gnumake
     git
     gh
-	tectonic
-	#think these two can be removed since cuda env is used
-	libGL
-	libGLU
+    tectonic
+    #think these two can be removed since cuda env is used
+    libGL
+    libGLU
 
     discord
     firefox
@@ -54,20 +54,20 @@
 
     xclip
     alacritty
-	unzip
-	psmisc
+    unzip
+    psmisc
 
-	pavucontrol
-	pamixer
-	playerctl
+    pavucontrol
+    pamixer
+    playerctl
 
-	lxappearance
-	feh
+    lxappearance
+    feh
   ];
   environment.shellAliases = {
     cuda-env = "nix-shell ~/.config/nix/shells/cuda-fhs.nix";
-	py-test = "python -m unittest -v";
-	#picom-toggle = "killall picom || picom";
+    py-test = "python -m unittest -v";
+    #picom-toggle = "killall picom || picom";
   };
 
   networking.hostName = "idfk"; 
@@ -77,48 +77,50 @@
 
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  services.picom = {
-    enable = true;
-	shadow = true;
-	fade = true;
-	fadeDelta = 8;
-	settings = {
-	  blur = {
-	    #method = "kernel";
-		#kern = "7,7,7";
-		#backend = "xrender";
-		#method = "dual_kawase";
-		#strength = 5;
-		#backend = "glx";
-	  };
-	  corner-radius = 15;
-	};
-  };
-  services.xserver = {
-    enable = true;
-    layout = "us";
-    xkbVariant = "";
-	xkbOptions = "caps:escape";
-    windowManager.i3 = {
+  services = {
+    picom = {
       enable = true;
-      extraPackages = with pkgs; [
-		dmenu
-		rofi
-        i3status
-		i3lock
-      ];
-	  package = pkgs.i3-gaps;
+      shadow = true;
+      fade = true;
+      fadeDelta = 8;
+      settings = {
+        blur = {
+          #method = "kernel";
+          #kern = "7,7,7";
+          #backend = "xrender";
+          #method = "dual_kawase";
+          #strength = 5;
+          #backend = "glx";
+        };
+        corner-radius = 15;
+      };
     };
-    desktopManager = {
-      xterm.enable = false;
-      xfce.enable = false;
+    xserver = {
+      enable = true;
+      layout = "us";
+      xkbVariant = "";
+      xkbOptions = "caps:escape";
+      windowManager.i3 = {
+        enable = true;
+        extraPackages = with pkgs; [
+          dmenu
+          rofi
+          i3status
+          i3lock
+        ];
+        package = pkgs.i3-gaps;
+      };
+      desktopManager = {
+        xterm.enable = false;
+        xfce.enable = false;
+      };
+      displayManager = {
+        defaultSession = "none+i3";
+      };
     };
-    displayManager = {
-      defaultSession = "none+i3";
-    };
+    printing.enable = true;
   };
 
-  services.printing.enable = true;
 
   sound.enable = false; #menat for ALSA only, using pipewire
   hardware.pulseaudio.enable = false;
@@ -129,24 +131,42 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-	wireplumber.enable = true;
+    wireplumber.enable = true;
   };
 
   hardware.bluetooth = {
     enable = true;
-	powerOnBoot = true;
+    powerOnBoot = true;
+  };
+
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 30;
+
+      START_CHARGE_THRESH_BAT0 = 60;
+      STOP_CHARGE_THRESH_BAT0 = 80;
+    };
   };
 
   fonts.packages = with pkgs; [
     font-awesome
     powerline-fonts
-	powerline-symbols
-	(nerdfonts.override {fonts = [ "NerdFontsSymbolsOnly" ];})
+    powerline-symbols
+    (nerdfonts.override {fonts = [ "NerdFontsSymbolsOnly" ];})
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
