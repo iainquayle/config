@@ -4,14 +4,14 @@
 window:
   decorations: "None"
   startup_mode: "Maximized"
-  opacity: 0.35
+  opacity: 0.90
   padding:
     x: 10
     y: 10
 
 colors:
   primary:
-    background: "0x40370a"
+    background: "0x362b00"
     foreground: "0xe0e0e0"
 
 font:
