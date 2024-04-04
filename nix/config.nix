@@ -63,6 +63,7 @@
 
     lxappearance
     feh
+	brightnessctl
   ];
   environment.shellAliases = {
     cuda-env = "nix-shell ~/.config/nix/shells/cuda-fhs.nix";

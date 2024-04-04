@@ -41,6 +41,9 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous 
 
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10% 
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%- 
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -157,11 +160,22 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
+		i3bar_command i3bar --transparency
         status_command i3status
+		position top
+		#tray_output none
+		font pango:monospace 10
+		padding 0 12px 0 12px
+		colors {
+			background #312700e6 
+			 #focused_workspace  
+		}
 }
 
-gaps inner 25
+gaps inner 20
 gaps outer 0
 
 default_border none
 default_floating_border none
+
+
