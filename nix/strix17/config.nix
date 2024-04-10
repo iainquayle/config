@@ -6,8 +6,8 @@
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
-    extraPackages = [ pkgs.amdvlk ];
-    extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+    #extraPackages = [ pkgs.amdvlk ];
+    #extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -19,7 +19,7 @@
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
   };
 
   #environment.systemPackages = with pkgs; [ ];
