@@ -56,6 +56,8 @@
     alacritty
     unzip
     psmisc
+	zenith-nvidia
+	neofetch
 
     pavucontrol
     pamixer
@@ -93,7 +95,7 @@
           #strength = 5;
           #backend = "glx";
         };
-        corner-radius = 15;
+        corner-radius = 0;
       };
     };
     xserver = {
