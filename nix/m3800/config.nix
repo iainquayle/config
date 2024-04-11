@@ -1,11 +1,14 @@
 { config, pkgs, ... }:
 {
-  boot.kernelPackages = pkgs.linuxPackages_6_6; #6 1 hangs on shutdown
+  boot = {
+    kernelPackages = pkgs.linuxPackages_6_6; #6 1 hangs on shutdown
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+  };
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.nvidia.acceptLicense = true;
 
- /*
   hardware.opengl = {
     enable = true;
     driSupport = true;
@@ -28,7 +31,7 @@
   #environment.systemPackages = with pkgs; [ ];
 
   hardware.nvidia.prime = {
-    #sync.enable = true;
+    sync.enable = true;
     #offload = {
     #  enable = true;
     #  enableOffloadCmd = true;
@@ -36,5 +39,4 @@
     intelBusId = "PCI:0:2:0";
     nvidiaBusId = "PCI:2:0:0";
   };
-  */
 }

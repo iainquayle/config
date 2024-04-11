@@ -58,6 +58,7 @@
     psmisc
 	zenith-nvidia
 	neofetch
+	nm-tray
 
     pavucontrol
     pamixer
