@@ -9,6 +9,9 @@ nvim/lazy-lock.json
 !i3
 !i3/*
 
+!hypr
+!hypr/*
+
 !alacritty
 !alacritty/*
 

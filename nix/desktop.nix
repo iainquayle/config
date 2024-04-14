@@ -1,5 +1,32 @@
 {pkgs, ...}:
 {
+  programs = {
+    hyprland = {
+      enable = true;
+	  enableNvidiaPatches = true;
+      xwayland.enable = true;
+    };
+	waybar = {
+      enable = true;
+	  package = pkgs.waybar.overrideAttrs (oldAttrs: {
+	    mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+      });
+	};
+  };
+
+  environment.sessionVariables = {
+    #WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+  };
+
+  environment.systemPackages = with pkgs; [
+	dunst
+	libnotify
+	rofi-wayland
+	kitty
+  ];
+
+/*
   services = {
     picom = {
       enable = true;
@@ -43,4 +70,5 @@
     };
     printing.enable = true;
   };
+*/
 }
