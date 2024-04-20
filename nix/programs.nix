@@ -44,17 +44,13 @@
 
     xclip
     alacritty
+    kitty
     unzip
     psmisc
-	zenith-nvidia
-	neofetch
-
-    pavucontrol
-    pamixer
-    playerctl
-
-    lxappearance
-    feh
-	brightnessctl
+    zenith-nvidia
+    neofetch
   ];
+  environment.sessionVariables = {
+    #NIXOS_OZONE_WL = "1";
+  };
 }

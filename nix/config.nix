@@ -17,7 +17,6 @@
   environment.shellAliases = {
     cuda-env = "nix-shell ~/.config/nix/shells/cuda-fhs.nix";
     py-test = "python -m unittest -v";
-    #picom-toggle = "killall picom || picom";
   };
 
   time.timeZone = "America/Edmonton";
@@ -35,7 +34,7 @@
       CPU_MIN_PERF_ON_AC = 0;
       CPU_MAX_PERF_ON_AC = 100;
       CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 30;
+      CPU_MAX_PERF_ON_BAT = 40;
 
       START_CHARGE_THRESH_BAT0 = 60;
       STOP_CHARGE_THRESH_BAT0 = 80;
@@ -51,5 +50,4 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
 }

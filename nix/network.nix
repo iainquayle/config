@@ -1,8 +1,8 @@
 {...}:
 {
   networking = {
-	hostName = "idfk";
-	networkmanager.enable = true;
+    hostName = "idfk";
+    networkmanager.enable = true;
   };
   programs.nm-applet.enable = true;
   hardware.bluetooth = {
