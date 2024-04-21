@@ -12,6 +12,9 @@ nvim/lazy-lock.json
 !hypr
 !hypr/*
 
+!waybar
+!waybar/*
+
 !alacritty
 !alacritty/*
 
