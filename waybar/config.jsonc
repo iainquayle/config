@@ -1,3 +1,4 @@
+
 {
 	"layer": "top", 
 	"height": 30, // Waybar height (to be removed for auto height)
@@ -8,14 +9,16 @@
 		//"hyprland/scratchpad",
 		//"custom/media"
 	],
+	/*
 	"modules-center": [
-		//"hyprland/window"
+		"hyprland/window"
 	],
+	*/
 	"modules-right": [
 		"idle_inhibitor",
 		"pulseaudio",
 		"network",
-		"power-profiles-daemon",
+		//"power-profiles-daemon",
 		"cpu",
 		"memory",
 		"temperature",
@@ -29,7 +32,7 @@
 		"format": "{name}{icon}",
 		"format-icons": {
 			"urgent": "!",
-			"active": "<",
+			"active": "&lt;",
 			"default": ""
 		},
 		/*
