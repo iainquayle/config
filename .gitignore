@@ -11,6 +11,7 @@ nvim/lazy-lock.json
 
 !hypr
 !hypr/*
+!bg.jpg
 
 !waybar
 !waybar/*
