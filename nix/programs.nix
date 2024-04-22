@@ -45,12 +45,14 @@
     xclip
     alacritty
     kitty
+	tmux
+
     unzip
     psmisc
+
     zenith-nvidia
     neofetch
   ];
   environment.sessionVariables = {
-    #NIXOS_OZONE_WL = "1";
   };
 }
