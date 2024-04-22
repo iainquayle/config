@@ -16,6 +16,9 @@ nvim/lazy-lock.json
 !waybar
 !waybar/*
 
+!rofi
+!rofi/*
+
 !alacritty
 !alacritty/*
 
