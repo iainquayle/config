@@ -27,6 +27,7 @@
 		"clock",
 		"tray"
 	],
+	/*
 	"hyprland/workspaces": {
 		"on-click": "activate", 
 		"format": "{name}{icon}",
@@ -35,17 +36,13 @@
 			"active": "&lt;",
 			"default": ""
 		},
-		/*
 		"format-icons": {
 			"urgent": "",
 			"active": "",
 			"default": ""
 		},
-		"persistent_workspaces": {
-			"*": 10,
-		},
-		*/
 	},
+	*/
 	"hyprland/mode": {
 		"format": "<span style=\"italic\">{}</span>"
 	},
