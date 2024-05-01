@@ -31,6 +31,13 @@ return {
 						capabilities = capabilities,
 						filetypes = { "html", "templ" },
 					})
+				end,
+				tsserver = function()
+					require('lspconfig').tsserver.setup({
+						on_attach = on_attach,
+						capabilities = capabilities,
+						filetypes = { "html", "ts", "js", "templ" },
+					})
 				end
 			},
 			ensure_installed = {
