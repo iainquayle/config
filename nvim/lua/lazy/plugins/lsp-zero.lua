@@ -32,20 +32,13 @@ return {
 						filetypes = { "html", "templ" },
 					})
 				end,
-				tsserver = function()
-					require('lspconfig').tsserver.setup({
-						on_attach = on_attach,
-						capabilities = capabilities,
-						filetypes = { "html", "ts", "js", "templ" },
-					})
-				end
 			},
 			ensure_installed = {
 				"lua_ls",
 				"rust_analyzer",
 				"pyright",
 				"jdtls",
-				"texlab",
+				--"texlab",
 				"tsserver",
 				"gopls",
 				"html",
@@ -53,7 +46,8 @@ return {
 				"cssls",
 				"nil_ls",
 				--"clangd",
-				"templ",
+				--"templ",
+				"elixirls",
 			},
 			automatic_installation=true,
 		})

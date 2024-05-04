@@ -2,12 +2,6 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	event = {"BufReadPre", "BufNewFile"},
 	build = ":TSUpdate",
-	--[[
-	dependencies = {
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		"windwp/nvim-ts-autotag",
-	},
-	]]--
 	config = function()
 		local treesitter = require("nvim-treesitter.configs")
 
@@ -20,13 +14,14 @@ return {
 			--should have cli installed for this
 			--autoinstall = true,
 			ensure_installed = {
-				"latex",
+				--"latex",
 				"rust",
 				"python",
 				"go",
 				"java",
 				"json",
 				"typescript",
+				"javascript",
 				"tsx",
 				"html",
 				"css",
@@ -39,8 +34,12 @@ return {
 				"hlsl",
 				"glsl",
 				"wgsl",
-				"templ",
+				--"templ",
 				"nix",
+				"elixir",
+				"erlang",
+				"eex",
+				"heex",
 			},
 			incremental_selection = {
 				enable = true,

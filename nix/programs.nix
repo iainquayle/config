@@ -28,15 +28,16 @@
     cargo
     go
     gcc
+	elixir
+	erlang
     nodejs
+    tectonic
+
     cmake
     gnumake
+
     git
     gh
-    tectonic
-    #think these two can be removed since cuda env is used
-    #libGL
-    #libGLU
 
     discord
     firefox
