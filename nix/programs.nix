@@ -39,6 +39,8 @@
     git
     gh
 
+	freecad
+
     discord
     firefox
     ncspot
