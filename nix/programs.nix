@@ -54,7 +54,7 @@
     psmisc
 
     zenith-nvidia
-    neofetch
+    fastfetch
   ];
   environment.sessionVariables = {
   };
