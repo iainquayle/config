@@ -16,3 +16,11 @@ vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead',}, {
 	end,
 	group = generalSettingsGroup,
 })
+vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead',}, {
+	pattern = {'*.js.eex'},
+	callback = function()
+		local buffer = vim.api.nvim_get_current_buf()
+		vim.api.nvim_buf_set_option(buffer, 'filetype', "javascript.eelixir")
+	end,
+	group = generalSettingsGroup,
+})
