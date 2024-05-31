@@ -42,8 +42,9 @@
 	freecad
 
     discord
-    firefox
     ncspot
+    firefox
+	nyxt
 
     xclip
     alacritty
