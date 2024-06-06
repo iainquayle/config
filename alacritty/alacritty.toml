@@ -8,11 +8,11 @@ size = 12
 
 [window]
 decorations = "None"
-opacity = 0.90
+opacity = 0.7
 startup_mode = "Maximized"
 padding = { x = 10, y = 10 }
 
 [colors]
-primary = { background = "0x312700", foreground = "0xe0e0e0" }
+primary = { background = "0x000000", foreground = "0xe0e0e0" }
 normal = { black = "#2e3436", red = "#cc0000", green = "#4e9a06", yellow = "#c4a000", blue = "#3465a4", magenta = "#75507b", cyan = "#06989a", white = "#d3d7cf" }
 bright = { black = "#555753", red = "#ef2929", green = "#8ae234", yellow = "#fce94f", blue = "#729fcf", magenta = "#ad7fa8", cyan = "#34e2e2", white = "#eeeeec" }
