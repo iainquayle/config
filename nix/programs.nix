@@ -48,6 +48,7 @@
 
     xclip
     alacritty
+	kitty
     kitty
 	tmux
 
