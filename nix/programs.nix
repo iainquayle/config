@@ -20,7 +20,6 @@
       enable = true;
       gamescopeSession.enable = true;
     };
-    thunar.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
@@ -45,6 +44,7 @@
     ncspot
     firefox
 	nyxt
+	nnn	
 
     xclip
     alacritty
