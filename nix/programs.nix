@@ -45,6 +45,7 @@
     firefox
 	nyxt
 	nnn	
+	vlc
 
     xclip
     alacritty

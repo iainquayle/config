@@ -8,6 +8,7 @@ vim.filetype.add({
 })
 
 --make a func for this and add css and js
+--[[
 vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead',}, {
 	pattern = {'*.html.eex'},
 	callback = function()
@@ -32,3 +33,4 @@ vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead',}, {
 	end,
 	group = generalSettingsGroup,
 })
+]]--
