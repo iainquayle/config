@@ -9,11 +9,11 @@ return {
 		treesitter.setup({
 			highlight = {
 				enable = true,
+				disable = {"latex"},
 			},
 			indent = { enable = true },
 			autotag = { enable = true, },
-			--should have cli installed for this
-			--autoinstall = true,
+			autoinstall = false,
 			ensure_installed = {
 				--"latex",
 				"rust",
