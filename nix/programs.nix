@@ -39,6 +39,7 @@
     gh
 
 	freecad
+	libreoffice-still
 
     discord
     ncspot
@@ -52,6 +53,7 @@
 	kitty
     kitty
 	tmux
+	fzf
 
     unzip
     psmisc
