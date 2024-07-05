@@ -29,5 +29,8 @@ nvim/lazy-lock.json
 !nixpkgs
 !nixpkgs/*
 
+!nyxt
+!nyxt/*
+
 result*
 
