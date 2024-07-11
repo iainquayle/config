@@ -15,6 +15,8 @@
     neovim = {
       enable = true;
       defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
     };
     steam = {
       enable = true;
@@ -25,26 +27,23 @@
   environment.systemPackages = with pkgs; [
     cmake
     gnumake
-
     git
     gh
 
-	freecad
-	libreoffice-still
+    freecad
+    libreoffice-still
 
     discord
     ncspot
     firefox
-	nyxt
-	nnn	
-	vlc
+    nyxt
+    nnn    
+    vlc
 
     xclip
     alacritty
-	kitty
-    kitty
-	tmux
-	fzf
+    tmux
+    fzf
 
     unzip
     psmisc
@@ -53,36 +52,36 @@
     fastfetch
 
     python3
-	#pyright
+    #pyright
 
     cargo
-	#rust-analyzer
+    #rust-analyzer
 
     go
-	#gopls
+    #gopls
 
     gcc
-	#clangd
+    #clangd
 
-	elixir
-	#elixir-ls
+    elixir
+    #elixir-ls
 
-	erlang
+    erlang
 
     nodejs
-	#typescript
+    #typescript
 
     tectonic
-	#texlab
+    #texlab
 
-	#nil
-	#lua-language-server
+    #nil
+    #lua-language-server
 
-	#current hack for linking mason lsps, use fhs, cuda works since it has glib and whatnot
-	#options in the future:
-	#	auto start a fhs in each open shell
-	#	or us nix-ld, catches dynamic linking
-	#	set an environment variable, and have nvim switch between on machine lsps (nix) and mason lsps (other os)
+    #current hack for linking mason lsps, use fhs, cuda works since it has glib and whatnot
+    #options in the future:
+    #    auto start a fhs in each open shell
+    #    or us nix-ld, catches dynamic linking
+    #    set an environment variable, and have nvim switch between on machine lsps (nix) and mason lsps (other os)
   ];
   environment.sessionVariables = {
     
