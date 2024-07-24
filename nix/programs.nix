@@ -42,6 +42,7 @@
 
     xclip
     alacritty
+	nushell
     tmux
     fzf
 
@@ -50,6 +51,8 @@
 
     zenith-nvidia
     fastfetch
+
+	wlr-randr
 
     python3
     #pyright
