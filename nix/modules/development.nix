@@ -29,9 +29,10 @@
 
     xclip
     alacritty
-	nushell
     tmux
     fzf
+	nushell
+	xonsh
 
     python3
     #pyright
