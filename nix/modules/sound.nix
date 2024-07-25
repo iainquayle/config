@@ -1,5 +1,4 @@
-{pkgs, ...}:
-{
+{pkgs, ...}: {
   sound.enable = false; #meant for ALSA only, using pipewire
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;

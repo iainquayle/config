@@ -18,11 +18,8 @@
       viAlias = true;
       vimAlias = true;
     };
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-    };
   };
+  users.defaultUserShell = pkgs.zsh;
 
   environment.systemPackages = with pkgs; [
     cmake
@@ -30,29 +27,11 @@
     git
     gh
 
-    freecad
-    libreoffice-still
-
-    discord
-    ncspot
-    firefox
-    nyxt
-    nnn    
-    vlc
-
     xclip
     alacritty
 	nushell
     tmux
     fzf
-
-    unzip
-    psmisc
-
-    zenith-nvidia
-    fastfetch
-
-	wlr-randr
 
     python3
     #pyright
@@ -86,7 +65,18 @@
     #    or us nix-ld, catches dynamic linking
     #    set an environment variable, and have nvim switch between on machine lsps (nix) and mason lsps (other os)
   ];
-  environment.sessionVariables = {
-    
+
+  environment.shellAliases = {
+    cuda-env = "nix-shell ~/.config/nix/shells/cuda-fhs.nix";
+    py-test = "python -m unittest -v";
   };
+
+  environment.sessionVariables = { };
+
+  fonts.packages = with pkgs; [
+    font-awesome
+    powerline-fonts
+    powerline-symbols
+    (nerdfonts.override {fonts = [ "NerdFontsSymbolsOnly" ];})
+  ];
 }
