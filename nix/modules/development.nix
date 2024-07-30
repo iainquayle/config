@@ -31,8 +31,8 @@
     alacritty
     tmux
     fzf
-	nushell
-	xonsh
+    nushell
+    xonsh
 
     python3
     #pyright
@@ -74,10 +74,4 @@
 
   environment.sessionVariables = { };
 
-  fonts.packages = with pkgs; [
-    font-awesome
-    powerline-fonts
-    powerline-symbols
-    (nerdfonts.override {fonts = [ "NerdFontsSymbolsOnly" ];})
-  ];
 }

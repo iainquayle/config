@@ -1,14 +1,14 @@
 { config, ... }: {
   imports = [
-	./modules/standard.nix
-	./modules/programs.nix
-	./modules/desktop.nix
-	./modules/sound.nix
-	./modules/wireless.nix
-	./modules/development.nix
-	./modules/nvidia.nix
-	./modules/gaming.nix
-	./modules/laptop.nix
+    ./modules/standard.nix
+    ./modules/programs.nix
+    ./modules/desktop.nix
+    ./modules/sound.nix
+    ./modules/wireless.nix
+    ./modules/development.nix
+    ./modules/nvidia.nix
+    ./modules/gaming.nix
+    ./modules/laptop.nix
   ];
 
   hardware.nvidia = {

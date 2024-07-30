@@ -9,8 +9,8 @@
   environment.systemPackages = with pkgs; [
     discord
 
-	wlr-randr
-	xorg.xrandr
+    wlr-randr
+    xorg.xrandr
   ];
 
   environment.sessionVariables = { };

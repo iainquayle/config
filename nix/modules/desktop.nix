@@ -15,7 +15,7 @@
 
   xdg.portal = {
     enable = true;
-	wlr.enable = true;
+    wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
@@ -36,5 +36,13 @@
     nwg-look 
     hyprpaper
     brightnessctl
+  ];
+
+
+  fonts.packages = with pkgs; [
+    font-awesome
+    powerline-fonts
+    powerline-symbols
+    (nerdfonts.override {fonts = [ "NerdFontsSymbolsOnly" ];})
   ];
 }
