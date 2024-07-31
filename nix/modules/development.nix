@@ -25,6 +25,7 @@
     cmake
     gnumake
     git
+	git-lfs
     gh
 
     xclip
