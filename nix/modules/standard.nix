@@ -19,6 +19,7 @@
     git
 
     nnn    
+	superfile
 
     xclip
     tmux
