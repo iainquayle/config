@@ -61,6 +61,8 @@
     #nil
     #lua-language-server
 
+	vial
+
     #current hack for linking mason lsps, use fhs, cuda works since it has glib and whatnot
     #options in the future:
     #    auto start a fhs in each open shell
@@ -71,8 +73,10 @@
   environment.shellAliases = {
     cuda-env = "nix-shell ~/.config/nix/shells/cuda-fhs.nix";
     py-test = "python -m unittest -v";
+	vial = "Vial";
   };
 
   environment.sessionVariables = { };
 
+  services.udev.extraRules = '' KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl" '';
 }
