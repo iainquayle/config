@@ -9,6 +9,7 @@
     ./modules/nvidia.nix
     ./modules/gaming.nix
     ./modules/laptop.nix
+    ./modules/vial_unsecure.nix
   ];
 
   hardware.nvidia = {
