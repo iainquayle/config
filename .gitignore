@@ -32,5 +32,7 @@ nvim/lazy-lock.json
 !nyxt
 !nyxt/*
 
+!redox.layout.json
+
 result*
 
