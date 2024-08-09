@@ -59,7 +59,7 @@
       "KC_K",
       "KC_J",
       "KC_H",
-      "KC_RGUI",
+      "TO(2)",
       "KC_ENT",
       "KC_SLSH",
       "KC_DOT",
@@ -70,7 +70,7 @@
       "KC_NO",
       "KC_NO",
       "KC_NO",
-      "MO(1)",
+      "KC_RGUI",
       "LT(1,KC_SPC)",
       "KC_RALT",
       "KC_RCTL"
