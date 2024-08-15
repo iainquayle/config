@@ -1,6 +1,7 @@
 { config, ... }: {
   imports = [
-    ./modules/standard.nix
+    ./modules/boot.nix
+    ./modules/essentials.nix
     ./modules/programs.nix
     ./modules/desktop.nix
     ./modules/sound.nix
