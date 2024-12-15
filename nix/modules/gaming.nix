@@ -2,7 +2,7 @@
   programs = {
     steam = {
       enable = true;
-      gamescopeSession.enable = false;
+      gamescopeSession.enable = true;
     };
   };
 

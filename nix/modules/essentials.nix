@@ -15,7 +15,7 @@
     nnn    
     superfile
 
-    xclip
+    wl-clipboard 
 
     unzip
     psmisc

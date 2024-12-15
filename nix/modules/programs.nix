@@ -1,11 +1,11 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     freecad
-    libreoffice-still
+    #libreoffice-still
 
     ncspot
     firefox
-    nyxt
+    #nyxt
     vlc
   ];
 }
