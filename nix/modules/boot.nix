@@ -6,7 +6,7 @@
   };
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_6; 
+    kernelPackages = pkgs.linuxPackages_6_12; 
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
   };

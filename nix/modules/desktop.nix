@@ -33,6 +33,8 @@
     libnotify
     rofi-wayland
 
+    wl-clipboard 
+
     nwg-look 
     hyprpaper
     brightnessctl
