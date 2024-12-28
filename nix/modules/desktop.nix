@@ -2,16 +2,21 @@
   programs = {
     hyprland = {
       enable = true;
-      #enableNvidiaPatches = true;
       xwayland.enable = true;
     };
     waybar = {
       enable = true;
-      #package = pkgs.waybar.overrideAttrs (oldAttrs: {
-      #  mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-      #});
     };
   };
+
+  #need to check if anything below will cause issues between the two desktops
+  #maybe try to move any of that to inits
+  #services.xserver = {
+  #  enable = true;
+    #will need to make an init rc for this
+  #  displayManager.startx.enable = true;
+  #  desktopManager.lxqt.enable = true;
+  #};
 
   xdg.portal = {
     enable = true;
@@ -39,7 +44,6 @@
     hyprpaper
     brightnessctl
   ];
-
 
   fonts.packages = with pkgs; [
     font-awesome

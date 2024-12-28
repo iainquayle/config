@@ -11,6 +11,8 @@
 
     wlr-randr
     xorg.xrandr
+
+    ludusavi
   ];
 
   environment.sessionVariables = { };
