@@ -39,7 +39,7 @@ return {
 				"pyright",
 				"jdtls",
 				--"texlab",
-				"tsserver",
+				"ts_ls",
 				"gopls",
 				"html",
 				--"htmx",
