@@ -22,6 +22,7 @@
       enable = true;
         libraries = with pkgs; [
 #          glibc
+#           cargo
       ];
     };
   };
@@ -45,6 +46,7 @@
     #pyright
 
     cargo
+    rustc
     #rust-analyzer
 
     go

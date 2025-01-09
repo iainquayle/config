@@ -5,8 +5,6 @@
     cudatoolkit
     linuxPackages.nvidia_x11
     stdenv.cc 
-    #clang-tools 
-    #clangStdenv
     glibc
     binutils 
     libGL 
@@ -15,6 +13,8 @@
     #gnumake 
     #m4 
     util-linux
+
+    cargo
   ];
   #multiPkgs = pkgs: with pkgs; [zlib];
   runScript = "zsh";
