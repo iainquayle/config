@@ -5,6 +5,9 @@
     cudatoolkit
     linuxPackages.nvidia_x11
     stdenv.cc 
+    #clang-tools 
+    #clangStdenv
+    glibc
     binutils 
     libGL 
     libGLU 

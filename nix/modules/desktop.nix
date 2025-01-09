@@ -26,7 +26,7 @@
 
   environment.sessionVariables = {
     #WLR_NO_HARDWARE_CURSORS = "1";
-    NIXOS_OZONE_WL = "1";
+    NIXOS_OZONE_WL = "1"; #may cause issues with other servers... may not need this anymore anyway
   };
 
   environment.systemPackages = with pkgs; [
@@ -40,8 +40,9 @@
 
     wl-clipboard 
 
-    nwg-look 
     hyprpaper
+    hyprcursor
+    nwg-look 
     brightnessctl
   ];
 

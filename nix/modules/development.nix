@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   programs = {
+#move zsg to essentials, maybe even nvim too
     zsh = {
       enable = true;
       enableCompletion = true;
@@ -17,6 +18,12 @@
       viAlias = true;
       vimAlias = true;
     };
+    nix-ld = {
+      enable = true;
+        libraries = with pkgs; [
+#          glibc
+      ];
+    };
   };
   users.defaultUserShell = pkgs.zsh;
 
@@ -24,7 +31,7 @@
     cmake
     gnumake
     git
-	git-lfs
+    #git-lfs
     gh
 
     xclip
@@ -44,6 +51,14 @@
     #gopls
 
     gcc
+    #llvmPackages_latest.lldb
+    #llvmPackages_latest.libllvm
+    #llvmPackages_latest.libcxx
+    #llvmPackages_latest.clang
+    clang 
+    libcxx
+    libllvm
+    clang-tools
     #clangd
 
     elixir
@@ -60,7 +75,7 @@
     #nil
     #lua-language-server
 
-	#vial
+    #vial
 
     #current hack for linking mason lsps, use fhs, cuda works since it has glib and whatnot
     #options in the future:
