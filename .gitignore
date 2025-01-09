@@ -34,5 +34,7 @@ nvim/lazy-lock.json
 
 !redox.layout.json
 
+!zsh/.zshrc
+
 result*
 
