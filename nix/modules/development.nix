@@ -32,15 +32,11 @@
     cmake
     gnumake
     git
-    #git-lfs
     gh
 
-    xclip
     alacritty
     tmux
     fzf
-    nushell
-    xonsh
 
     python3
     #pyright
