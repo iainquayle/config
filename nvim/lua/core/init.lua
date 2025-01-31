@@ -8,6 +8,8 @@ vim.filetype.add({
 })
 
 --make a func for this and add css and js
+--two options, supposedly, make specific injections scheme for tree sitter
+--or, turn off tree sitter for these files may give some of the basic syntax highlighting
 --[[
 vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead',}, {
 	pattern = {'*.html.eex'},
