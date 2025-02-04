@@ -47,9 +47,10 @@
   ];
 
   fonts.packages = with pkgs; [
-    font-awesome
-    powerline-fonts
-    powerline-symbols
-    (nerdfonts.override {fonts = [ "NerdFontsSymbolsOnly" ];})
+    meslo-lgs-nf
+    #font-awesome
+    #powerline-fonts
+    #powerline-symbols
+    #(nerdfonts.override {fonts = [ "MesloNerdFont" "MesloNerdFontP10k" ];})
   ];
 }
