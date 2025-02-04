@@ -1,17 +1,5 @@
 {pkgs, ...}: {
   programs = {
-#move zsg to essentials, maybe even nvim too
-    zsh = {
-      enable = true;
-      enableCompletion = true;
-      autosuggestions.enable = true;
-      syntaxHighlighting.enable = true;
-      ohMyZsh = {
-        enable = true;
-        theme = "agnoster";
-        #theme = "jonathan";
-      };
-    };
     neovim = {
       enable = true;
       defaultEditor = true;
@@ -26,7 +14,6 @@
       ];
     };
   };
-  users.defaultUserShell = pkgs.zsh;
 
   environment.systemPackages = with pkgs; [
     cmake
