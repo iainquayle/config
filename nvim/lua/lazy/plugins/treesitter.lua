@@ -11,9 +11,9 @@ return {
 				enable = true,
 				disable = {"latex"},
 			},
-			indent = { enable = true },
+			--indent = { enable = true },
 			autotag = { enable = true, },
-			autoinstall = false,
+			autoinstall = true,
 			ensure_installed = {
 				--"latex",
 				"rust",

@@ -7,9 +7,10 @@ return {
 
 		local keymap = vim.keymap 
 		keymap.set("n", "<leader>ff",  fzf.files, { desc = "Fuzzy find files in cwd" })
-		--keymap.set("n", "<leader>fr",  fzf.oldfiles, { desc = "Fuzzy find recent files" })
-		--keymap.set("n", "<leader>fs",  fzf.grep, { desc = "Find string in cwd" })
+		keymap.set("n", "<leader>fr",  fzf.oldfiles, { desc = "Fuzzy find recent" })
+		keymap.set("n", "<leader>ft",  fzf.treesitter, { desc = "Fuzzy find treesitter nodes" })
 		keymap.set("n", "<leader>fs",  fzf.live_grep, { desc = "Find string in cwd" })
+		keymap.set("n", "<leader>fd",  fzf.diagnostics_workspace, { desc = "Find diagnostics" })
 		--keymap.set("n", "<leader>fc",  fzf.grep_cword, { desc = "Find string under cursor in cwd" })
 		keymap.set("n", "<leader>fc",  fzf.builtin, { desc = "Find fzf commands" })
 	end

@@ -3,7 +3,6 @@
     enable = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
   nixpkgs.config.nvidia.acceptLicense = true;
   services.xserver.videoDrivers = ["nvidia"];
 
