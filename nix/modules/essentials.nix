@@ -6,8 +6,15 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  # pabkages that may make sense to get or switch to
+  # zellij vs tmux
+  # 7zip
+  # entr # run a command when a file changes, probably put in dev
+  # tldr # better docs
+  # rclone or rsync # file sync
+  
   programs = {
-    zsh = {
+    zsh = { # not exactly essential, but nice to have and not very large.
       enable = true;
       enableCompletion = true;
       autosuggestions.enable = true;
@@ -15,20 +22,15 @@
       promptInit = ''
         source "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       '';
-      ohMyZsh = {
-        enable = false;
-        #enable = true;
-        #theme = "agnoster";
-        #theme = "jonathan";
-        #theme = "fino-time";
-        #theme = "xiong-chiamiov-plus";
-      };
     };
     tmux = {
       enable = true;
       extraConfig = ''
         set -s escape-time 0
       '';
+    };
+    git = {
+      enable = true;
     };
   };
   users.defaultUserShell = pkgs.zsh;
@@ -38,9 +40,10 @@
   };
 
   environment.systemPackages = with pkgs; [
-    git
-
     zsh-powerlevel10k
+
+    ripgrep
+    fzf
 
     superfile
 

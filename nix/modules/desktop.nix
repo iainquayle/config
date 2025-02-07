@@ -38,6 +38,7 @@
     libnotify
     rofi-wayland
 
+    alacritty
     wl-clipboard 
 
     hyprpaper

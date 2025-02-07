@@ -18,12 +18,8 @@
   environment.systemPackages = with pkgs; [
     cmake
     gnumake
-    git
     gh
 
-    alacritty
-    tmux
-    fzf
 
     python3
     #pyright
