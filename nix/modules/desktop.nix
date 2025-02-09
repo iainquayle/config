@@ -12,7 +12,6 @@
     pwvucontrol
   ];
   services.blueman.enable = true; 
-  networking.networkmanager.enable = true;
 
   fonts.packages = with pkgs; [
     meslo-lgs-nf

@@ -1,9 +1,27 @@
-{...}:
-{
+{...}: {
   networking = {
     hostName = "idfk";
-    networkmanager.enable = true;
+    wireless = {
+      enable = false; #wpa_supplicant
+      iwd = {
+        enable = true;
+        settings = {
+          IPv6 = {
+            Enabled = true;
+          };
+          Settings = {
+            AutoConnect = true;
+          };
+        };
+      };
+    };
+    useNetworkd = true;
+    #useDHCP = false;
   };
+  systemd.network = {
+    enable = true;
+  };
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;

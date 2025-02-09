@@ -10,7 +10,7 @@ return {
 		--keymap.set("n", "<leader>fr",  fzf.oldfiles, { desc = "Fuzzy find recent" })
 
 		keymap.set("n", "<leader>ft",  fzf.treesitter, { desc = "Find treesitter nodes" })
-		keymap.set("n", "<leader>fs",  fzf.lsp_workspace_symbols, { desc = "Find lsp symbols" })
+		keymap.set("n", "<leader>fs",  fzf.lsp_live_workspace_symbols, { desc = "Find lsp symbols" })
 		keymap.set("n", "<leader>fr",  fzf.lsp_references, { desc = "Find symbol references" })
 
 		keymap.set("n", "<leader>fg",  fzf.live_grep, { desc = "Grep for string" })

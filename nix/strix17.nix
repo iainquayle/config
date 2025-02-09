@@ -10,7 +10,7 @@
     ./modules/laptop.nix
     ./modules/network.nix
     ./modules/nvidia.nix
-    ./modules/vial_unsecure.nix
+    ./modules/vial-unsecure.nix
   ];
 
   hardware.nvidia = {
