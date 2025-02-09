@@ -1,3 +1,5 @@
+# kept seperate from standard in case of specific boot requirements
+
 { pkgs, ... }: {
   users.users.iainq = {
     isNormalUser = true;

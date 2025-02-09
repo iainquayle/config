@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  #disable wireplumber if using pamixer?
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -9,10 +8,7 @@
     pulse.enable = true;
     wireplumber.enable = true;
   };
-
   environment.systemPackages = with pkgs; [
-    pavucontrol
-    pamixer
     playerctl
   ];
 }

@@ -4,17 +4,22 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+      auto-optimise-store = true;
+    };
+  };
 
-  # pabkages that may make sense to get or switch to
-  # zellij vs tmux
-  # 7zip
-  # entr # run a command when a file changes, probably put in dev
-  # tldr # better docs
-  # rclone or rsync # file sync
+  # 7zip # seems to not have the actual upto date version in nixpkgs
   
   programs = {
-    zsh = { # not exactly essential, but nice to have and not very large.
+    zsh = { # not exactly essential, but nice to have and not very large. # may move back to dev
       enable = true;
       enableCompletion = true;
       autosuggestions.enable = true;
@@ -32,6 +37,7 @@
     git = {
       enable = true;
     };
+    nano.enable = false;
   };
   users.defaultUserShell = pkgs.zsh;
 
@@ -52,5 +58,7 @@
 
     zenith-nvidia
     fastfetch
+
+    tealdeer
   ];
 }

@@ -1,20 +1,20 @@
 { config, ... }: {
   imports = [
+    ./modules/audio.nix
+    ./modules/base.nix
     ./modules/boot.nix
-    ./modules/essentials.nix
-    ./modules/programs.nix
     ./modules/desktop.nix
-    ./modules/sound.nix
-    ./modules/wireless.nix
     ./modules/development.nix
-    ./modules/nvidia.nix
     ./modules/gaming.nix
+    ./modules/hyprland.nix
     ./modules/laptop.nix
+    ./modules/network.nix
+    ./modules/nvidia.nix
     ./modules/vial_unsecure.nix
   ];
 
   hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
     prime = {
       offload = {
         enable = true;

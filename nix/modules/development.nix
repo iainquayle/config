@@ -8,10 +8,10 @@
     };
     nix-ld = {
       enable = true;
-        libraries = with pkgs; [
+#        libraries = with pkgs; [
 #          glibc
-#           cargo
-      ];
+#          cargo
+#      ];
     };
   };
 
@@ -20,6 +20,7 @@
     gnumake
     gh
 
+    entr
 
     python3
     #pyright
@@ -72,5 +73,4 @@
 
   environment.sessionVariables = { };
 
-  #services.udev.extraRules = '' KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl" '';
 }
