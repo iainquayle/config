@@ -60,5 +60,7 @@
     fastfetch
 
     tealdeer
+
+    pass-nodmenu
   ];
 }
