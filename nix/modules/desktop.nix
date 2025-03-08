@@ -7,6 +7,7 @@
     alacritty
 
     freecad
+    renderdoc
 
     ncspot
     firefox
@@ -14,6 +15,7 @@
     mpv 
 
     pwvucontrol
+    iwgtk
   ];
   services.blueman.enable = true; 
 

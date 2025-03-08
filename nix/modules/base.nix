@@ -54,6 +54,7 @@
     superfile
 
     unzip
+    zip 
     psmisc
 
     zenith-nvidia

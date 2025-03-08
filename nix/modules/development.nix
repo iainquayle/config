@@ -22,6 +22,8 @@
 
     entr
 
+    stack
+
     python3
     #pyright
 
