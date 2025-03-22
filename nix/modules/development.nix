@@ -22,7 +22,11 @@
 
     entr
 
-    stack
+    #ghc
+    #cabal-install
+
+    #opam
+    #ocaml
 
     python3
     #pyright
@@ -47,10 +51,12 @@
 
     elixir
     #elixir-ls
-
     erlang
 
     nodejs
+    nodePackages.parcel
+    nodePackages.tailwindcss
+    #tailwindcss
     #typescript
 
     tectonic

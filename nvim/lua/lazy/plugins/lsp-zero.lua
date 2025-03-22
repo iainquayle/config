@@ -48,6 +48,7 @@ return {
 				"clangd",
 				--"templ",
 				"elixirls",
+				"ocamllsp"
 			},
 			automatic_installation=true,
 		})
