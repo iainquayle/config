@@ -1,8 +1,8 @@
 # changes
 
-consider removing auto close
+flatten file structure, move core, and lazy.lua in lua folder, plugins have their own folder
 
-consider moving window focus to leader ..., since it will be mainly used with plugins
+move lsp stuff into one folder, and switch on what gets returned?
 
 add more ftplugins, even if nothing in them, just for ease of use later
 

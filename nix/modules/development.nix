@@ -33,10 +33,10 @@
 
     cargo
     rustc
-    #rust-analyzer
+    rust-analyzer
 
     go
-    #gopls
+    gopls
 
     gcc
     #llvmPackages_latest.lldb
@@ -47,23 +47,23 @@
     libcxx
     libllvm
     clang-tools
-    #clangd
+    clangd
 
     elixir
-    #elixir-ls
+    elixir-ls
     erlang
 
     nodejs
     nodePackages.parcel
     nodePackages.tailwindcss
     #tailwindcss
-    #typescript
+    typescript
 
-    tectonic
+    #tectonic
     #texlab
 
-    #nil
-    #lua-language-server
+    nil
+    lua-language-server
 
     #vial
 

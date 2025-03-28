@@ -43,6 +43,7 @@
 
   environment.sessionVariables = {
     ZDOTDIR = "${config.users.users.iainq.home}/.config/zsh";
+    NIXOS = "1";
   };
 
   environment.systemPackages = with pkgs; [
