@@ -13,10 +13,9 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-local lazy = require("lazy")
-lazy.setup({
+require("lazy").setup({
 	spec = {
-		{import = "lazy.plugins"},
+		{import = "plugins"},
 	},
 	checker = {
 		enable = true, --check for updates

@@ -29,7 +29,7 @@
     #ocaml
 
     python3
-    #pyright
+    pyright
 
     cargo
     rustc
@@ -47,7 +47,7 @@
     libcxx
     libllvm
     clang-tools
-    clangd
+    #clangd #errors for some reason?
 
     elixir
     elixir-ls
@@ -63,6 +63,7 @@
     #texlab
 
     nil
+
     lua-language-server
 
     #vial

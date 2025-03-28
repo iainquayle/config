@@ -1,5 +1,6 @@
-require("core.options")
-require("core.keymaps")
+require("options")
+require("keymaps")
+require("lazy-loader")
 
 vim.filetype.add({
 	extension = {
