@@ -32,23 +32,34 @@ end
 
 if os.getenv("NIXOS") == '1' or os.getenv("MASON") == "0" then
 	return {
-		"neovim/nvim-lspconfig",
-		config = function()
-			lsp_setup()
+		{
+			"neovim/nvim-lspconfig",
+			config = function()
+				lsp_setup()
 
-			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({
-				--diagnostics = {
-					--globals = { "vim" },
-				--},
-			})
-			lspconfig.ts_ls.setup({})
-			lspconfig.rust_analyzer.setup({})
-			lspconfig.elixirls.setup({})
-			lspconfig.gopls.setup({})
-			lspconfig.nil_ls.setup({})
-			lspconfig.pyright.setup({})
-		end
+				local lspconfig = require("lspconfig")
+				lspconfig.lua_ls.setup({
+					settings = {
+						Lua = {
+							diagnostics = {
+								globals = { "vim" },
+							},
+						}
+					}
+				})
+				--lspconfig.ts_ls.setup({})
+				lspconfig.rust_analyzer.setup({})
+				lspconfig.elixirls.setup({cmd = { "elixir-ls" }})
+				lspconfig.gopls.setup({})
+				lspconfig.nil_ls.setup({})
+				lspconfig.pyright.setup({})
+			end
+		},
+		{
+			"pmizio/typescript-tools.nvim",
+			dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+			opts = {},
+		}
 	}
 else
 	return {

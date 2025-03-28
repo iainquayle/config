@@ -58,6 +58,7 @@
     nodePackages.tailwindcss
     #tailwindcss
     typescript
+    typescript-language-server
 
     #tectonic
     #texlab
