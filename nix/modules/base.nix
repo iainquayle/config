@@ -17,6 +17,21 @@
   };
 
   # 7zip # seems to not have the actual upto date version in nixpkgs
+
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = ["*"];
+        settings = {
+          main = {
+            capslock = "escape";
+          };
+          otherlayer = {};
+        };
+      };
+    };
+  };
   
   programs = {
     zsh = { # not exactly essential, but nice to have and not very large. # may move back to dev
