@@ -16,21 +16,22 @@
     };
   };
 
-  # 7zip # seems to not have the actual upto date version in nixpkgs
-
-  services.keyd = {
-    enable = true;
-    keyboards = {
-      default = {
-        ids = ["*"];
-        settings = {
-          main = {
-            capslock = "escape";
+  services = { 
+    keyd = {
+      enable = true;
+      keyboards = {
+        default = {
+          ids = ["*"];
+          settings = {
+            main = {
+              capslock = "escape";
+            };
+            otherlayer = {};
           };
-          otherlayer = {};
         };
       };
     };
+    gnome.gnome-keyring.enable = true;
   };
   
   programs = {
@@ -58,6 +59,7 @@
 
   environment.sessionVariables = {
     ZDOTDIR = "${config.users.users.iainq.home}/.config/zsh";
+    GNUPGHOME = "${config.users.users.iainq.home}/.config/gpg";
     NIXOS = "1";
   };
 
@@ -78,6 +80,6 @@
 
     tealdeer
 
-    pass-nodmenu
+    libsecret
   ];
 }
