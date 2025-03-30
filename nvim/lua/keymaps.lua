@@ -10,3 +10,7 @@ vim.keymap.set("n", "<Left>", "zh", { noremap = true })
 vim.keymap.set("n", "<Down>", "<S-Down>", { noremap = true })
 vim.keymap.set("n", "<Up>", "<S-Up>", { noremap = true })
 vim.keymap.set("n", "<Right>", "zl", { noremap = true })
+
+vim.keymap.set("n", "<leader>q", "<cmd>q<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>Q", "<cmd>qa<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { noremap = true })
