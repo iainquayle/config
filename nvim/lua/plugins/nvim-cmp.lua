@@ -15,6 +15,9 @@ return {
 				{ name = "buffer" },
 				{ name = "path" },
 				--{ name = "cmdline" },
+				per_filetype = {
+					codecompanion = { "codecompanion" }
+				},
 			},
 			snippet = {
 				expand = function(args)

@@ -4,7 +4,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		"nvim-treesitter/nvim-treesitter",
 	},
-	config = true, 
+	config = true,
 	opts = {
 		strategies = {
 			chat = {
@@ -13,6 +13,7 @@ return {
 			inline = {
 				adapter = "gemini",
 			},
+
 		}
 	}
 }
