@@ -36,6 +36,8 @@ return {
 				"erlang",
 				"eex",
 				"heex",
+				"yaml",
+				"toml",
 			},
 			incremental_selection = {
 				enable = true,
