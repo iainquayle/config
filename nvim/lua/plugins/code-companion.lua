@@ -54,9 +54,15 @@ return {
 			adapters = {
 				gemini = function()
 					return require("codecompanion.adapters").extend("gemini", {
-						--schema = { model = { default = "" } },
+						schema = {
+							model = {
+								--default = "gemini-2.5-pro-exp-03-25"
+								default = "gemini-2.0-flash"
+								--default = "gemini-1.5-pro"
+							}
+						},
 						env = {
-							api_key = "cmd:secret-tool lookup gemini gemini"
+							api_key = "cmd:secret-tool lookup api-key gemini"
 						}
 					})
 				end
