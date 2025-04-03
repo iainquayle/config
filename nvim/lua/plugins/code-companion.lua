@@ -1,5 +1,6 @@
 return {
 	"olimorris/codecompanion.nvim",
+	event = "VeryLazy",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-treesitter/nvim-treesitter",
@@ -13,7 +14,10 @@ return {
 		require("codecompanion").setup({
 			display = {
 				chat = {
-					show_settings = true
+					show_settings = false
+				},
+				diff = {
+					provider = "mini_diff"
 				}
 			},
 			strategies = {

@@ -34,6 +34,7 @@ if os.getenv("NIXOS") == '1' or os.getenv("MASON") == "0" then
 	return {
 		{
 			"neovim/nvim-lspconfig",
+			event = "VeryLazy",
 			config = function()
 				lsp_setup()
 
@@ -65,16 +66,19 @@ else
 	return {
 		{
 			"neovim/nvim-lspconfig",
+			event = "VeryLazy",
 			dependencies = { { "williamboman/mason-lspconfig.nvim", dependencies = { "williamboman/mason.nvim", } } },
 			config = function() lsp_setup() end
 		},
 		{
 			'williamboman/mason.nvim',
+			event = "VeryLazy",
 			cmd = 'Mason',
 			config = function() require('mason').setup() end
 		},
 		{
 			'williamboman/mason-lspconfig.nvim',
+			event = "VeryLazy",
 			config = function()
 				require('mason-lspconfig').setup({
 					handlers = {
