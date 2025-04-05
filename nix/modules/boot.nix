@@ -4,7 +4,7 @@
   users.users.iainq = {
     isNormalUser = true;
     description = "Iain Quayle";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" ]; # maybe can remove networkmanager?
   };
 
   boot = {

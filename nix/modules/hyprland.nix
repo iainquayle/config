@@ -9,15 +9,6 @@
     };
   };
 
-  #need to check if anything below will cause issues between the two desktops
-  #maybe try to move any of that to inits
-  #services.xserver = {
-  #  enable = true;
-    #will need to make an init rc for this
-  #  displayManager.startx.enable = true;
-  #  desktopManager.lxqt.enable = true;
-  #};
-
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -34,8 +25,8 @@
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
 
-    dunst
-    libnotify
+    dunst # notification daemon
+    libnotify # notification library
     rofi-wayland
 
     wl-clipboard 

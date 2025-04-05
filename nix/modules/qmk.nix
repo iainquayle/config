@@ -1,3 +1,4 @@
+#rename this file?
 {pkgs, ... }: {
   hardware.keyboard.qmk.enable = true;
   environment.systemPackages = with pkgs; [

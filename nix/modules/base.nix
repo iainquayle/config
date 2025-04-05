@@ -59,8 +59,8 @@
 
   environment.sessionVariables = {
     ZDOTDIR = "${config.users.users.iainq.home}/.config/zsh";
-    GNUPGHOME = "${config.users.users.iainq.home}/.config/gpg";
-    NIXOS = "1";
+    #GNUPGHOME = "${config.users.users.iainq.home}/.config/gpg";
+    NIXOS = "1"; # for use in configs
   };
 
   environment.systemPackages = with pkgs; [
@@ -73,7 +73,7 @@
 
     unzip
     zip 
-    psmisc
+    psmisc # process management
 
     zenith-nvidia
     fastfetch

@@ -1,14 +1,14 @@
 {pkgs, ...}: {
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  services.pipewire = {
+  services.pipewire = { # replaces pulseaudio
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    wireplumber.enable = true;
+    wireplumber.enable = true; # manager for pipewire
   };
   environment.systemPackages = with pkgs; [
-    playerctl
+    playerctl # media player control
   ];
 }

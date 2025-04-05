@@ -9,10 +9,11 @@
   environment.systemPackages = with pkgs; [
     discord
 
-    wlr-randr
+    #look at removing or replacing with something else
+    wlr-randr 
     xorg.xrandr
 
-    ludusavi
+    ludusavi # game save backup tool
   ];
 
   environment.sessionVariables = { };

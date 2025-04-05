@@ -10,9 +10,10 @@
     ./modules/laptop.nix
     ./modules/network.nix
     ./modules/nvidia.nix
-    ./modules/keyboard.nix
+    ./modules/qmk.nix
   ];
-
+  
+  # look at nixos specialisations
   hardware.nvidia = {
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     prime = {

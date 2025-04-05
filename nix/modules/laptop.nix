@@ -17,7 +17,4 @@
       STOP_CHARGE_THRESH_BAT0 = 80;
     };
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 }

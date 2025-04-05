@@ -20,13 +20,7 @@
     gnumake
     gh
 
-    entr
-
-    #ghc
-    #cabal-install
-
-    #opam
-    #ocaml
+    entr # run commands when files change
 
     python3
     pyright
@@ -82,5 +76,4 @@
   };
 
   environment.sessionVariables = { };
-
 }
