@@ -73,6 +73,7 @@
   environment.shellAliases = {
     cuda-env = "nix-shell ~/.config/nix/shells/cuda-fhs.nix";
     py-test = "python -m unittest -v";
+    count-lines = "find . -type f | xargs wc -l | sort -n";
   };
 
   environment.sessionVariables = { };
