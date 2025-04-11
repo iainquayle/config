@@ -23,6 +23,9 @@ nvim/lazy-lock.json
 !alacritty
 !alacritty/*
 
+!kitty
+!kitty/*
+
 !nix
 !nix/*
 
@@ -34,6 +37,8 @@ nvim/lazy-lock.json
 
 !redox.layout.json
 
+!zsh
+zsh/*
 !zsh/.p10k.zsh
 !zsh/.zshrc
 
