@@ -25,6 +25,9 @@
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
 
+    wlr-randr #wayland output cli
+    kanshi #wayland output auto config
+
     dunst # notification daemon
     libnotify # notification library
     rofi-wayland
@@ -34,6 +37,8 @@
     hyprpaper
     hyprcursor
     #nwg-look 
-    brightnessctl
+
+    #perhaps should be moved somewhere else? not specific to hyprland/wayland
+    brightnessctl 
   ];
 }

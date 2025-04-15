@@ -4,9 +4,6 @@ once copilot runs out, switch to huggingface/llm.nvim
 supposedly get the same interface while bringing own model.
 may not be as good but may as well try
 
-look at astral/ags for widgets, may have to eww instead if too difficult
-look at niri and wayfire
-
 look at fuzzel for dmenu
 
 neovim:
@@ -18,6 +15,12 @@ neovim:
 - consider moving code companion binding
 - consider moving nvimcmp accept to different key
 - figure out good binding for terminal, as cant use leader to close it
+
+de:
+- maybe move to wayfire or niri, maybe pinnicle if it show constinued maintenance
+- move to eww or astral/ags. eww probably easier to find documentation on, as well takes less setup with nix
+    if move, can move fuzzy finder there
+    would be nice to remove bar when not needed, could just have popover status system
 
 # additions
 
