@@ -25,6 +25,8 @@
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
 
+    #for some reason, this is not working with hyprland
+    #see if with niri maybe it will work, or make our own system that switches based on the session
     wlr-randr #wayland output cli
     kanshi #wayland output auto config
 
@@ -41,4 +43,8 @@
     #perhaps should be moved somewhere else? not specific to hyprland/wayland
     brightnessctl 
   ];
+
+  environment.shellAliases = {
+    monitors-home = "hyprctl keyword monitor DP-2,preferred,auto,1,transform,3";
+  };
 }

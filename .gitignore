@@ -42,5 +42,8 @@ zsh/*
 !zsh/.p10k.zsh
 !zsh/.zshrc
 
+!kanshi
+!kanshi/*
+
 result*
 
