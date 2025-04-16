@@ -69,7 +69,8 @@
     ripgrep
     fzf
 
-    superfile
+    #superfile
+    nnn
 
     unzip
     zip 

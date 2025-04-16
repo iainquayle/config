@@ -13,7 +13,11 @@
     ncspot
     firefox
     #nyxt
+
     mpv 
+    imv
+
+    pcmanfm
 
     pwvucontrol # pipewire gui
     iwgtk # iwd gui
