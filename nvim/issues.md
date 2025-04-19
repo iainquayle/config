@@ -15,6 +15,7 @@ neovim:
 - consider moving code companion binding
 - consider moving nvimcmp accept to different key
 - figure out good binding for terminal, as cant use leader to close it
+- consider move to snacks picker, and explorer, and then add file rename from there
 
 de:
 - maybe move to wayfire or niri, maybe pinnicle if it show constinued maintenance

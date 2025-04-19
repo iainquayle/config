@@ -1,11 +1,30 @@
 return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "nvim-tree/nvim-web-devicons", },
-	opts = { },
 	config = function ()
+		require("fzf-lua").setup({
+			winopts = {
+				height = 0.9,
+				width = 0.9,
+				row = 0.5,
+				col = 0.5,
+				preview = {
+					layout = "flex",
+					flip_columns = 150,
+				}
+			},
+			keymap = {
+				builtin = {
+					["<C-p>"] = "toggle-preview",
+					["<C-s>"] = "toggle-preview-cw",
+					["<C-S-s>"] = "toggle-preview-ccw",
+				}
+			}
+		})
+
 		local fzf = require("fzf-lua")
 
-		local keymap = vim.keymap 
+		local keymap = vim.keymap
 		keymap.set("n", "<leader>ff",  fzf.files, { desc = "Find files" })
 		--keymap.set("n", "<leader>fr",  fzf.oldfiles, { desc = "Fuzzy find recent" })
 

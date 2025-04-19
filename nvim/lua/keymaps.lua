@@ -1,4 +1,4 @@
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>ee", "<cmd>Explore<CR>", { noremap = true, desc = "Explore" })
 
 vim.keymap.set("n", "<leader>h", "<C-w>h", { noremap = true, desc = "Move to left window" })

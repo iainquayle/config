@@ -37,9 +37,9 @@ nvim/lazy-lock.json
 
 !redox.layout.json
 
-!zsh
-zsh/*
-!zsh/.zshrc
+#!zsh
+#zsh/*
+#!zsh/.zshrc
 
 !kanshi
 !kanshi/*

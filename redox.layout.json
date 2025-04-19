@@ -292,5 +292,24 @@
       "KC_NO"
     ]
   ],
-  "encoders": []
+  "encoders": [
+	[
+      "KC_MS_WH_UP",
+      "KC_MS_DOWN",
+      "KC_VOLU",
+      "KC_VOLD",
+	],
+	[
+      "KC_MS_WH_UP",
+      "KC_MS_DOWN",
+      "KC_VOLU",
+      "KC_VOLD",
+	],
+	[
+      "KC_MS_WH_UP",
+      "KC_MS_DOWN",
+      "KC_VOLU",
+      "KC_VOLD",
+	]
+  ]
 }

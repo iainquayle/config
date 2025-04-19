@@ -18,7 +18,9 @@
   environment.systemPackages = with pkgs; [
     cmake
     gnumake
+
     gh
+    #lazygit
 
     entr # run commands when files change
 

@@ -5,6 +5,6 @@ return {
 	lazy = false,
 	opts = { },
 	keys = {
-		{"<leader>zz", function() Snacks.terminal() end, desc = "Snacks toggle terminal"},
+		{"<M-t>", function() Snacks.terminal() end, desc = "Snacks toggle terminal"},
 	}
 }

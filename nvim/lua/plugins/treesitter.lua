@@ -5,7 +5,6 @@ return {
 	build = ":TSUpdate",
 	config = function()
 		local treesitter = require("nvim-treesitter.configs")
-
 		treesitter.setup({
 			highlight = {
 				enable = true,
@@ -42,10 +41,10 @@ return {
 			incremental_selection = {
 				enable = true,
 				keymaps = {
-					init_selection = "<M-v>",
-					node_incremental = "<M-v>",
+					init_selection = "-",
+					node_incremental = "-",
 					scope_incremental = false,
-					node_decremental = "<M-V>",
+					node_decremental = "_",
 				},
 			},
 		})

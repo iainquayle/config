@@ -43,6 +43,9 @@
       promptInit = ''
         source "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       '';
+      shellInit = ''
+        bindkey -v
+      '';
     };
     tmux = {
       enable = true;
