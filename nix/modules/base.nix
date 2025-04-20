@@ -16,6 +16,11 @@
     };
   };
 
+  documentation.man = {
+    generateCaches = true; 
+    man-db.enable = true;
+  };
+
   services = { 
     keyd = {
       enable = true;
