@@ -27,8 +27,8 @@
 
     #for some reason, this is not working with hyprland
     #see if with niri maybe it will work, or make our own system that switches based on the session
-    wlr-randr #wayland output cli
-    kanshi #wayland output auto config
+    #wlr-randr #wayland output cli
+    #kanshi #wayland output auto config
 
     dunst # notification daemon
     libnotify # notification library

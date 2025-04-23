@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   programs = {
     kdeconnect.enable = true;
+    firefox.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
@@ -11,13 +12,12 @@
     renderdoc
 
     ncspot
-    firefox
     #nyxt
 
-    mpv 
-    imv
+    mpv # media player
+    imv # image viewer
 
-    pcmanfm
+    pcmanfm # file manager
 
     pwvucontrol # pipewire gui
     iwgtk # iwd gui

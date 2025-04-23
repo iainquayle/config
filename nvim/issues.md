@@ -23,6 +23,13 @@ de:
     if move, can move fuzzy finder there
     would be nice to remove bar when not needed, could just have popover status system
 
+nvidia:
+- look at gsp 
+- look at dynamic boost
+- perhaps split graphics and nvidia, such as move graphics.enable, opengl...
+
+look at boot
+
 # additions
 
 neovim:
