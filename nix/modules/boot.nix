@@ -7,7 +7,7 @@
     extraGroups = [ "networkmanager" "wheel" ]; # maybe can remove networkmanager?
   };
 
-  boot = {
+  boot = { #is this the best setup?
     kernelPackages = pkgs.linuxPackages_6_12; 
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;

@@ -17,8 +17,8 @@
   };
 
   documentation.man = {
-    generateCaches = true; 
     man-db.enable = true;
+    generateCaches = true; 
   };
 
   services = { 
@@ -62,6 +62,12 @@
       enable = true;
     };
     nano.enable = false;
+    #neovim = {
+    #  enable = true;
+    #  defaultEditor = true;
+    #  viAlias = true;
+    #  vimAlias = true;
+    #};
   };
   users.defaultUserShell = pkgs.zsh;
 
