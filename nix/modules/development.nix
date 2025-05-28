@@ -48,7 +48,7 @@
     erlang
 
     nodejs
-    nodePackages.parcel
+    #nodePackages.parcel
     nodePackages.tailwindcss
     #tailwindcss
     typescript
@@ -61,6 +61,7 @@
 
   environment.shellAliases = {
     cuda-env = "nix-shell ~/.config/nix/shells/cuda-fhs.nix";
+    std-env = "nix-shell ~/.config/nix/shells/std-fhs.nix";
     py-test = "python -m unittest -v";
     count-lines = "find . -type f | xargs wc -l | sort -n";
   };
