@@ -1,5 +1,5 @@
 { pkgs ? import <nixpkgs> {} }:
-(pkgs.buildFHSUserEnv {
+(pkgs.buildFHSEnv {
   name = "cuda-env";
   targetPkgs = pkgs: with pkgs; [
     cudatoolkit
@@ -9,12 +9,12 @@
     binutils 
     libGL 
     libGLU 
-    #zlib
+    zlib
     #gnumake 
     #m4 
     util-linux
   ];
-  #multiPkgs = pkgs: with pkgs; [zlib];
+  multiPkgs = pkgs: with pkgs; [zlib];
   runScript = "zsh";
   profile = ''
     export CUDA_PATH=${pkgs.cudatoolkit}

@@ -1,5 +1,5 @@
 { pkgs ? import <nixpkgs> {} }:
-(pkgs.buildFHSUserEnv {
+(pkgs.buildFHSEnv {
   name = "cuda-env";
   targetPkgs = pkgs: with pkgs; [
     stdenv.cc 
@@ -7,12 +7,12 @@
     binutils 
     libGL 
     libGLU 
-    #zlib
+    zlib
     #gnumake 
     #m4 
     util-linux
   ];
-  #multiPkgs = pkgs: with pkgs; [zlib];
+  multiPkgs = pkgs: with pkgs; [zlib];
   runScript = "zsh";
   profile = ''
     export EXTRA_CCFLAGS="-I/usr/include"
