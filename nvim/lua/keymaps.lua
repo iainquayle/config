@@ -13,8 +13,10 @@ vim.keymap.set("n", "<leader><C-l>", "<C-w>L", { noremap = true, desc = "Move wi
 --vim.keymap.set("n", "<leader>s", ":exe 'lwincmd w | wincmd '.(winwidth(0) == &columns ? 'H' : 'K')<CR>", { noremap = true, desc = "Move window right" })
 
 vim.keymap.set("n", "<Left>", "zh", { noremap = true, desc = "Scroll left" })
-vim.keymap.set("n", "<Down>", "<S-Down>", { noremap = true, desc = "Scroll down" })
-vim.keymap.set("n", "<Up>", "<S-Up>", { noremap = true, desc = "Scroll up" })
+--vim.keymap.set("n", "<Down>", "<S-Down>", { noremap = true, desc = "Scroll down" })
+vim.keymap.set("n", "<Down>", "<C-D>", { noremap = true, desc = "Scroll down" })
+--vim.keymap.set("n", "<Up>", "<S-Up>", { noremap = true, desc = "Scroll up" })
+vim.keymap.set("n", "<Up>", "<C-U>", { noremap = true, desc = "Scroll up" })
 vim.keymap.set("n", "<Right>", "zl", { noremap = true, desc = "Scroll right" })
 
 vim.keymap.set("n", "<leader>q", "<cmd>q<CR>", { noremap = true, desc = "Quit" })

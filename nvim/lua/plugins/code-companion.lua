@@ -14,11 +14,19 @@ return {
 		require("codecompanion").setup({
 			display = {
 				chat = {
-					show_settings = false
+					show_settings = false,
+					window = {
+						layout = "float",
+						height = 0.95,
+						width = 0.9,
+						opts = {
+							wrap = false,
+						}
+					},
 				},
 				diff = {
 					provider = "mini_diff"
-				}
+				},
 			},
 			strategies = {
 				chat = {
@@ -61,9 +69,7 @@ return {
 						schema = {
 							model = {
 								--default = "gemini-2.5-pro-exp-03-25"
-								--default = "gemini-2.0-flash"
-								default = "gemini-2.5-flash-preview-04-17"
-								--default = "gemini-1.5-pro"
+								default = "gemini-2.5-flash-preview-05-20"
 							}
 						},
 						env = {

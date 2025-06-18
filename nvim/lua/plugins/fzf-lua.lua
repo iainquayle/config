@@ -41,7 +41,9 @@ return {
 		keymap.set("n", "<leader>fD",  fzf.diagnostics_document, { desc = "Find diagnostics" })
 		keymap.set("n", "<leader>FD",  fzf.diagnostics_document, { desc = "Find diagnostics" })
 
-		keymap.set("n", "<leader>fb",  fzf.keymaps, { desc = "Find keymaps" })
+		keymap.set("n", "<leader>fb",  fzf.resume, { desc = "Resume search" })
+
+		keymap.set("n", "<leader>fq",  fzf.keymaps, { desc = "Find keymaps" })
 
 		keymap.set("n", "<leader>fc",  fzf.builtin, { desc = "Find fzf commands" })
 	end
