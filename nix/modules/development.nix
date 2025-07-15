@@ -24,7 +24,7 @@
 
     gh
 
-    entr # run commands when files change
+    #entr # run commands when files change
 
     python3
     pyright
@@ -37,10 +37,10 @@
     gopls
 
     gcc
-    clang 
-    libcxx
-    libllvm
-    clang-tools
+    #clang 
+    #libcxx
+    #libllvm
+    #clang-tools
     #clangd #errors for some reason?
 
     elixir
@@ -49,13 +49,14 @@
 
     nodejs
     #nodePackages.parcel
-    nodePackages.tailwindcss
+    #nodePackages.tailwindcss
     #tailwindcss
     typescript
     typescript-language-server
 
     nil
 
+    luajit
     lua-language-server
   ];
 

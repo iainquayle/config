@@ -9,6 +9,7 @@
     ./modules/hyprland.nix
     ./modules/laptop.nix
     ./modules/network.nix
+    ./modules/netbird.nix
     ./modules/nvidia.nix
     ./modules/qmk.nix
   ];
