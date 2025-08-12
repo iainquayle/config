@@ -12,6 +12,7 @@
     ./modules/netbird.nix
     ./modules/nvidia.nix
     ./modules/qmk.nix
+    ./modules/stream.nix
   ];
   
   # look at nixos specialisations
