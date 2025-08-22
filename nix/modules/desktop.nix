@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   programs = {
+    chromium.enable = true;
     kdeconnect.enable = true;
     firefox.enable = true;
   };
@@ -21,6 +22,9 @@
 
     pwvucontrol # pipewire gui
     iwgtk # iwd gui
+
+    #teams
+    #teams-for-linux
   ];
   services.blueman.enable = true; # bluetooth gui
 

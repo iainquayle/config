@@ -56,7 +56,9 @@
 
     nil
 
-    luajit
+    #luajit
+    lua
+    #lua54Packages.luaposix
     lua-language-server
   ];
 

@@ -7,6 +7,7 @@
     extraGroups = [ 
       "networkmanager" 
       "wheel" 
+      #"v4l2loopback"
     ]; # maybe can remove networkmanager?
   };
 
