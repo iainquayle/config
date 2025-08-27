@@ -13,6 +13,7 @@
     ./modules/nvidia.nix
     ./modules/qmk.nix
     ./modules/stream.nix
+    ./modules/ollama.nix
   ];
   
   # look at nixos specialisations
