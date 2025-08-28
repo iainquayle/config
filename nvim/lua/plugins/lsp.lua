@@ -10,7 +10,12 @@ local function lsp_setup()
 		callback = function(event)
 			local opts = { buffer = event.buf }
 
-			vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+			vim.keymap.set("n", "K", function()
+				vim.lsp.buf.hover({ border = "rounded" })
+			end, {
+				desc = "Show documentation",
+				buffer = event.buf,
+			})
 			vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 			vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 			vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
@@ -30,7 +35,9 @@ local function lsp_setup()
 	})
 end
 
-if os.getenv("NIXOS") == '1' or os.getenv("MASON") == "0" then
+-- switch on whether to use mason or not
+-- multiple modules returned based on either need 
+if os.getenv("NIXOS") == '1' or os.getenv("MASON") ~= '1' then
 	return {
 		{
 			"neovim/nvim-lspconfig",

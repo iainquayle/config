@@ -20,7 +20,7 @@ return {
 						height = 0.95,
 						width = 0.9,
 						opts = {
-							wrap = false,
+							wrap = true,
 						}
 					},
 				},
@@ -30,7 +30,10 @@ return {
 			},
 			strategies = {
 				chat = {
-					adapter = "gemini",
+					adapter = {
+						name = "ollama",
+						model = "deepseek-r1:14b",
+					},
 					keymaps = {
 						send = {
 							modes = { n = "<CR>", v = "<M-CR>" }
@@ -64,19 +67,30 @@ return {
 				},
 			},
 			adapters = {
-				gemini = function()
-					return require("codecompanion.adapters").extend("gemini", {
-						schema = {
-							model = {
-								--default = "gemini-2.5-pro-exp-03-25"
-								default = "gemini-2.5-flash-preview-05-20"
+				http = {
+					gemini = function()
+						return require("codecompanion.adapters").extend("gemini", {
+							schema = {
+								model = {
+									--default = "gemini-2.5-pro-exp-03-25"
+									default = "gemini-2.5-flash-preview-05-20"
+								}
+							},
+							env = {
+								api_key = "cmd:secret-tool lookup api-key gemini"
 							}
-						},
-						env = {
-							api_key = "cmd:secret-tool lookup api-key gemini"
-						}
-					})
-				end
+						})
+					end,
+					ollama = function()
+						return require("codecompanion.adapters").extend("ollama", {
+							schema = {
+								model = {
+									default = "deepseek-r1:14b"
+								}
+							},
+						})
+					end,
+				}
 			}
 		})
 	end,
