@@ -5,9 +5,12 @@
     enable = true;
     acceleration = "cuda";
     loadModels = [
-      "deepseek-r1:14b"
+      #"deepseek-r1:14b"
       "qwen3:14b"
-      "phi4-reasoning:plus"
+      "mistral-small3.2:24b"
+      #"phi4-reasoning:plus"
+      "gpt-oss:20b"
+      "devstral:24b"
     ];
   };
 }

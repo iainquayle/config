@@ -32,7 +32,9 @@ return {
 				chat = {
 					adapter = {
 						name = "ollama",
-						model = "deepseek-r1:14b",
+						model = "gpt-oss:20b",
+						--name = "gemini",
+						--model = "gemini-2.5-flash",
 					},
 					keymaps = {
 						send = {
@@ -73,7 +75,7 @@ return {
 							schema = {
 								model = {
 									--default = "gemini-2.5-pro-exp-03-25"
-									default = "gemini-2.5-flash-preview-05-20"
+									default = "gemini-2.5-flash"
 								}
 							},
 							env = {
@@ -85,7 +87,9 @@ return {
 						return require("codecompanion.adapters").extend("ollama", {
 							schema = {
 								model = {
-									default = "deepseek-r1:14b"
+									--default = "deepseek-r1:14b"
+									default = "devstral:24b"
+									--default = "gpt-oss:20b"
 								}
 							},
 						})
