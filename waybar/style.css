@@ -1,5 +1,5 @@
 * {
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
 
 	border: none;
@@ -73,6 +73,10 @@ button:hover {
     background: rgba(0, 0, 0, 0.2);
 }
 
+/* 
+ * perhaps switch to all modules having atleast a dead border, and then switch the colors on activity
+ * would fit better with hyprland anyways
+ */
 #workspaces button.active {
     padding: 0 5px;
     box-shadow: inset -2px -2px rgba(227, 146, 66, .7);
