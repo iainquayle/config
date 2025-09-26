@@ -1,52 +1,57 @@
-local function lsp_setup()
-	local lsp_defaults = require("lspconfig").util.default_config
-	lsp_defaults.capabilities = vim.tbl_extend(
-		"force",
-		lsp_defaults.capabilities,
-		require("cmp_nvim_lsp").default_capabilities()
-	)
-	vim.api.nvim_create_autocmd("LspAttach", {
-		desc = "LSP Actions",
-		callback = function(event)
-			local opts = { buffer = event.buf }
+local function on_attach(client, bufnr)
+	--vim.lsp.buf.defaults.set_keymaps(bufnr)
 
-			vim.keymap.set("n", "K", function()
-				vim.lsp.buf.hover({ border = "rounded" })
-			end, {
-				desc = "Show documentation",
-				buffer = event.buf,
-			})
-			vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-			vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-			vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-			vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
-			vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-			vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { noremap = true })
-			--vim.keymap.set({"n", "x"}, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", opts)
-			--vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-			--[[
-			  map('n', 'gD', vim.diagnostic.setqflist, 'LSP open diagnostics quick fix list')
-			  map('n', 'gl', vim.diagnostic.open_float, 'LSP show line diagnostics')
-			  map('n', ']d', vim.diagnostic.goto_next, 'LSP goto next diagnostic')
-			  map('n', '[d', vim.diagnostic.goto_prev, 'LSP goto previous diagnostic')
-			  --]]
-		end,
+	local opts = { noremap = true, silent = true, buffer = bufnr}
+	vim.keymap.set("n", "K", function()
+		vim.lsp.buf.hover({ border = "rounded" })
+	end, {
+		desc = "Show documentation",
+		buffer = bufnr,
+	})
+	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+	vim.keymap.set("n", "go", vim.lsp.buf.type_definition, opts)
+	vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+	vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, opts)
+	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { noremap = true })
+	--vim.keymap.set({"n", "x"}, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", opts)
+	--vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+	--[[
+	  map('n', 'gD', vim.diagnostic.setqflist, 'LSP open diagnostics quick fix list')
+	  map('n', 'gl', vim.diagnostic.open_float, 'LSP show line diagnostics')
+	  map('n', ']d', vim.diagnostic.goto_next, 'LSP goto next diagnostic')
+	  map('n', '[d', vim.diagnostic.goto_prev, 'LSP goto previous diagnostic')
+	  --]]
+
+	if client.server_capabilities.inlayHintProvider then
+		vim.lsp.inlay_hint.enable(true, {bufnr=bufnr})
+	end
+end
+
+local function lsp_setup()
+	local capabilities = vim.lsp.protocol.make_client_capabilities()
+	local cmp_nvim_lsp = require("cmp_nvim_lsp")
+	capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+
+	vim.lsp.config("*", {
+		capabilities=capabilities,
+		on_attach=on_attach,
 	})
 end
 
 -- switch on whether to use mason or not
 -- multiple modules returned based on either need 
-if os.getenv("NIXOS") == '1' or os.getenv("MASON") ~= '1' then
+if true or os.getenv("NIXOS") == '1' or os.getenv("MASON") ~= '1' then
 	return {
 		{
 			"neovim/nvim-lspconfig",
-			event = "VeryLazy",
+			--event = "VeryLazy",
+			lazy = false,
 			config = function()
 				lsp_setup()
 
-				local lspconfig = require("lspconfig")
-				lspconfig.lua_ls.setup({
+				vim.lsp.config("lua_ls", {
 					settings = {
 						Lua = {
 							diagnostics = {
@@ -55,12 +60,15 @@ if os.getenv("NIXOS") == '1' or os.getenv("MASON") ~= '1' then
 						}
 					}
 				})
+				vim.lsp.config("elixirls", {cmd = { "elixir-ls" }})
+
 				--lspconfig.ts_ls.setup({})
-				lspconfig.rust_analyzer.setup({})
-				lspconfig.elixirls.setup({cmd = { "elixir-ls" }})
-				lspconfig.gopls.setup({})
-				lspconfig.nil_ls.setup({})
-				lspconfig.pyright.setup({})
+				vim.lsp.enable("lua_ls")
+				vim.lsp.enable("elixirls")
+				vim.lsp.enable("rust_analyzer")
+				vim.lsp.enable("gopls")
+				vim.lsp.enable("nil_ls")
+				vim.lsp.enable("pyright")
 			end
 		},
 		{
@@ -70,6 +78,8 @@ if os.getenv("NIXOS") == '1' or os.getenv("MASON") ~= '1' then
 		}
 	}
 else
+	--currently setup such that this wont run
+	--going to move away from mason
 	return {
 		{
 			"neovim/nvim-lspconfig",
