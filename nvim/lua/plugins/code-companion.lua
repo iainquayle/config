@@ -25,7 +25,12 @@ return {
 					},
 				},
 				diff = {
-					provider = "mini_diff"
+				--	provider = "mini_diff"
+					provider_opts = {
+						inline = {
+							layout = "float"
+						}
+					}
 				},
 			},
 			strategies = {
@@ -41,11 +46,18 @@ return {
 							modes = { n = "<CR>", v = "<M-CR>" }
 						},
 						close = {
-							modes = { n = "q" }
+							modes = {
+								n = "cq"
+							}
 						},
 						stop = {
-							modes = { n = "<M-q>" }
+							modes = {
+								n = "cs"
+							}
 						}
+					},
+					opts = {
+						completion_provider = "cmp"
 					},
 					slash_commands = {
 						["file"] = {
@@ -59,9 +71,17 @@ return {
 					}
 				},
 				inline = {
-					adapter = "gemini",
+					adapter = {
+						name = "ollama",
+						model = "gpt-oss:20b"
+					},
 					keymaps = {
-						--accept_change = { n = "<" }
+						accept_change = {
+							modes = { n = "ca" }
+						},
+						reject_change = {
+							modes = { n = "cr" }
+						}
 					},
 				},
 				cmd = {
@@ -88,8 +108,8 @@ return {
 							schema = {
 								model = {
 									--default = "deepseek-r1:14b"
-									default = "devstral:24b"
-									--default = "gpt-oss:20b"
+									--default = "devstral:24b"
+									default = "gpt-oss:20b"
 								}
 							},
 						})
