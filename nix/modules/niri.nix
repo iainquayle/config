@@ -1,8 +1,7 @@
 {pkgs, ...}: {
   programs = {
-    hyprland = {
+    nir = {
       enable = true;
-      xwayland.enable = true;
     };
     waybar = {
       enable = true;
@@ -14,6 +13,7 @@
     wlr.enable = true;
     extraPortals = [ 
       pkgs.xdg-desktop-portal-gtk 
+      #pkgs.xdg-desktop-portal-gnome may need to for screen cast
     ];
   };
 
@@ -39,14 +39,14 @@
     wl-clipboard 
 
     hyprpaper
-    hyprcursor
     #nwg-look 
 
     #perhaps should be moved somewhere else? not specific to hyprland/wayland
     brightnessctl 
+
+    xwayland-satellite
   ];
 
   environment.shellAliases = {
-    monitors-home = "hyprctl keyword monitor DP-2,preferred,auto,1,transform,3";
   };
 }
