@@ -143,8 +143,8 @@ layout {
 
     // You can enable drop shadows for windows.
     shadow {
-        // on
-        // draw-behind-window true
+        //on
+        draw-behind-window true
         softness 30
         spread 5
         offset x=0 y=5
@@ -161,8 +161,13 @@ layout {
         // bottom 64
     }
 }
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+	draw-border-with-background false
+}
 
-spawn-sh-at-startup "wabar -c ~/.config/niri/waybar/config.jsonc"
+spawn-sh-at-startup "killall waybar || waybar -c $HOME/.config/niri/waybar/config.jsonc -s $HOME/.config/niri/waybar/style.css & hyprpaper"
 
 hotkey-overlay {
     skip-at-startup
@@ -203,11 +208,6 @@ window-rule {
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
     block-out-from "screen-capture"
     block-out-from "screencast"
-}
-
-window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
 }
 
 binds {
