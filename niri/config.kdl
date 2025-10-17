@@ -6,6 +6,8 @@
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
+spawn-sh-at-startup "killall waybar || waybar -c $HOME/.config/niri/waybar/config.jsonc -s $HOME/.config/niri/waybar/style.css & hyprpaper"
+
 input {
     keyboard {
         xkb {
@@ -89,49 +91,11 @@ layout {
 
     default-column-width { proportion 0.5; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
-    // default-column-width {}
 
-    // By default focus ring and border are rendered as a solid background rectangle
-    // behind windows. That is, they will show up through semitransparent windows.
-    //
-    // If you don't like that, you should uncomment `prefer-no-csd` below.
-    // Niri will draw focus ring and border *around* windows that agree to omit their
-    // client-side decorations.
-    //
-    // Alternatively, you can override it with a window rule called
-    // `draw-border-with-background`.
-
-    // You can change how the focus ring looks.
-	// border does this but how we want it?
-    focus-ring {
-        off
-
-        width 2
-
-        // - CSS named colors: "red"
-        // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
-        // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
-        active-color "#7fc8ff"
-		// color on inactive monitor
-        inactive-color "#505050"
-
-		// follows css
-        // active-gradient from="#80c8ff" to="#c7ff7f" angle=45
-
-        // You can also color the gradient relative to the entire view
-        // of the workspace, rather than relative to just the window itself.
-        // To do that, set relative-to="workspace-view".
-        //
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
-    }
-
-    // You can also add a border. It's similar to the focus ring, but always visible.
     border {
         width 2
         active-color "#ffc87f"
         inactive-color "#505050"
-
-        // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
 
         // Gradients can use a few different interpolation color spaces.
@@ -141,7 +105,6 @@ layout {
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 
-    // You can enable drop shadows for windows.
     shadow {
         //on
         draw-behind-window true
@@ -153,28 +116,20 @@ layout {
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
     // Left and right struts will cause the next window to the side to always be visible.
-    // Top and bottom struts will simply add outer gaps in addition to the area occupied by layer-shell panels and regular gaps.
     struts {
         // left 64
-        // right 64
-        // top 64
-        // bottom 64
     }
 }
+prefer-no-csd
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 	draw-border-with-background false
 }
 
-spawn-sh-at-startup "killall waybar || waybar -c $HOME/.config/niri/waybar/config.jsonc -s $HOME/.config/niri/waybar/style.css & hyprpaper"
-
 hotkey-overlay {
     skip-at-startup
 }
-
-// request that windows dont use client decorations
-prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // screenshot-path null
@@ -192,17 +147,11 @@ window-rule {
     default-column-width {}
 }
 
-// Open the Firefox picture-in-picture player as floating by default.
 window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
 }
 
-// Example: block out two password managers from screen capture.
-// (This example rule is commented out with a "/-" in front.)
 /-window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
@@ -213,24 +162,16 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; } // aslo Mod+?
 
-    Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "rofi"; }
-    Mod+B hotkey-overlay-title="Open a Browser: firefox" { spawn "firefox"; }
+    Mod+Enter hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+    Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi"; }
+    Mod+Ctrl+Enter hotkey-overlay-title="Open a Browser: firefox" { spawn "firefox"; }
 
-    // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
-    // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
-    // For example, this is a standard bind to toggle the screen reader (orca).
-    Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
-
-    // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    // Using spawn-sh allows to pass multiple arguments together with the command.
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
-    // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
     // but you need to manually put each argument in separate "" quotes.
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
@@ -257,15 +198,15 @@ binds {
     //Mod+Ctrl+Home { move-column-to-first; }
     //Mod+Ctrl+End  { move-column-to-last; }
 
-    Mod+Shift+H     { focus-monitor-left; }
-    Mod+Shift+J     { focus-monitor-down; }
-    Mod+Shift+K     { focus-monitor-up; }
-    Mod+Shift+L     { focus-monitor-right; }
+    Mod+S+H     { focus-monitor-left; }
+    Mod+S+J     { focus-monitor-down; }
+    Mod+S+K     { focus-monitor-up; }
+    Mod+S+L     { focus-monitor-right; }
 
-    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
+    Mod+S+Ctrl+H     { move-column-to-monitor-left; }
+    Mod+S+Ctrl+J     { move-column-to-monitor-down; }
+    Mod+S+Ctrl+K     { move-column-to-monitor-up; }
+    Mod+S+Ctrl+L     { move-column-to-monitor-right; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
@@ -330,15 +271,15 @@ binds {
     Mod+Period { consume-or-expel-window-right; }
 
     Mod+R { switch-preset-column-width; }
-    Mod+Shift+R { switch-preset-window-height; }
-    Mod+Ctrl+R { reset-window-height; }
+    Mod+Ctrl+R { switch-preset-window-height; }
+    // Mod+Ctrl+R { reset-window-height; }
 
     Mod+F { maximize-column; }
-    Mod+Shift+F { fullscreen-window; }
+    Mod+Ctrl+F { fullscreen-window; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
-    Mod+Ctrl+F { expand-column-to-available-width; }
+    // Mod+Ctrl+F { expand-column-to-available-width; }
 
     Mod+C { center-column; }
 
@@ -349,16 +290,16 @@ binds {
     // * adjust width as a percentage of screen width: "-10%" or "+10%"
     // Pixel sizes use logical, or scaled, pixels. I.e. on an output with scale 2.0,
     // set-column-width "100" will make the column occupy 200 physical screen pixels.
-    Mod+Minus { set-column-width "-10%"; }
-    Mod+Equal { set-column-width "+10%"; }
-    Mod+Shift+Minus { set-window-height "-10%"; }
-    Mod+Shift+Equal { set-window-height "+10%"; }
+    Mod+Minus { set-column-width "-20%"; }
+    Mod+Equal { set-column-width "+20%"; }
+    Mod+Ctrl+Minus { set-window-height "-20%"; }
+    Mod+Ctrl+Equal { set-window-height "+20%"; }
 
     // Move the focused window between the floating and the tiling layout.
     Mod+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
-    Mod+W { toggle-column-tabbed-display; }
+    Mod+T { toggle-column-tabbed-display; }
 
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }

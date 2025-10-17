@@ -6,7 +6,7 @@
     ./modules/desktop.nix
     ./modules/development.nix
     ./modules/gaming.nix
-    ./modules/hyprland.nix
+    ./modules/wayland-wms.nix
     ./modules/laptop.nix
     ./modules/network.nix
     ./modules/netbird.nix
@@ -16,7 +16,6 @@
     ./modules/ollama.nix
   ];
   
-  # look at nixos specialisations
   hardware.nvidia = {
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     prime = {
