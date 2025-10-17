@@ -12,7 +12,11 @@ nvim/lazy-lock.json
 
 !hypr
 !hypr/*
+
 !bg.jpg
+
+!niri
+!niri/*
 
 !waybar
 !waybar/*

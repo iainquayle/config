@@ -3,6 +3,10 @@
     niri = {
       enable = true;
     };
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
     waybar = {
       enable = true;
     };
@@ -34,7 +38,7 @@
 
     dunst # notification daemon
     libnotify # notification library
-    rofi-wayland
+    rofi-wayland # runner
 
     wl-clipboard 
 
@@ -48,5 +52,6 @@
   ];
 
   environment.shellAliases = {
+    monitors-home = "hyprctl keyword monitor DP-2,preferred,auto,1,transform,3";
   };
 }
