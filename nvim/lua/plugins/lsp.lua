@@ -22,7 +22,7 @@ local function on_attach(client, bufnr)
 	  map('n', 'gl', vim.diagnostic.open_float, 'LSP show line diagnostics')
 	  map('n', ']d', vim.diagnostic.goto_next, 'LSP goto next diagnostic')
 	  map('n', '[d', vim.diagnostic.goto_prev, 'LSP goto previous diagnostic')
-	  --]]
+	 --]]
 
 	if client.server_capabilities.inlayHintProvider then
 		vim.lsp.inlay_hint.enable(true, {bufnr=bufnr})
@@ -61,6 +61,9 @@ if true or os.getenv("NIXOS") == '1' or os.getenv("MASON") ~= '1' then
 					}
 				})
 				vim.lsp.config("elixirls", {cmd = { "elixir-ls" }})
+				vim.lsp.config("pyright", {
+					on_attach = on_attach
+				})
 
 				--lspconfig.ts_ls.setup({})
 				vim.lsp.enable("lua_ls")
