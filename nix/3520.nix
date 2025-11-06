@@ -11,4 +11,6 @@
     ./modules/network.nix
     ./modules/qmk.nix
   ];
+
+  networking.hostName = "dell";
 }

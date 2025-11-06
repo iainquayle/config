@@ -4,7 +4,4 @@
       enable = true;
     };
   };
-  environment.systemPackages = with pkgs; [
-    netbird-ui 
-  ];
 }

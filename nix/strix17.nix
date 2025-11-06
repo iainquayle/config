@@ -27,4 +27,6 @@
       nvidiaBusId = "PCI:1:0:0";
     };
   };
+
+  networking.hostName = "strix";
 }

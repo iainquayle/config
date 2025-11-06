@@ -1,6 +1,5 @@
 {...}: {
   networking = {
-    hostName = "idfk";
     wireless = {
       enable = false; #wpa_supplicant
       iwd = { #inet wireless daemon, intel resplacement for wpa_supplicant
