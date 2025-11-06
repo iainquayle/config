@@ -175,13 +175,13 @@ binds {
     Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
     Mod+Ctrl+L     { move-column-right; }
 
+    Mod+Alt+H  { consume-or-expel-window-left; }
+    Mod+Alt+L  { consume-or-expel-window-right; }
+
     Mod+Comma      { focus-workspace-down; }
     Mod+Period     { focus-workspace-up; }
     Mod+Ctrl+Comma         { move-workspace-down; }
     Mod+Ctrl+Period         { move-workspace-up; }
-
-    Mod+Alt+H  { consume-or-expel-window-left; }
-    Mod+Alt+L  { consume-or-expel-window-right; }
 
     Mod+S+H     { focus-monitor-left; }
     Mod+S+J     { focus-monitor-down; }
@@ -193,15 +193,10 @@ binds {
     Mod+S+Ctrl+K     { move-column-to-monitor-up; }
     Mod+S+Ctrl+L     { move-column-to-monitor-right; }
 
-    Mod+S+Ctrl+H     { move-workspace-to-monitor-left; }
-    Mod+S+Ctrl+J     { move-workspace-to-monitor-down; }
-    Mod+S+Ctrl+K     { move-workspace-to-monitor-up; }
-    Mod+S+Ctrl+L     { move-workspace-to-monitor-right; }
-
-    Mod+U              { focus-workspace-down; }
-    Mod+I              { focus-workspace-up; }
-    Mod+Ctrl+U         { move-column-to-workspace-down; }
-    Mod+Ctrl+I         { move-column-to-workspace-up; }
+    Mod+S+Alt+H     { move-workspace-to-monitor-left; }
+    Mod+S+Alt+J     { move-workspace-to-monitor-down; }
+    Mod+S+Alt+K     { move-workspace-to-monitor-up; }
+    Mod+S+Alt+L     { move-workspace-to-monitor-right; }
 
     // Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
     // Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
@@ -238,7 +233,6 @@ binds {
     // Mod+Ctrl+F { expand-column-to-available-width; }
 
     Mod+C { center-column; }
-
     Mod+Ctrl+C { center-visible-columns; }
 
     Mod+R { switch-preset-column-width; }

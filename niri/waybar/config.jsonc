@@ -6,14 +6,14 @@
 	"height": 30, // Waybar height (to be removed for auto height)
 	"spacing": 10, // Gaps between modules 
 	"modules-left": [
-		"hyprland/workspaces"
-		//"hyprland/mode",
-		//"hyprland/scratchpad",
+		"niri/workspaces"
+		//"niri/mode",
+		//"niri/scratchpad",
 		//"custom/media"
 	],
 	/*
 	"modules-center": [
-		"hyprland/window"
+		"niri/window"
 	],
 	*/
 	"modules-right": [
@@ -31,7 +31,7 @@
 		"tray"
 	],
 	/*
-	"hyprland/workspaces": {
+	"niri/workspaces": {
 		"on-click": "activate", 
 		"format": "{name}{icon}",
 		"format-icons": {
@@ -46,10 +46,10 @@
 		},
 	},
 	*/
-	"hyprland/mode": {
-		"format": "<span style=\"italic\">{}</span>"
-	},
-	"hyprland/scratchpad": {
+	//"niri/mode": {
+	//	"format": "<span style=\"italic\">{}</span>"
+	//},
+	"niri/scratchpad": {
 		"format": "{icon} {count}",
 		"show-empty": false,
 		"format-icons": ["", ""],
