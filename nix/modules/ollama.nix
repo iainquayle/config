@@ -6,11 +6,11 @@
     acceleration = "cuda";
     loadModels = [
       #"deepseek-r1:14b"
-      "qwen3:14b"
+      #"qwen3:14b"
       "mistral-small3.2:24b"
       #"phi4-reasoning:plus"
       "gpt-oss:20b"
-      "devstral:24b"
+      #"devstral:24b"
     ];
   };
 }

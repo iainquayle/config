@@ -1,19 +1,20 @@
 {pkgs, ...}: {
   programs = {
-    chromium.enable = true;
+    chromium.enable = false;
     kdeconnect.enable = true;
     firefox.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
+    vieb
+
     alacritty
     kitty
 
     freecad
     renderdoc
 
-    ncspot
-    #nyxt
+    ncspot # this should be elsewhere?
 
     mpv # media player
     imv # image viewer
@@ -22,10 +23,8 @@
 
     pwvucontrol # pipewire gui
     iwgtk # iwd gui
-
-    #teams
-    #teams-for-linux
   ];
+
   services.blueman.enable = true; # bluetooth gui
 
   fonts.packages = with pkgs; [
