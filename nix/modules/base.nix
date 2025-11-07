@@ -45,11 +45,14 @@
       enableCompletion = true;
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
+      histSize = 500;
       promptInit = ''
         source "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       '';
       shellInit = ''
         bindkey -v
+        setopt HIST_IGNORE_SPACE
+        export HIST_IGNORE='*netbird up --setup-key*|*secret-tool store*'
       '';
     };
     tmux = {

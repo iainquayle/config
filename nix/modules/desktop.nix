@@ -6,7 +6,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vieb
+    #vieb
+    qutebrowser
 
     alacritty
     kitty
@@ -28,9 +29,7 @@
   services.blueman.enable = true; # bluetooth gui
 
   fonts.packages = with pkgs; [
-    # may want to add awesome font back in
     font-awesome
     meslo-lgs-nf
-    #(nerdfonts.override {fonts = [ "MesloNerdFont" "MesloNerdFontP10k" ];})
   ];
 }
