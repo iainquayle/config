@@ -8,6 +8,7 @@
     ./modules/gaming.nix
     ./modules/wayland-wms.nix
     ./modules/laptop.nix
+    ./modules/netbird.nix
     ./modules/network.nix
     ./modules/qmk.nix
   ];

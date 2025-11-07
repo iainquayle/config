@@ -11,6 +11,15 @@ return {
 
 		vim.cmd([[cab cc CodeCompanion]])
 
+		local ollama_url = "http://strix.netbird.cloud:21339"
+		--[[local ollama_check_handle = io.popen("ollama -v", "r")
+		if ollama_check_handle then
+			local _, _, exit_code = ollama_check_handle:close()
+			if exit_code == 0 then
+				ollama_url = "http://localhost:11434"
+			end
+		end]]--
+
 		require("codecompanion").setup({
 			display = {
 				chat = {
@@ -105,6 +114,9 @@ return {
 					end,
 					ollama = function()
 						return require("codecompanion.adapters").extend("ollama", {
+							env = {
+								url = ollama_url,
+							},
 							schema = {
 								model = {
 									--default = "deepseek-r1:14b"
