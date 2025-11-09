@@ -40,8 +40,9 @@
     #clang 
     #libcxx
     #libllvm
-    #clang-tools
-    #clangd #errors for some reason?
+    clang-tools # should have clangd and all necessities
+
+    arduino-cli
 
     elixir
     elixir-ls

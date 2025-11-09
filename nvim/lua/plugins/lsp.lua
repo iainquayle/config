@@ -67,6 +67,7 @@ if true or os.getenv("NIXOS") == '1' or os.getenv("MASON") ~= '1' then
 
 				--lspconfig.ts_ls.setup({})
 				vim.lsp.enable("lua_ls")
+				vim.lsp.enable("clangd")
 				vim.lsp.enable("elixirls")
 				vim.lsp.enable("rust_analyzer")
 				vim.lsp.enable("gopls")
