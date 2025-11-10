@@ -9,11 +9,12 @@
     ./modules/wayland-wms.nix
     ./modules/laptop.nix
     ./modules/network.nix
-    ./modules/netbird.nix
     ./modules/nvidia.nix
     ./modules/qmk.nix
     ./modules/stream.nix
     ./modules/ollama.nix
+    ./modules/netbird.nix
+    ./modules/ibkr.nix
   ];
   
   hardware.nvidia = {
