@@ -14,7 +14,7 @@
     ./modules/stream.nix
     ./modules/ollama.nix
     ./modules/netbird.nix
-    ./modules/ibkr.nix
+    ./modules/trading.nix
   ];
   
   hardware.nvidia = {
