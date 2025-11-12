@@ -11,6 +11,12 @@ return {
 
 		vim.cmd([[cab cc CodeCompanion]])
 
+		-- change logic, 
+		-- check for available connection via vpn
+		-- check local and capabilities
+		-- 	decide on check for gemini or other model, otherwise use local
+		-- 	otherwise none available and maybe disable entirely?
+
 		local ollama_url = "http://strix.netbird.cloud:21339"
 		--[[local ollama_check_handle = io.popen("ollama -v", "r")
 		if ollama_check_handle then
@@ -119,10 +125,7 @@ return {
 							},
 							schema = {
 								model = {
-									--default = "deepseek-r1:14b"
-									--default = "devstral:24b"
 									default = "gpt-oss:20b"
-									--default = "qwen3:30b"
 								}
 							},
 						})

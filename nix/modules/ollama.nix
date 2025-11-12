@@ -1,3 +1,5 @@
+# acceleration and port, and maybe context length, and models should be moved to machine specific config
+# or maybe create multiple configs?
 {...}: {
   services = {
     ollama = {
@@ -5,13 +7,12 @@
       acceleration = "cuda";
       port = 11434;
       loadModels = [
-        #"deepseek-r1:14b"
-        #"qwen3:14b"
+        #"qwen2.5-coder:14b"
+        "cogito:14b"
         "gpt-oss:20b"
-        #"devstral:24b"
       ];
       environmentVariables = {
-        OLLAMA_CONTEXT_LENGTH = "128000";
+        OLLAMA_CONTEXT_LENGTH = "64000";
       };
     };
     #nextjs-ollama-llm-ui.enable = true;
