@@ -121,8 +121,8 @@ return {
 								model = {
 									--default = "deepseek-r1:14b"
 									--default = "devstral:24b"
-									--default = "gpt-oss:20b"
-									default = "qwen3:30b"
+									default = "gpt-oss:20b"
+									--default = "qwen3:30b"
 								}
 							},
 						})

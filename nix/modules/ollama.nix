@@ -7,11 +7,12 @@
       loadModels = [
         #"deepseek-r1:14b"
         #"qwen3:14b"
-        "mistral-small3.2:24b"
-        #"phi4-reasoning:plus"
         "gpt-oss:20b"
         #"devstral:24b"
       ];
+      environmentVariables = {
+        OLLAMA_CONTEXT_LENGTH = "128000";
+      };
     };
     #nextjs-ollama-llm-ui.enable = true;
   };
