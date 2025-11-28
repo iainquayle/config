@@ -11,7 +11,8 @@
           "server string" = "smbnix";
           "netbios name" = "smbnix";
           "security" = "user";
-          "hosts allow" = "100.65.64.248 strix.netbird.cloud 127.0.0.1 localhost"; # need to add machines netbird addr 
+          "hosts allow" = "100.65.0.0/16 127.0.0.1 localhost"; # need to add machines netbird addr 
+          # supposedly I can have a line hosts allow += addr, which could be used for machine specific?
           "hosts deny" = "ALL";
           "guest account" = "pubsambauser";
           "map to guest" = "Bad User";
