@@ -16,6 +16,10 @@
     };
     useNetworkd = true; # replaces NetworkManager
     #useDHCP = false; # may be able to hand this off to networkd?
+
+    nftables = {
+      enable = true;
+    };
     firewall = {
       enable = true;
       allowPing = true;
@@ -30,7 +34,7 @@
     powerOnBoot = true;
   };
 
-  # Local link multicast name resolution, not the same as mdns
+  # Local link multicast name resolution
   services.resolved.llmnr = "false"; 
 
   # programs.mtr.enable = true;

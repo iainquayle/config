@@ -44,15 +44,18 @@
       };
       virtualHosts."http://strix.netbird.cloud:21338" = {
         extraConfig = ''
-          respond "hello from netbird" 
+          respond "Hello from Caddy to Netbird" 
         '';
       };
       virtualHosts."http://localhost:21338" = {
         extraConfig = ''
-          respond "hello from local" 
+          respond "Hello from Caddy to Local" 
         '';
       };
     };
   };
-  networking.firewall.allowedTCPPorts = [ 21338 21339 ];
+  # tcp 139, and udp 137 138 are needed for netbios if wanting network findable samba
+  networking.firewall.extraInputRules = ''
+    ip saddr 100.65.0.0/16 tcp dport { 445, 21338, 21339 } accept
+  '';
 }

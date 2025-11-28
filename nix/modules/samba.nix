@@ -4,7 +4,7 @@
     samba = {
       enable = true;
       #securityType = "";
-      openFirewall = true;
+      #openFirewall = true;
       settings = {
         global = {
           "workgroup" = "WORKGROUP";
