@@ -11,8 +11,7 @@
           "server string" = "smbnix";
           "netbios name" = "smbnix";
           "security" = "user";
-          "hosts allow" = "100.65.0.0/16 127.0.0.1 localhost"; # need to add machines netbird addr 
-          # supposedly I can have a line hosts allow += addr, which could be used for machine specific?
+          "hosts allow" = "100.65.0.0/16 127.0.0.1 localhost";
           "hosts deny" = "ALL";
           "guest account" = "pubsambauser";
           "map to guest" = "Bad User";
@@ -55,7 +54,7 @@
   # either need to setup a auto systemd tempfile
   # or, setup auto mount for a disk to a certain path
   systemd.tmpfiles.rules = [
-    "d /mnt/share/public 0755 pubsambauser pubsambagroup - -"
+    "d /mnt/share/public 0775 pubsambauser pubsambagroup - -"
   ];
 }
 
