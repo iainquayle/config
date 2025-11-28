@@ -15,6 +15,7 @@
     ./modules/ollama.nix
     ./modules/netbird.nix
     ./modules/trading.nix
+    ./modules/samba.nix # need to extract parts that are specific to a machine
   ];
   
   hardware.nvidia = {

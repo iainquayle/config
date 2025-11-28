@@ -18,7 +18,7 @@
     #useDHCP = false; # may be able to hand this off to networkd?
     firewall = {
       enable = true;
-      allowPing = false;
+      allowPing = true;
     };
   };
   systemd.network = {
