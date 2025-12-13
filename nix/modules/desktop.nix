@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{lib, pkgs, ...}: {
   programs = {
     chromium.enable = false;
     kdeconnect.enable = true;
@@ -20,13 +20,19 @@
     mpv # media player
     imv # image viewer
 
-    pcmanfm # file manager
-
     pwvucontrol # pipewire gui
     iwgtk # iwd gui
+
+    pcmanfm # file manager
   ];
 
-  services.blueman.enable = true; # bluetooth gui
+  services = {
+    gvfs = {
+      enable = true; # gnome virtual file system, for connections to network files
+      package = lib.mkForce pkgs.gnome.gvfs;
+    };
+    blueman.enable = true; # bluetooth gui
+  };
 
   fonts.packages = with pkgs; [
     font-awesome
