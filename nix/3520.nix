@@ -11,7 +11,7 @@
     ./modules/netbird.nix
     ./modules/network.nix
     ./modules/qmk.nix
-    ./modules/ibkr.nix
+    ./modules/trading.nix
   ];
 
   networking.hostName = "dell";
