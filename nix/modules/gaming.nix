@@ -15,4 +15,8 @@
   ];
 
   environment.sessionVariables = { };
+
+  environment.shellAliases = {
+    steam-gamescope = "gamescope -f -e -W 2560 -H 1440 -- steam -gamepadui"; # -O will specify display
+  };
 }

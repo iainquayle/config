@@ -144,9 +144,9 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; } // aslo Mod+?
 
-    Mod+Enter hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi"; }
-    Mod+Ctrl+Enter hotkey-overlay-title="Open a Browser: firefox" { spawn "firefox"; }
+    Mod+Ctrl+Return hotkey-overlay-title="Open a Browser: firefox" { spawn "firefox"; }
 
     // The allow-when-locked=true property makes them work even when the session is locked.
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
