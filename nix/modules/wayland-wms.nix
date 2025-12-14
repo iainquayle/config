@@ -38,7 +38,7 @@
 
     dunst # notification daemon
     libnotify # notification library
-    rofi-wayland # runner
+    rofi # runner
 
     wl-clipboard 
 
