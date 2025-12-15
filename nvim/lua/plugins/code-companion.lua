@@ -52,10 +52,6 @@ return {
 				chat = {
 					adapter = {
 						name = "ollama",
-						--model = "gpt-oss:20b",
-						model = "qwen3:30b",
-						--name = "gemini",
-						--model = "gemini-2.5-flash",
 					},
 					keymaps = {
 						send = {
@@ -89,9 +85,6 @@ return {
 				inline = {
 					adapter = {
 						name = "ollama",
-						--model = "gpt-oss:20b"
-						--model = "cogito:14b",
-						model = "qwen3:30b",
 					},
 					keymaps = {
 						accept_change = {
@@ -128,8 +121,8 @@ return {
 							},
 							schema = {
 								model = {
-									--default = "gpt-oss:20b"
-									default = "qwen3:30b",
+									default = "gpt-oss:20b"
+									--default = "qwen3:30b",
 								}
 							},
 						})

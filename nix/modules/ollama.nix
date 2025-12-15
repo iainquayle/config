@@ -7,8 +7,6 @@
       acceleration = "cuda";
       port = 11434;
       loadModels = [
-        #"qwen2.5-coder:14b"
-        #"cogito:14b"
         "gpt-oss:20b"
       ];
       environmentVariables = {
