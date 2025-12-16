@@ -28,6 +28,9 @@ return {
 
 		require("codecompanion").setup({
 			display = {
+				action_palette = {
+					provider = "fzf_lua"
+				},
 				chat = {
 					show_settings = false,
 					window = {
@@ -41,6 +44,7 @@ return {
 				},
 				diff = {
 				--	provider = "mini_diff"
+					enabled = true,
 					provider_opts = {
 						inline = {
 							layout = "float"
@@ -48,11 +52,12 @@ return {
 					}
 				},
 			},
-			strategies = {
+			interactions = {
 				chat = {
-					adapter = {
-						name = "ollama",
-					},
+					--adapter = {
+					--	name = "ollama",
+					--},
+					adapter = "ollama",
 					keymaps = {
 						send = {
 							modes = { n = "<CR>", v = "<M-CR>" }
@@ -73,11 +78,8 @@ return {
 					},
 					slash_commands = {
 						["file"] = {
-							callback = "strategies.chat.slash_commands.file",
-							description = "Open a file",
 							opts = {
 								provider = "fzf_lua",
-								contains_code = true,
 							}
 						}
 					}
@@ -96,7 +98,9 @@ return {
 					},
 				},
 				cmd = {
-					adapter = "gemini",
+					adapter = {
+						name = "ollama",
+					},
 				},
 			},
 			adapters = {
@@ -105,7 +109,6 @@ return {
 						return require("codecompanion.adapters").extend("gemini", {
 							schema = {
 								model = {
-									--default = "gemini-2.5-pro-exp-03-25"
 									default = "gemini-2.5-flash"
 								}
 							},
@@ -116,6 +119,7 @@ return {
 					end,
 					ollama = function()
 						return require("codecompanion.adapters").extend("ollama", {
+							name = "ollama",
 							env = {
 								url = ollama_url,
 							},
@@ -123,6 +127,9 @@ return {
 								model = {
 									default = "gpt-oss:20b"
 									--default = "qwen3:30b",
+								},
+								num_ctx = {
+									default = 64000,
 								}
 							},
 						})
