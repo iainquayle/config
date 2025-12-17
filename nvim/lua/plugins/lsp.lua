@@ -73,6 +73,7 @@ if true or os.getenv("NIXOS") == '1' or os.getenv("MASON") ~= '1' then
 				vim.lsp.enable("gopls")
 				vim.lsp.enable("nil_ls")
 				vim.lsp.enable("pyright")
+				vim.lsp.enable("html")
 			end
 		},
 		{

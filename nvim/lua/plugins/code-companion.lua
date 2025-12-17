@@ -125,8 +125,8 @@ return {
 							},
 							schema = {
 								model = {
-									default = "gpt-oss:20b"
-									--default = "qwen3:30b",
+									--default = "gpt-oss:20b"
+									default = "qwen3-coder:30b",
 								},
 								num_ctx = {
 									default = 64000,

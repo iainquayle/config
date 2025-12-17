@@ -55,7 +55,11 @@
     typescript
     typescript-language-server
 
-    nil
+    vscode-langservers-extracted
+
+    #marksman #markdown lsp
+
+    nil #nix lsp
 
     #luajit
     lua
