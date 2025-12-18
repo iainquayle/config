@@ -1,5 +1,5 @@
 * {
-	font-family: "MesloLGS NF", Roboto, Helvetica, Arial, sans-serif;
+	font-family: "Fira Code", "MesloLGS NF", Roboto, Helvetica, Arial, sans-serif;
 	font-size: 13px;
 
 	border: none;
@@ -8,6 +8,16 @@
 
 	padding: 0;
 	margin: 0;
+}
+
+#tray menu {
+    background-color: #242424; 
+    color: #ffffff;            
+    border: 1px solid #444444;
+}
+
+#tray menu menuitem:hover {
+    background-color: #333333;
 }
 
 window#waybar {
@@ -23,25 +33,6 @@ window#waybar {
 	padding-left: 10px;
 	padding-right: 10px;
 }
-
-/*
-window#waybar.hidden {
-	opacity: 0.2;
-}
-window#waybar.empty {
-	background-color: transparent;
-}
-window#waybar.solo {
-	background-color: #FFFFFF;
-}
-window#waybar.termite {
-	background-color: #3F3F3F;
-}
-window#waybar.chromium {
-	background-color: #000000;
-	border: none;
-}
-*/
 
 button {
 	/*
