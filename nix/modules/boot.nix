@@ -12,7 +12,9 @@
   };
 
   boot = { #is this the best setup?
-    kernelPackages = pkgs.linuxPackages_zen; 
+    #kernelPackages = pkgs.linuxPackages_zen; 
+    #kernelPackages = pkgs.linuxPackages_6_18; 
+    kernelPackages = pkgs.linuxPackages_6_12; 
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
   };

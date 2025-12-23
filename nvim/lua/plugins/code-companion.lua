@@ -109,7 +109,7 @@ return {
 						return require("codecompanion.adapters").extend("gemini", {
 							schema = {
 								model = {
-									default = "gemini-2.5-flash"
+									default = "gemini-3.0-flash"
 								}
 							},
 							env = {
