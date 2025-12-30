@@ -3,6 +3,30 @@
     chromium.enable = false;
     kdeconnect.enable = true;
     firefox.enable = true;
+    dconf = {
+      enable = true;
+      profiles.user.databases = [{
+        settings = {
+          "org/gnome/desktop/interface" = {
+            color-scheme = "prefer-dark";
+            gtk-theme = "rose-pine-moon-gtk";
+            icon-theme = "rose-pine-moon-icon";
+            #cursor-theme = 
+          };
+        };
+      }];
+    };
+  };
+
+  environment.etc."gtk-3.0/settings.ini".text = ''
+    [Settings]
+    gtk-theme-name=rose-pine-moon-gtk
+    gtk-icon-theme-name=rose-pine-moon-icons
+    gtk-application-prefer-dark-theme=1
+  '';
+
+  environment.sessionVariables = {
+    GTK_THEME = "rose-pine-moon-gtk";
   };
 
   environment.systemPackages = with pkgs; [
@@ -13,7 +37,7 @@
     kitty
 
     freecad
-    renderdoc
+    #renderdoc
 
     ncspot # this should be elsewhere?
 
@@ -24,6 +48,12 @@
     iwgtk # iwd gui
 
     pcmanfm # file manager
+
+    rose-pine-gtk-theme
+    rose-pine-icon-theme
+
+    #gruvbox-gtk-theme
+    #gruvbox-plus-icons
   ];
 
   services = {
