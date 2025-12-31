@@ -6,19 +6,13 @@
       viAlias = true;
       vimAlias = true;
     };
-    #nix-ld = {
-    #  enable = true;
-#        libraries = with pkgs; [
-#          glibc
-#          cargo
-#      ];
-    #};
-    #lazygit.enable = true;
   };
 
   documentation.dev.enable = true;
 
   environment.systemPackages = with pkgs; [
+    opencode
+
     cmake
     gnumake
 

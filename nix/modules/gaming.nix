@@ -11,7 +11,6 @@
     #steamcontroller.enable = true;
     gamemode = {
       enable = true;
-      #enableRenice = true;
     };
   };
   #services.seatd.enable = true;
