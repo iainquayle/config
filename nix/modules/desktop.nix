@@ -64,9 +64,13 @@
     blueman.enable = true; # bluetooth gui
   };
 
-  fonts.packages = with pkgs; [
-    font-awesome
-    meslo-lgs-nf
-    fira-code
-  ];
+  fonts = {
+    packages = with pkgs; [
+      #font-awesome
+      #meslo-lgs-nf
+      nerd-fonts.fira-code
+      nerd-fonts.symbols-only
+    ];
+    fontDir.enable = true;
+  };
 }
