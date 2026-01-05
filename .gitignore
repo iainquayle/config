@@ -41,6 +41,9 @@ nvim/lazy-lock.json
 
 !redox.layout.json
 
+!opencode
+!opencode/*
+
 #!zsh
 #zsh/*
 #!zsh/.zshrc
