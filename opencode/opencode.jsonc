@@ -2,6 +2,8 @@
 	"$schema": "https://opencode.ai/config.json",
 	"model": "openrouter/xiaomi/mimo-v2-flash",
 	"theme": "system",
+	// add instructions, perhaps some general or project specific on style and what not
+	// create instructions for a project.md file per project which the llm can write to
 	"provider": {
 		"openrouter": {
 			"models": {

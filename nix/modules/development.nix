@@ -62,7 +62,7 @@
   ];
 
   environment.shellAliases = {
-    opencode-authed = "OPENROUTER_API_KEY=$(secret-tool lookup api-key openrouter) opencode";
+    opencode-authed = "OPENROUTER_API_KEY=$(secret-tool lookup api-key openrouter) opencode -c";
     cuda-env = "nix-shell ~/.config/nix/shells/cuda-fhs.nix";
     std-env = "nix-shell ~/.config/nix/shells/std-fhs.nix";
     py-test = "python -m unittest -v";
