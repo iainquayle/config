@@ -27,10 +27,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    (pkgs.waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    }))
-
     #for some reason, this is not working with hyprland
     #see if with niri maybe it will work, or make our own system that switches based on the session
     #wlr-randr #wayland output cli
@@ -44,6 +40,7 @@
     wl-clipboard 
 
     hyprpaper
+    swww # wayland wall paper setter supporting animations
     #nwg-look 
 
     #perhaps should be moved somewhere else? not specific to hyprland/wayland
