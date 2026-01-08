@@ -68,6 +68,7 @@
     packages = with pkgs; [
       #font-awesome
       #meslo-lgs-nf
+      #fira-code
       nerd-fonts.fira-code
       nerd-fonts.symbols-only
     ];
