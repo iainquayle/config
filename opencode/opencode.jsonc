@@ -2,6 +2,10 @@
 	"$schema": "https://opencode.ai/config.json",
 	"model": "openrouter/qwen/qwen3-coder-480b-a35b",
 	"theme": "system",
+	"compaction": {
+		"auto": true,
+		"prune": true
+	}
 	// add instructions, perhaps some general or project specific on style and what not
 	// create instructions for a project.md file per project which the llm can write to
 	"provider": {
@@ -10,9 +14,10 @@
 				"qwen/qwen3-coder-480b-a35b:floor": {},
 				"minimax/minimax-m2.1:floor": {},
 				"z-ai/glm-4.7:floor": {},
+				"z-ai/glm-4.6:floor": {},
 				"openai/gpt-oss-120b:floor": {},
 				"xiaomi/mimo-v2-flash:floor": {},
-				"moonshotai/kimi-k2-thinking": {}
+				"moonshotai/kimi-k2-thinking:floor": {}
 			}
 		}
 	}
