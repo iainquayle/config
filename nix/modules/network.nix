@@ -35,7 +35,7 @@
   };
 
   # Local link multicast name resolution
-  services.resolved.llmnr = "false"; 
+  services.resolved.settings.Resolve.LLMNR = "false"; 
 
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
