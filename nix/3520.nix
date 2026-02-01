@@ -12,6 +12,7 @@
     ./modules/network.nix
     ./modules/qmk.nix
     ./modules/trading.nix
+    ./modules/can.nix
   ];
 
   networking.hostName = "dell";
