@@ -1,6 +1,5 @@
 {
 	"$schema": "https://opencode.ai/config.json",
-	"model": "openrouter/qwen/qwen3-coder-480b-a35b",
 	"theme": "system",
 	"compaction": {
 		"auto": true,
@@ -22,7 +21,18 @@
 				"moonshotai/kimi-k2-thinking:floor": {}
 			}
 		},
-		"zai": {
+		"zai-coding-plan": {
+		},
+		"ollama": {
+			//"npm": "@ai-sdk/openai-compatible"
+			"options": {
+				"baseURL": "http://strix.netbird.cloud:21339"
+	 		},
+			"models": {
+				"glm-4.7-flash": {
+					"name": "glm-4.7-flash"
+				}
+			}
 		}
 	}
 }

@@ -3,11 +3,11 @@
 {pkgs, ...}: {
   services = {
     ollama = {
-      enable = false;
+      enable = true;
       package = pkgs.ollama-cuda;
       port = 11434;
       loadModels = [
-        "gpt-oss:20b"
+        "glm-4.7-flash:latest"
       ];
       environmentVariables = {
         OLLAMA_CONTEXT_LENGTH = "64000";
