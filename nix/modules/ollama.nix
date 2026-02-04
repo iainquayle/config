@@ -10,7 +10,7 @@
         "glm-4.7-flash:latest"
       ];
       environmentVariables = {
-        OLLAMA_CONTEXT_LENGTH = "64000";
+        OLLAMA_CONTEXT_LENGTH = "256000";
       };
     };
     #nextjs-ollama-llm-ui.enable = true;

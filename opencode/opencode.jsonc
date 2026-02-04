@@ -24,9 +24,9 @@
 		"zai-coding-plan": {
 		},
 		"ollama": {
-			//"npm": "@ai-sdk/openai-compatible"
+			"npm": "@ai-sdk/openai-compatible",
 			"options": {
-				"baseURL": "http://strix.netbird.cloud:21339"
+				"baseURL": "http://strix.netbird.cloud:21339/v1"
 	 		},
 			"models": {
 				"glm-4.7-flash": {
