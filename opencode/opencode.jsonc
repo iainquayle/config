@@ -18,7 +18,17 @@
 				"z-ai/glm-4.6:floor": {},
 				"openai/gpt-oss-120b:floor": {},
 				"xiaomi/mimo-v2-flash:floor": {},
-				"moonshotai/kimi-k2-thinking:floor": {}
+				"moonshotai/kimi-k2-thinking:floor": {},
+				"Venice-GLM-4.7": {
+					"id": "z-ai/glm-4.7",
+					"options": {
+						"provider": {
+							"order": ["Venice"],
+							"allow_fallbacks": false,
+							"data_collection": "deny"
+						}
+					}
+				}
 			}
 		},
 		"zai-coding-plan": {
