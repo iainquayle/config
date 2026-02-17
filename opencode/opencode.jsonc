@@ -43,6 +43,21 @@
 					"name": "glm-4.7-flash"
 				}
 			}
+		},
+		"chutes": {
+			"npm": "@ai-sdk/openai-compatible",
+			"options": {
+				"baseURL": "https://llm.chutes.ai/v1",
+				"apiKey": "{env:CHUTES_API_KEY}"
+	 		},
+			"models": {
+				"zai-org/GLM-5-TEE": {
+					"name": "GLM-5"
+				},
+				"moonshotai/Kimi-K2.5-TEE": {
+					"name": "Kimi-K2.5"
+				}
+			}
 		}
 	}
 }
