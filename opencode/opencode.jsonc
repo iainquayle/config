@@ -1,5 +1,6 @@
 {
 	"$schema": "https://opencode.ai/config.json",
+	//"model": "chutes/zai-org/GLM-5-TEE",
 	"theme": "system",
 	"compaction": {
 		"auto": true,
@@ -49,15 +50,17 @@
 			"options": {
 				"baseURL": "https://llm.chutes.ai/v1",
 				"apiKey": "{env:CHUTES_API_KEY}"
-	 		},
+	 		}
+			/*
 			"models": {
 				"zai-org/GLM-5-TEE": {
-					"name": "GLM-5"
+					"name": "GLM-5-TEE"
 				},
 				"moonshotai/Kimi-K2.5-TEE": {
-					"name": "Kimi-K2.5"
+					"name": "Kimi-K2.5-TEE"
 				}
 			}
+			*/
 		}
 	}
 }
