@@ -135,12 +135,15 @@
 		},
 		"format": "{capacity}% {icon}",
 		"format-full": "{capacity}% {icon}",
-		"format-charging": "{capacity}% ",
+		"format-charging": "{capacity}% {icon}",
 		"format-plugged": "{capacity}% ",
 		"format-alt": "{time} {icon}",
 		// "format-good": "", // An empty format will hide the module
 		// "format-full": "",
-		"format-icons": ["", "", "", "", ""]
+		"format-icons": {
+			"charging": ["󰢜", "󰂇", "󰢝", "󰢞", "󰂋"],
+			"default": ["", "", "", "", ""]
+		}
 	},
 	"power-profiles-daemon": {
 	  "format": "{icon}",
@@ -166,8 +169,8 @@
 		// "scroll-step": 1, // %, can be a float
 		"format": "{volume}% {icon} {format_source}",
 		"format-bluetooth": "{volume}% {icon} {format_source}",
-		"format-bluetooth-muted": " {icon} {format_source}",
-		"format-muted": " {format_source}",
+		"format-bluetooth-muted": "󰝟 {icon} {format_source}",
+		"format-muted": "󰝟 {format_source}",
 		"format-source": "{volume}% ",
 		"format-source-muted": "",
 		"format-icons": {
