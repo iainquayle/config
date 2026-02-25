@@ -18,7 +18,7 @@
 
   documentation.man = {
     man-db.enable = true;
-    generateCaches = true; 
+    cache.enable = true; 
   };
 
   services = { 
