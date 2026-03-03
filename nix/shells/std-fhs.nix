@@ -8,6 +8,17 @@
     libGL 
     libGLU 
     zlib
+
+    # Common dependencies for Python document/image processing
+    libz
+    glib
+    libxcb
+    libx11
+    libxext
+    libxrender
+    libice
+    libsm
+
     #gnumake 
     #m4 
     util-linux
