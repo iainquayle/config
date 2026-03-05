@@ -64,6 +64,9 @@ if true or os.getenv("NIXOS") == '1' or os.getenv("MASON") ~= '1' then
 				vim.lsp.config("pyright", {
 					on_attach = on_attach
 				})
+				vim.lsp.config("rust_analyzer", {
+					on_attach = on_attach
+				})
 
 				--lspconfig.ts_ls.setup({})
 				vim.lsp.enable("lua_ls")
