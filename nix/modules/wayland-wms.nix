@@ -32,7 +32,8 @@
     #wlr-randr #wayland output cli
     #kanshi #wayland output auto config
 
-    dunst # notification daemon
+    #dunst # notification daemon
+    mako # notification daemon
     libnotify # notification library
 
     rofi # runner

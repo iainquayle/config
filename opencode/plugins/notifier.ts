@@ -8,21 +8,12 @@ export const NotifierPlugin: Plugin = async ({ $, client }) => {
       // Extract session info if available
       const sessionId = event.properties?.sessionID || "Unknown Session";
       let urgency = "normal";
-      let duration = "3000";
+      let duration = "5000";
       let icon = "dialog-information";
       let title = "OpenCode Update";
       let message = "";
       let voiceMessage = "";
-      let sessionTitle = "Untitled Session";
-
-      try {
-        const session = await client.sessions.get(event.sessionId);  
-        if (session && session.title) {
-          sessionTitle = session.title;
-        } else {
-          //sessionTitle = 
-        }
-      } catch(e) { sessionTitle = "Error Fetching Title"; }
+      let sessionTitle = event.properties?.info?.title ?? "Untitled Session";
 
       switch (event.type) {
         case "session.idle":
@@ -62,7 +53,7 @@ export const NotifierPlugin: Plugin = async ({ $, client }) => {
       }
 
       try {
-        await $`notify-send -a OpenCode -u ${urgency} -i utilities-terminal "${title}" "${message}"`;
+        await $`notify-send -a OpenCode -t ${duration} -u ${urgency} -i utilities-terminal "${title}" "${message}"`;
         
         // Voice Notification (requires espeak-ng)
         //await $`espeak-ng "${voiceMessage}" &`; 

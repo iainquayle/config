@@ -1,4 +1,175 @@
+* {
+    font-family: "Fira Code";
+    font-size: 13px;
+    background-color: transparent;
+    text-color: #ffffff;
+    border-color: #595959;
+    border-radius: 10px;
+}
 
-//@theme "/nix/store/pbfffdzdliv2yvpizb2mfphiml9dr3v0-rofi-1.7.5+wayland3/share/rofi/themes/gruvbox-dark-soft.rasi"
+configuration {
+    show-icons: true;
+    icon-theme: "hicolor";
+    drun-display-format: "{name}";
+    disable-history: false;
+    hide-scrollbar: true;
+    sidebar-mode: false;
+}
 
-@theme "/nix/store/qda1dx1sa0adn9g2c9xifk63pm19ylj4-rofi-2.0.0/share/rofi/themes/gruvbox-dark.rasi"
+window {
+    background-color: #00000099;
+    border: 2px;
+    border-color: #595959;
+    border-radius: 10px;
+    padding: 15px;
+    width: 600px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing: 10px;
+}
+
+inputbar {
+    children: [ prompt, entry, case-indicator ];
+    spacing: 5px;
+    padding: 10px;
+    background-color: #00000066;
+    border: 0px 0px 2px 0px;
+    border-color: #595959;
+}
+
+prompt {
+    text-color: #e39242;
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: #aaaaaa;
+    text-color: #ffffff;
+}
+
+listview {
+    lines: 8;
+    spacing: 5px;
+    scrollbar: false;
+    padding: 5px;
+}
+
+element {
+    padding: 10px;
+    background-color: transparent;
+    border: 0px;
+    border-radius: 5px;
+    children: [ element-icon, element-text ];
+}
+
+element normal.normal {
+    background-color: #00000066;
+    text-color: #ffffff;
+}
+
+element alternate.normal {
+    background-color: #00000066;
+    text-color: #ffffff;
+}
+
+element selected.normal {
+    background-color: #e3924244;
+    border: 2px;
+    border-color: #e39242;
+    text-color: #ffffff;
+}
+
+element normal.urgent {
+    background-color: #e3363644;
+    text-color: #ffffff;
+}
+
+element alternate.urgent {
+    background-color: #e3363644;
+    text-color: #ffffff;
+}
+
+element selected.urgent {
+    background-color: #e3363666;
+    border: 2px;
+    border-color: #ff0000;
+    text-color: #ffffff;
+}
+
+element normal.active {
+    background-color: #00000066;
+    text-color: #ffffff;
+}
+
+element alternate.active {
+    background-color: #00000066;
+    text-color: #ffffff;
+}
+
+element selected.active {
+    background-color: #e3924244;
+    border: 2px;
+    border-color: #e39242;
+    text-color: #ffffff;
+}
+
+element-icon {
+    size: 32px;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+}
+
+mode-switcher {
+    padding: 10px;
+    background-color: #00000066;
+}
+
+button {
+    padding: 5px;
+    background-color: #00000066;
+    text-color: #ffffff;
+    border: 1px;
+    border-color: #595959;
+    border-radius: 5px;
+}
+
+button selected {
+    background-color: #e3924244;
+    border-color: #e39242;
+}
+
+message {
+    padding: 10px;
+    background-color: #00000066;
+    border: 1px;
+    border-color: #595959;
+    border-radius: 10px;
+}
+
+textbox {
+    background-color: transparent;
+    text-color: #ffffff;
+}
+
+error-message {
+    padding: 10px;
+    background-color: #e3363666;
+    border: 2px;
+    border-color: #ff0000;
+    border-radius: 10px;
+}
+
+scrollbar {
+    width: 4px;
+    padding: 0px;
+    border: 0px;
+    background-color: #00000066;
+    handle-width: 4px;
+    handle-color: #595959;
+}
