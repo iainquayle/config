@@ -1,6 +1,6 @@
 {
 	"$schema": "https://opencode.ai/config.json",
-	"plugins": ["./plugins/notifier.ts"],
+	"plugin": ["./plugins/notifier.ts"],
 	"compaction": {
 		"auto": true,
 		"prune": true,
