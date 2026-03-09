@@ -23,9 +23,7 @@
     python3
     pyright
 
-    cargo
-    rustc
-    rust-analyzer
+    rustup
 
     go
     gopls
