@@ -34,7 +34,7 @@ inputbar {
     children: [ prompt, entry, case-indicator ];
     spacing: 5px;
     padding: 6px;
-    background-color: #00000066;
+    background-color: #2d2d2d;
     border: 2px;
     border-color: #595959;
 }
@@ -75,7 +75,7 @@ element alternate.normal {
 }
 
 element selected.normal {
-    background-color: #e39242;
+    background-color: #2d2d2d;
     border: 2px;
     border-color: #e39242;
     text-color: #ffffff;
@@ -109,7 +109,7 @@ element alternate.active {
 }
 
 element selected.active {
-    background-color: #e39242;
+    background-color: #2d2d2d;
     border: 2px;
     border-color: #e39242;
     text-color: #ffffff;
