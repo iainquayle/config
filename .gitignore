@@ -51,5 +51,8 @@ nvim/lazy-lock.json
 !kanshi
 !kanshi/*
 
+!mako
+!mako/*
+
 result*
 

@@ -6,14 +6,21 @@ export const NotifierPlugin: Plugin = async ({ $, client }) => {
   return {
     event: async ({ event }) => {
       // Extract session info if available
-      const sessionId = event.properties?.sessionID || "Unknown Session";
+      const sessionId = event.properties?.sessionID || null;
       let urgency = "normal";
-      let duration = "5000";
+      let duration = "10000";
       let icon = "dialog-information";
       let title = "OpenCode Update";
       let message = "";
       let voiceMessage = "";
-      let sessionTitle = event.properties?.info?.title ?? "Untitled Session";
+      let sessionTitle = "Untitled Session";
+      //let sessionTitle = event.properties?.info?.title ?? "Untitled Session";
+      if (sessionId) {
+        const sessions = await client.session.list();
+        const session = sessions.data?.find(s => s.id === sessionId);
+        sessionTitle = session?.title || "Failed to Get Title";
+      }
+
 
       switch (event.type) {
         case "session.idle":
@@ -28,6 +35,7 @@ export const NotifierPlugin: Plugin = async ({ $, client }) => {
           urgency = "critical";
           icon = "dialog-warning";
           title = "⚠️ Permission Required";
+          duration = "20000";
           message = `Permission in: ${sessionTitle}`;
           voiceMessage = "Permission required.";
           break;
@@ -36,6 +44,7 @@ export const NotifierPlugin: Plugin = async ({ $, client }) => {
           urgency = "critical"
           icon = "dialog-warning";
           title = "❓ Question for You";
+          duration = "20000";
           message = `Question in: ${sessionTitle}`;
           voiceMessage = "I have a question for you.";
           break;
@@ -44,6 +53,7 @@ export const NotifierPlugin: Plugin = async ({ $, client }) => {
           urgency = "critical"
           icon = "dialog-error";
           title = "❌ Session Error";
+          duration = "20000";
           message = `Error in: ${sessionTitle}`;
           voiceMessage = "An error occurred.";
           break;
