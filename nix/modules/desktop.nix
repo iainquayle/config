@@ -29,7 +29,14 @@
     GTK_THEME = "rose-pine-moon-gtk";
   };
 
+  environment.variables = {
+    XCURSOR_THEME = "Bibata-Modern-Classic";
+    XCURSOR_SIZE = "24";
+  };
+
   environment.systemPackages = with pkgs; [
+    bibata-cursors
+
     #vieb
     qutebrowser
 
@@ -66,9 +73,6 @@
 
   fonts = {
     packages = with pkgs; [
-      #font-awesome
-      #meslo-lgs-nf
-      #fira-code
       nerd-fonts.fira-code
       nerd-fonts.symbols-only
     ];

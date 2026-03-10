@@ -23,7 +23,11 @@
     python3
     pyright
 
-    rustup
+    #rustup
+    cargo
+    rustc
+    rust-analyzer
+    clippy
 
     go
     gopls
