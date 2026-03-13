@@ -1,7 +1,7 @@
 // This config is in the KDL format: https://kdl.dev
 // https://yalter.github.io/niri/Configuration:-Introduction
 
-spawn-sh-at-startup "killall waybar || waybar -c $HOME/.config/niri/waybar/config.jsonc -s $HOME/.config/niri/waybar/style.css & hyprpaper"
+spawn-sh-at-startup "killall waybar || waybar -c $HOME/.config/niri/waybar/config.jsonc -s $HOME/.config/niri/waybar/style.css & ~/.config/swww/set-wallpaper"
 
 input {
     keyboard {

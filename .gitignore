@@ -54,5 +54,8 @@ nvim/lazy-lock.json
 !mako
 !mako/*
 
+!swww
+!swww/*
+
 result*
 

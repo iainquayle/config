@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Check if swww-daemon is already running
+if ! pgrep -x "swww-daemon" > /dev/null; then
+    swww-daemon &
+    # Wait a bit for daemon to initialize
+    sleep 0.5
+fi
+
+# Set wallpaper with nearest neighbor scaling
+swww img ~/.config/hypr/IMG_6180.JPG --resize crop --filter Nearest

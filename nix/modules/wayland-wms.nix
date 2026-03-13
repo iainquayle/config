@@ -40,7 +40,6 @@
 
     wl-clipboard 
 
-    hyprpaper
     swww # wayland wall paper setter supporting animations
     #nwg-look 
 
