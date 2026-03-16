@@ -1,7 +1,10 @@
 {
+  "context": {
+    "alwaysInclude": ["AGENTS.md"]
+  },
   "permissions": {
     "allow": [
-      "Agent(*)" 
+      "Agent(*)"
     ]
   },
   "hooks": {
@@ -26,5 +29,6 @@
         ]
       }
     ]
-  }
+  },
+  "model": "sonnet"
 }
