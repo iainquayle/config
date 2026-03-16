@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Agent(*)" 
+    ]
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "permission_prompt|idle_prompt|elicitation_dialog",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.config/claude/hooks/claude-notify.sh 'ACTION REQUIRED'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.config/claude/hooks/claude-notify.sh 'TASK COMPLETE'"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -12,6 +12,7 @@
 
   environment.systemPackages = with pkgs; [
     opencode
+    claude-code
 
     cmake
     gnumake
@@ -71,5 +72,7 @@
     count-lines = "find . -type f | xargs wc -l | sort -n";
   };
 
-  environment.sessionVariables = { };
+  environment.sessionVariables = {
+    CLAUDE_CONFIG_DIR = "$HOME/.config/claude";
+  };
 }

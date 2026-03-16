@@ -44,6 +44,9 @@ nvim/lazy-lock.json
 !opencode
 !opencode/*
 
+!claude
+!claude/*
+
 #!zsh
 #zsh/*
 #!zsh/.zshrc
