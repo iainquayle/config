@@ -52,7 +52,7 @@
     typescript
     typescript-language-server
 
-    vscode-langservers-extracted
+    vscode-langservers-extracted #html, css
 
     #marksman #markdown lsp
 

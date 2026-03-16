@@ -1,7 +1,4 @@
 {
-  "context": {
-    "alwaysInclude": ["AGENTS.md"]
-  },
   "permissions": {
     "allow": [
       "Agent(*)"
