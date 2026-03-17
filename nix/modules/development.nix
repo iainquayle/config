@@ -14,6 +14,8 @@
     opencode
     claude-code
 
+    jq
+
     cmake
     gnumake
 
