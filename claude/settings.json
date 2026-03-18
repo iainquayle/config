@@ -23,7 +23,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.config/claude/hooks/claude-notify.sh 'ACTION REQUIRED'"
+            "command": "$HOME/.config/claude/hooks/claude-notify.sh"
           }
         ]
       }
@@ -33,7 +33,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.config/claude/hooks/claude-notify.sh 'TASK COMPLETE'"
+            "command": "$HOME/.config/claude/hooks/claude-notify.sh"
           }
         ]
       }
