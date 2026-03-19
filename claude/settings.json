@@ -1,4 +1,5 @@
 {
+  "notifications": "off",
   "permissions": {
     "allow": [
       "Agent(*)",
