@@ -64,6 +64,9 @@
     lua
     #lua54Packages.luaposix
     lua-language-server
+
+    ruby
+    ruby-lsp
   ];
 
   environment.shellAliases = {
