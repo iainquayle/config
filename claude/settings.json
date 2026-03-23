@@ -1,5 +1,4 @@
 {
-  "notifications": "off",
   "permissions": {
     "allow": [
       "Agent(*)",
@@ -17,6 +16,8 @@
       "Write"
     ]
   },
+  "model": "opusplan",
+  "effortLevel": "high",
   "hooks": {
     "Notification": [
       {
@@ -40,5 +41,8 @@
       }
     ]
   },
-  "model": "opusplan"
+  "notifications": "off",
+  "enabledPlugins": {
+    "ruby-lsp@claude-plugins-official": true
+  }
 }
