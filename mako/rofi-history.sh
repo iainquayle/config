@@ -46,6 +46,8 @@ main() {
     local notifications
     notifications=$(makoctl history 2>/dev/null | parse_history)
     
+    makoctl dismiss -a
+    
     if [[ -z "$notifications" ]]; then
         rofi -e "No notification history"
         exit 0
