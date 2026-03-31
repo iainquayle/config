@@ -2,7 +2,7 @@
 
 ALWAYS follow these rules!!!
 
-## .context/ Directory
+## **/project_root/.context/ Directory
 
 Contains context files for agents to understand project patterns, decisions, and workflows.
 
