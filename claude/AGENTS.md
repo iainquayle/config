@@ -2,7 +2,7 @@
 
 ALWAYS follow these rules!!!
 
-## **/project_root/.context/ Directory
+## **/git_repo_root/.context/ Directory
 
 Contains context files for agents to understand project patterns, decisions, and workflows.
 
