@@ -17,7 +17,6 @@
     ]
   },
   "model": "opusplan",
-  "effortLevel": "high",
   "hooks": {
     "Notification": [
       {
@@ -41,8 +40,10 @@
       }
     ]
   },
-  "notifications": "off",
   "enabledPlugins": {
-    "ruby-lsp@claude-plugins-official": true
-  }
+    "ruby-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true
+  },
+  "effortLevel": "high",
+  "notifications": "off"
 }

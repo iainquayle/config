@@ -10,5 +10,6 @@
   };
   environment.systemPackages = with pkgs; [
     playerctl # media player control
+    wiremix
   ];
 }
