@@ -2,7 +2,7 @@
 (pkgs.buildFHSEnv {
   name = "cuda-env";
   targetPkgs = pkgs: with pkgs; [
-    stdenv.cc 
+    stdenv.cc.cc.lib
     glibc
     binutils 
     libGL 
