@@ -10,6 +10,6 @@
   };
   environment.systemPackages = with pkgs; [
     playerctl # media player control
-    wiremix
+    wiremix # tui pipewire config
   ];
 }

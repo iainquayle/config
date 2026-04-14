@@ -1,6 +1,7 @@
 { config, ... }: {
   imports = [
     ./modules/audio.nix
+    ./modules/auth.nix
     ./modules/base.nix
     ./modules/boot.nix
     ./modules/desktop.nix
