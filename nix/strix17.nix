@@ -16,7 +16,7 @@
     ./modules/ollama.nix
     ./modules/netbird.nix
     ./modules/trading.nix
-    ./modules/samba.nix # need to extract parts that are specific to a machine
+    ./modules/file-share.nix
     ./modules/can.nix
     ./modules/security.nix
   ];
@@ -60,6 +60,6 @@
   };
   # tcp 139, and udp 137 138 are needed for netbios if wanting network findable samba
   networking.firewall.extraInputRules = ''
-    ip saddr 100.65.0.0/16 tcp dport { 445, 21338, 21339 } accept
+    ip saddr 100.65.0.0/16 tcp dport { 6065, 21338, 21339 } accept
   '';
 }
