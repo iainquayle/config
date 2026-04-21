@@ -9,6 +9,7 @@
     ./modules/development.nix
     ./modules/nvidia.nix
     ./modules/laptop.nix
+    ./modules/security.nix
   ];
 
   hardware.nvidia = {
