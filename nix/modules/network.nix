@@ -23,6 +23,7 @@
     firewall = {
       enable = true;
       allowPing = true;
+      checkReversePath = "loose";
     };
   };
   systemd.network = {

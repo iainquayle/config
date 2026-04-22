@@ -4,10 +4,10 @@
     user = "fileshare";
     group = "fileshare";
     settings = {
-      address = "0.0.0.0";
+      address = "127.0.0.1"; 
       port = 6065;
-      scope = "/mnt/share/public";
-      modify = true;
+      directory = "/mnt/share/public";
+      permissions = "CRUD";
     };
   };
 

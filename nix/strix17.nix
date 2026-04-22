@@ -46,6 +46,13 @@
           }
         '';
       };
+      virtualHosts."http://strix.netbird.cloud:21340" = {
+        extraConfig = ''
+          reverse_proxy http://localhost:6065 {
+            header_up Host localhost:6065
+          }
+        '';
+      };
       virtualHosts."http://strix.netbird.cloud:21338" = {
         extraConfig = ''
           respond "Hello from Caddy to Netbird" 
@@ -58,8 +65,14 @@
       };
     };
   };
-  # tcp 139, and udp 137 138 are needed for netbios if wanting network findable samba
   networking.firewall.extraInputRules = ''
-    ip saddr 100.65.0.0/16 tcp dport { 6065, 21338, 21339 } accept
+    # WebDAV and ollama restrictions.
+    ip saddr 100.65.0.0/16 tcp dport { 21338, 21339, 21340 } accept
+
+    # KDE connect restrictions
+    ip saddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 } tcp dport 1714-1764 accept
+    ip saddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 } udp dport 1714-1764 accept
+    ip saddr 100.65.0.0/16 tcp dport 1714-1764 accept 
+    ip saddr 100.65.0.0/16 udp dport 1714-1764 accept
   '';
 }
