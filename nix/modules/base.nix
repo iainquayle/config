@@ -65,12 +65,12 @@
       enable = true;
     };
     nano.enable = false;
-    #neovim = {
-    #  enable = true;
-    #  defaultEditor = true;
-    #  viAlias = true;
-    #  vimAlias = true;
-    #};
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+    };
   };
   users.defaultUserShell = pkgs.zsh;
 
@@ -91,6 +91,9 @@
 
     unzip
     zip 
+    zstd
+    gnutar
+
     psmisc # process management
 
     zenith-nvidia

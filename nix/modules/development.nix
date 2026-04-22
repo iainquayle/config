@@ -1,13 +1,4 @@
 {pkgs, ...}: {
-  programs = {
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-    };
-  };
-
   documentation.dev.enable = true;
 
   environment.systemPackages = with pkgs; [
