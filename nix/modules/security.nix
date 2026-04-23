@@ -1,14 +1,33 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    ente-auth 
+    ente-auth
     ente-cli
-    #git-crypt
     age
-    #_7zz
+    (writeShellScriptBin "encrypt-archive" ''
+      if [ $# -lt 1 ]; then
+        echo "Usage: encrypt-archive <path> [output]" >&2
+        exit 1
+      fi
+      src="$1"
+      if [ ! -e "$src" ]; then
+        echo "encrypt-archive: path not found: $src" >&2
+        exit 1
+      fi
+      out="''${2:-$(basename "$src").tar.zst.age}"
+      tar -c "$src" | zstd -T0 -19 --long | age -e -p > "$out"
+    '')
+    (writeShellScriptBin "decrypt-archive" ''
+      if [ $# -lt 1 ]; then
+        echo "Usage: decrypt-archive <input> [output-dir]" >&2
+        exit 1
+      fi
+      src="$1"
+      if [ ! -f "$src" ]; then
+        echo "decrypt-archive: file not found: $src" >&2
+        exit 1
+      fi
+      out="''${2:-.}"
+      age -d -p < "$src" | zstd -d -T0 --long | tar x -C "$out"
+    '')
   ];
-
-  environment.shellAliases = {
-    #encrypt-7z = "7zz a -p -mhe=on -t7z";
-    #decrypt-7z = "7zz x";
-  };
 }

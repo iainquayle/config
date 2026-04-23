@@ -1,0 +1,16 @@
+[colors]
+active = "#e39242"
+inactive = "#595959"
+bg = "#000000"
+fg = "#ffffff"
+
+[font]
+family = "Fira Code"
+size = 13
+
+[window]
+opacity = 0.8
+border_size = 2
+gaps_in = 5
+gaps_out = 10
+rounding = 10

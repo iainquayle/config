@@ -64,3 +64,10 @@ nvim/lazy-lock.json
 
 result*
 
+!propagate
+!propagate/propagate.py
+!propagate/requirements.txt
+!propagate/setup.sh
+!propagate/values.toml
+propagate/venv/
+
