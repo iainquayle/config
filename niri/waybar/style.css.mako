@@ -1,23 +1,17 @@
+<%
+def rgb(h):
+    return f"{int(h[1:3],16)}, {int(h[3:5],16)}, {int(h[5:7],16)}"
+%>
 * {
-	font-family: "Fira Code", "MesloLGS NF", Roboto, Helvetica, Arial, sans-serif;
-	font-size: 13px;
+	font-family: "${font.family}", ${font.fallback};
+	font-size: ${font.size}px;
 
 	border: none;
 
-  color: #ffffff;
+  color: ${colors.fg};
 
 	padding: 0;
 	margin: 0;
-}
-
-#tray menu {
-    background-color: #242424; 
-    color: #ffffff;            
-    border: 1px solid #444444;
-}
-
-#tray menu menuitem:hover {
-    background-color: #333333;
 }
 
 window#waybar {
@@ -33,6 +27,25 @@ window#waybar {
 	padding-left: 10px;
 	padding-right: 10px;
 }
+
+/*
+window#waybar.hidden {
+	opacity: 0.2;
+}
+window#waybar.empty {
+	background-color: transparent;
+}
+window#waybar.solo {
+	background-color: #FFFFFF;
+}
+window#waybar.termite {
+	background-color: #3F3F3F;
+}
+window#waybar.chromium {
+	background-color: #000000;
+	border: none;
+}
+*/
 
 button {
 	/*
@@ -54,29 +67,27 @@ button:hover {
 #workspaces button {
 	padding: 0 5px;
 	margin: 0 5px;
-	background-color: rgba(0, 0, 0, .4);
-	box-shadow: inset 0px 0px 0px 2px rgba(89, 89, 89, .7);
-	/*border: 2px solid rgba(89, 89, 89, 170);*/
-	border-radius: 10;
+	background-color: rgba(${rgb(colors.bg_deep)}, ${window.bar_alpha});
+	box-shadow: inset 0px 0px 0px 2px ${colors.border};
+	border-radius: ${window.radius};
 }
 
 #workspaces button:hover {
 	background: rgba(0, 0, 0, 0.2);
 }
 
-/* 
+/*
  * perhaps switch to all modules having atleast a dead border, and then switch the colors on activity
  * would fit better with hyprland anyways
  * though this does seem to work despite swapping the borders instead of adding and removing, and they are the same width, so idk
  */
 #workspaces button.active {
 	padding: 0 5px;
-	box-shadow: inset 0px 0px 0px 2px rgba(227, 146, 66, .7);
-	/*border: 2px solid rgba(227, 146, 66, 170);*/
+	box-shadow: inset 0px 0px 0px 2px ${colors.accent};
 }
 
 #workspaces button.urgent {
-	background-color: #eb4d4b;
+	background-color: ${colors.error};
 }
 
 #mode {
@@ -102,9 +113,9 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
 	padding: 0 10px;
-	background-color: rgba(0, 0, 0, .4);
-	border-radius: 10;
-	box-shadow: inset -2px -2px rgba(89, 89, 89, .7);
+	background-color: rgba(${rgb(colors.bg_deep)}, ${window.bar_alpha});
+	border-radius: ${window.radius};
+	box-shadow: inset 0px 0px 0px 2px ${colors.border};
 }
 
 #clock {
@@ -114,12 +125,12 @@ button:hover {
 }
 
 #battery.charging, #battery.plugged {
-	box-shadow: inset -2px -2px rgba(38, 166, 91, .7);
+	box-shadow: inset 0px 0px 0px 2px ${colors.success};
 }
 
 @keyframes blink {
 	to {
-		box-shadow: inset -2px -2px rgba(255, 0, 0, .7);
+		box-shadow: inset 0px 0px 0px 2px ${colors.error};
 	}
 }
 
@@ -149,16 +160,16 @@ button:hover {
 }
 
 #network.disconnected {
-	box-shadow: inset -2px -2px rgba(255, 0, 0, .7);
+	box-shadow: inset 0px 0px 0px 2px ${colors.error};
 }
 
 #pulseaudio {
 }
 #pulseaudio.muted {
-	box-shadow: inset -2px -2px rgba(255, 0, 0, .7);
+	box-shadow: inset 0px 0px 0px 2px ${colors.error};
 }
 #pulseaudio:hover {
-	background-color: #a37800;
+	background-color: ${colors.bg_raised};
 }
 
 #wireplumber {
@@ -169,7 +180,7 @@ button:hover {
 #temperature {
 }
 #temperature.critical {
-	box-shadow: inset -2px -2px rgba(255, 0, 0, .7);
+	box-shadow: inset 0px 0px 0px 2px ${colors.error};
 }
 
 #idle_inhibitor {
@@ -201,7 +212,7 @@ button:hover {
 
 #tray > .needs-attention {
 	-gtk-icon-effect: highlight;
-	background-color: #eb4d4b;
+	background-color: ${colors.error};
 }
 
 
@@ -296,5 +307,5 @@ button:hover {
 }
 
 label:focus {
-	background-color: #000000;
+	background-color: ${colors.bg_deep};
 }

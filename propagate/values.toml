@@ -1,16 +1,26 @@
 [colors]
-active = "#e39242"
-inactive = "#595959"
-bg = "#000000"
-fg = "#ffffff"
+bg_deep   = "#1c1917"
+bg        = "#2b2420"
+bg_raised = "#3a322c"
+fg        = "#e2d9d0"
+fg_dim    = "#9a8e82"
+border    = "#584e44"
+accent    = "#c07850"
+success   = "#7a9e6a"
+warning   = "#d4a044"
+error     = "#c04040"
 
 [font]
-family = "Fira Code"
-size = 13
+family   = "FiraCode Nerd Font"
+fallback = "Roboto, Helvetica, Arial, sans-serif"
+size     = 13
+
+[spacing]
+pad = 8
+gap = 16
 
 [window]
-opacity = 0.8
-border_size = 2
-gaps_in = 5
-gaps_out = 10
-rounding = 10
+border_width = 2
+radius       = 10
+opacity      = 0.80
+bar_alpha    = 0.40

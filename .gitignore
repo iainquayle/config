@@ -71,3 +71,22 @@ result*
 !propagate/values.toml
 propagate/venv/
 
+alacritty/alacritty.toml
+
+hypr/hyprland.conf
+
+hypr/waybar/config.jsonc
+
+hypr/waybar/style.css
+
+kitty/kitty.conf
+
+mako/config
+
+niri/config.kdl
+
+niri/waybar/config.jsonc
+
+niri/waybar/style.css
+
+rofi/config.rasi

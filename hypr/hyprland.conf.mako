@@ -20,22 +20,22 @@ input {
         natural_scroll = no
     }
 
-    sensitivity = 0 
+    sensitivity = 0
 }
 
 general {
-    gaps_in = 5 
-    gaps_out = 10
-    border_size = 2
-    col.active_border = rgba(e39242aa) 
-    col.inactive_border = rgba(595959aa)
+    gaps_in = ${spacing.pad}
+    gaps_out = ${spacing.gap}
+    border_size = ${window.border_width}
+    col.active_border = rgba(${colors.accent[1:]}ff)
+    col.inactive_border = rgba(${colors.border[1:]}ff)
 
     layout = dwindle
 }
 
 decoration {
-    rounding = 10
-    
+    rounding = ${window.radius}
+
     blur {
         new_optimizations = true
         enabled = true
@@ -44,7 +44,7 @@ decoration {
     }
 
 	shadow {
-		enabled = false 
+		enabled = false
 		range = 10
 		render_power = 2
 		color = rgba(1a1a1aee)
@@ -52,11 +52,11 @@ decoration {
 }
 
 animations {
-    enabled = true 
+    enabled = true
 
     bezier = sig, 0.85, 0.0, 0.15, 1.0
     bezier = exp, 0.55, 0.0, 1.0, 0.45
-    bezier = root, 0.0, 0.55, 0.45, 1.0 
+    bezier = root, 0.0, 0.55, 0.45, 1.0
 
     animation = windows, 1, 4, sig
     animation = windowsIn, 1, 4, sig, slide #popin 20%
@@ -79,11 +79,11 @@ dwindle {
 #}
 
 gestures {
-    #workspace_swipe = on 
+    #workspace_swipe = on
 }
 
 misc {
-    force_default_wallpaper = 0 
+    force_default_wallpaper = 0
     vfr = true
 }
 
@@ -99,5 +99,4 @@ device{
 # Example windowrule v2
 # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
 # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-
 

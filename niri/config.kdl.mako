@@ -59,7 +59,7 @@ input {
 }
 
 layout {
-    gaps 16
+    gaps ${spacing.gap}
 
     center-focused-column "never"
 
@@ -75,10 +75,10 @@ layout {
     // If you leave the brackets empty, the windows themselves will decide their initial width.
 
     border {
-        width 2
-        active-color "#ffc87f"
-        inactive-color "#505050"
-        urgent-color "#9b0000"
+        width ${window.border_width}
+        active-color "${colors.accent}"
+        inactive-color "${colors.border}"
+        urgent-color "${colors.error}"
 
         // Gradients can use a few different interpolation color spaces.
         // For example, this is a pastel rainbow gradient via in="oklch longer hue".
@@ -104,7 +104,7 @@ layout {
 }
 prefer-no-csd
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius ${window.radius}
     clip-to-geometry true
 	draw-border-with-background false
 }

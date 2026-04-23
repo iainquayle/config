@@ -1,22 +1,22 @@
 
 [font]
-size = 12 
+size = ${font.size}
 #tabspaces = 4
 
 [font.normal]
-family = "MesloLGS NF"
+family = "${font.family}"
 style = "Regular"
 
 [font.bold]
-family = "MesloLGS NF"
+family = "${font.family}"
 style = "Bold"
 
 [font.italic]
-family = "MesloLGS NF"
+family = "${font.family}"
 style = "Italic"
 
 [font.bold_italic]
-family = "MesloLGS NF"
+family = "${font.family}"
 style = "Bold Italic"
 
 #[shell]
@@ -24,9 +24,9 @@ style = "Bold Italic"
 
 [window]
 decorations = "None"
-opacity = 0.70
+opacity = ${window.opacity}
 startup_mode = "Maximized"
-padding = { x = 10, y = 10 }
+padding = { x = ${spacing.pad}, y = ${spacing.pad} }
 
 [colors]
 primary = { background = "0x000000", foreground = "0xe0e0e0" }

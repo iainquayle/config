@@ -1,14 +1,14 @@
-font="Fira Code 11"
-background-color=#2d2d2d
-text-color=#FFFFFF
+font=${font.family} ${font.size}
+background-color=${colors.bg}
+text-color=${colors.fg}
 width=400
 max-visible=5
-border-size=2
-border-radius=10
-border-color=#e39242
-padding=8
-margin=5
-# outer-margin: 15 + margin 5 = 20px from screen edge (hyprland gaps_out 10 + text size factor)
+border-size=${window.border_width}
+border-radius=${window.radius}
+border-color=${colors.accent}
+padding=${spacing.pad}
+margin=${spacing.pad}
+# outer-margin: 15 + margin 8 = 23px from screen edge
 outer-margin=15
 default-timeout=5000
 ignore-timeout=1
@@ -27,15 +27,15 @@ max-icon-size=64
 icon-location=left
 
 [urgency=low]
-border-color=#e39242
+border-color=${colors.accent}
 default-timeout=3000
 
 [urgency=normal]
-border-color=#e39242
+border-color=${colors.accent}
 default-timeout=5000
 
 [urgency=critical]
-border-color=#ff0000
+border-color=${colors.error}
 default-timeout=0
 
 [grouped]

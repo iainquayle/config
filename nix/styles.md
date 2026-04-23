@@ -1,60 +1,49 @@
-# Desktop Styles
+# Desktop Styles — Terracotta + Sage
 
-Reference for consistent styling across waybar, rofi, kitty, mako, hyprland, niri, and other desktop apps.
+Reference for consistent styling across waybar, rofi, kitty, mako, hyprland, niri, and other desktop apps. All values managed via `propagate/values.toml`.
 
 ## Fonts
 
-| Token          | Value                                  | Notes                         |
-|----------------|----------------------------------------|-------------------------------|
-| Primary        | `FiraCode Nerd Font`                   | Terminals, bars, launchers    |
-| Fallback stack | `Roboto, Helvetica, Arial, sans-serif` | Non-monospace contexts        |
-| Icon           | `Symbols Nerd Font`                    | Icon-only glyphs              |
-
-### Sizes
-
-| Token | Value   | Usage                               |
-|-------|---------|-------------------------------------|
-| Small | `11px`  | Notifications, secondary text       |
-| Base  | `13px`  | Bars, launchers, general UI         |
-| Mono  | `12pt`  | Terminal emulators (kitty/alacritty)|
+| Token    | Value                                  | Notes                         |
+|----------|----------------------------------------|-------------------------------|
+| Primary  | `FiraCode Nerd Font`                   | Terminals, bars, launchers    |
+| Fallback | `Roboto, Helvetica, Arial, sans-serif` | Non-monospace contexts        |
+| Size     | `13`                                   | All UI (bars, launchers, terminals, notifications) |
 
 ---
 
 ## Color Palette
 
-Dark theme, warm orange accent.
+Warm dark theme — earthy terracotta accent, warm-tinted backgrounds.
 
 ### Base
 
-| Token    | Hex       | Usage                                     |
-|----------|-----------|-------------------------------------------|
-| bg-dark  | `#1a1a1a` | Deepest background, bar transparency base |
-| bg       | `#2d2d2d` | Surfaces: notifications, inputs, elements |
-| bg-light | `#3c3c3c` | Hover states, raised surfaces             |
-| fg       | `#e0e0e0` | Primary text                              |
-| fg-dim   | `#aaaaaa` | Placeholder, secondary text               |
-| border   | `#595959` | Inactive borders, dividers, scrollbars    |
+| Token     | Hex       | Usage                                     |
+|-----------|-----------|-------------------------------------------|
+| bg_deep   | `#1c1917` | Deepest layer, bar module bg base         |
+| bg        | `#2b2420` | Surfaces: notifications, inputs, elements |
+| bg_raised | `#3a322c` | Hover states, raised surfaces, tray menus |
+| fg        | `#e2d9d0` | Primary text (warm cream)                 |
+| fg_dim    | `#9a8e82` | Placeholder, secondary text               |
+| border    | `#584e44` | Inactive borders, dividers, scrollbars    |
 
 ### Accent
 
-| Token        | Hex       | Usage                                     |
-|--------------|-----------|-------------------------------------------|
-| accent       | `#e39242` | Active borders, prompts, selected items   |
-| accent-light | `#ffc87f` | Hover accent, lighter variant             |
-| accent-hover | `#a37800` | Pressed/hover state for accent elements   |
+| Token  | Hex       | Usage                                     |
+|--------|-----------|-------------------------------------------|
+| accent | `#c07850` | Active borders, prompts, selected items   |
 
 ### Semantic
 
-| Token        | Hex       | Usage                                     |
-|--------------|-----------|-------------------------------------------|
-| success      | `#26a65b` | Battery charging, positive states         |
-| warning      | `#d79921` | Warnings, caution states                  |
-| error        | `#e33636` | Urgent notifications, error backgrounds   |
-| error-border | `#ff0000` | Critical borders, error outlines          |
+| Token   | Hex       | Usage                                     |
+|---------|-----------|-------------------------------------------|
+| success | `#7a9e6a` | Battery charging, positive states         |
+| warning | `#d4a044` | Warnings, caution states                  |
+| error   | `#c04040` | Urgent notifications, errors, critical    |
 
 ### Terminal ANSI Colors
 
-Gruvbox Dark Hard — canonical for kitty and alacritty.
+Gruvbox Dark Hard — canonical for kitty and alacritty. Do not change.
 
 | Index | Normal    | Bright    | Name    |
 |-------|-----------|-----------|---------|
@@ -75,47 +64,42 @@ Terminal bg: `#1d2021` | Terminal fg: `#ebdbb2`
 
 | Token        | Value  | Usage                                      |
 |--------------|--------|--------------------------------------------|
-| gap-inner    | `8`    | Between windows / adjacent elements        |
-| gap-outer    | `16`   | Window-to-screen-edge / outer margins      |
-| padding-sm   | `5px`  | Tight padding (workspace buttons)          |
-| padding-md   | `8px`  | Standard padding (notifications, inputs)   |
-| padding-lg   | `10px` | Generous padding (bar modules, window)     |
-| margin-sm    | `5px`  | Small margins (between notifications)      |
-| border-width | `2px`  | All borders (windows, inputs, selections)  |
-| radius-sm    | `5px`  | Small elements (buttons, list items)       |
-| radius-md    | `10px` | Standard rounding (windows, notifications) |
-| shadow-soft  | `30`   | Compositor shadow softness                 |
-| shadow-spread| `5`    | Compositor shadow spread                   |
+| pad          | `8`    | Element padding, margins, inner gaps       |
+| gap          | `16`   | Window-to-screen-edge, compositor gaps     |
+| border_width | `2`    | All borders (windows, inputs, selections)  |
+| radius       | `10`   | All rounding (windows, notifications, UI)  |
 
 ## Opacity & Transparency
 
-| Token        | Value  | Usage                              |
-|--------------|--------|------------------------------------|
-| terminal-bg  | `0.80` | Terminal background opacity        |
-| bar-bg       | `0.40` | Bar/module background alpha        |
-| border-alpha | `0.67` | Window border alpha (hex: `aa`)    |
-| shadow-alpha | `0.47` | Drop shadow alpha (hex: `77`)      |
+| Token     | Value  | Usage                              |
+|-----------|--------|------------------------------------|
+| opacity   | `0.80` | Terminal background opacity        |
+| bar_alpha | `0.40` | Bar/module background alpha        |
+
+Compositor window borders are solid (no alpha).
 
 ---
 
 ## Application Mapping
 
-| App       | Font          | Size  | Accent  | BG       | Radius    | Border       |
-|-----------|---------------|-------|---------|----------|-----------|--------------|
-| Kitty     | Primary       | Mono  | —       | terminal | —         | —            |
-| Alacritty | Primary       | Mono  | —       | terminal | —         | —            |
-| Waybar    | Primary+stack | Base  | accent  | bar-bg   | radius-md | border-width |
-| Rofi      | Primary       | Base  | accent  | bg       | radius-md/sm | border-width |
-| Mako      | Primary       | Small | accent  | bg       | radius-md | border-width |
-| Hyprland  | —             | —     | accent  | —        | radius-md | border-width |
-| Niri      | —             | —     | accent  | —        | radius-md | border-width |
+| App       | Font    | Size | BG       | Accent  | Border  | Radius |
+|-----------|---------|------|----------|---------|---------|--------|
+| Kitty     | Primary | 13   | opacity  | —       | —       | —      |
+| Alacritty | Primary | 13   | opacity  | —       | —       | —      |
+| Waybar    | Primary | 13   | bar_alpha| accent  | border  | radius |
+| Rofi      | Primary | 13   | bg       | accent  | border  | radius |
+| Mako      | Primary | 13   | bg       | accent  | border  | radius |
+| Hyprland  | —       | —    | —        | accent  | border  | radius |
+| Niri      | —       | —    | —        | accent  | border  | radius |
 
 ---
 
-## Open Decisions
+## Templating
 
-- **GTK theme**: Rose Pine Moon doesn't match this palette. Options: Gruvbox GTK (matches terminal), Adwaita-dark (neutral), or accept the mismatch.
-- **Gap values**: Compromise of 8/16 proposed (was 5/10 hyprland, 16 niri).
-- **Niri accent**: Unified to `#e39242`; `#ffc87f` demoted to `accent-light`.
-- **Niri waybar font**: Should switch from `Font Awesome 6 Free` → `FiraCode Nerd Font`.
-- **Alacritty terminal palette**: Tango → Gruvbox Dark Hard (breaking change to color appearance).
+All values defined in `propagate/values.toml`. To apply:
+
+```
+propagate/venv/bin/python3 propagate/propagate.py render
+```
+
+Template files (`*.mako`) are git-tracked. Rendered outputs are gitignored.
