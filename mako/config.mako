@@ -1,4 +1,4 @@
-font=${font.family} 10
+font=${font.family} ${font.size}
 background-color=${colors.bg}
 text-color=${colors.fg}
 width=400
