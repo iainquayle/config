@@ -56,8 +56,8 @@ button:hover {
 
 
 #workspaces button {
-	padding: 0 ${spacing.pad // 2}px;
-	margin: 0 ${spacing.pad // 2}px;
+	padding: ${spacing.pad}px ${spacing.pad}px;
+	margin: 0px ${spacing.gap}px 0px 0px;
 	background-color: rgba(${rgb(colors.bg_deep)}, ${window.bar_alpha});
 	box-shadow: inset 0px 0px 0px 2px ${colors.border};
 	border-radius: ${window.radius};
@@ -97,7 +97,8 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-	padding: 0 ${spacing.pad}px;
+	padding: ${spacing.pad}px ${spacing.pad}px;
+	margin: 0px 0px 0px ${spacing.gap}px;
 	background-color: rgba(${rgb(colors.bg_deep)}, ${window.bar_alpha});
 	border-radius: ${window.radius};
 	box-shadow: inset 0px 0px 0px 2px ${colors.border};

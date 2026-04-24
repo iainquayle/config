@@ -3,7 +3,8 @@
 
 	"layer": "top", 
 	//"height": 30, // Waybar height (to be removed for auto height)
-	"spacing": ${spacing.pad}, // Gaps between modules 
+	//"spacing": ${spacing.pad}, // Gaps between modules 
+	"spacing": 0, // Gaps between modules 
 	"modules-left": [
 		"hyprland/workspaces"
 		//"hyprland/mode",

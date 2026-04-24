@@ -13,7 +13,7 @@ error     = "#c04040"
 [font]
 family   = "FiraCode Nerd Font Mono"
 fallback = "Roboto, Helvetica, Arial, sans-serif"
-size     = 13
+size     = 12
 
 [spacing]
 pad = 8
