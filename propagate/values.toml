@@ -11,7 +11,7 @@ warning   = "#d4a044"
 error     = "#c04040"
 
 [font]
-family   = "FiraCode Nerd Font"
+family   = "FiraCode Nerd Font Mono"
 fallback = "Roboto, Helvetica, Arial, sans-serif"
 size     = 13
 

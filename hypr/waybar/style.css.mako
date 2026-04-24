@@ -32,10 +32,10 @@ window#waybar {
 }
 
 .modules-left, .modules-right {
-	padding-top: 10px;
+	padding-top: ${spacing.gap}px;
 	padding-bottom: 0px;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: ${spacing.gap}px;
+	padding-right: ${spacing.gap}px;
 }
 
 button {
@@ -56,8 +56,8 @@ button:hover {
 
 
 #workspaces button {
-	padding: 0 5px;
-	margin: 0 5px;
+	padding: 0 ${spacing.pad // 2}px;
+	margin: 0 ${spacing.pad // 2}px;
 	background-color: rgba(${rgb(colors.bg_deep)}, ${window.bar_alpha});
 	box-shadow: inset 0px 0px 0px 2px ${colors.border};
 	border-radius: ${window.radius};
@@ -73,7 +73,6 @@ button:hover {
  * though this does seem to work despite swapping the borders instead of adding and removing, and they are the same width, so idk
  */
 #workspaces button.active {
-	padding: 0 5px;
 	box-shadow: inset 0px 0px 0px 2px ${colors.accent};
 }
 
@@ -103,7 +102,7 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-	padding: 0 10px;
+	padding: 0 ${spacing.pad}px;
 	background-color: rgba(${rgb(colors.bg_deep)}, ${window.bar_alpha});
 	border-radius: ${window.radius};
 	box-shadow: inset 0px 0px 0px 2px ${colors.border};
@@ -279,7 +278,7 @@ button:hover {
 
 
 #power-profiles-daemon {
-	padding-right: 15px;
+	padding-right: ${spacing.gap}px;
 }
 
 #power-profiles-daemon.performance {
