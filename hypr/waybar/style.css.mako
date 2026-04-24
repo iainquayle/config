@@ -4,7 +4,7 @@ def rgb(h):
 %>
 * {
 	font-family: "${font.family}", ${font.fallback};
-	font-size: ${font.size}px;
+	font-size: ${font.size}pt;
 
 	border: none;
 
