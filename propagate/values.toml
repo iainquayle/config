@@ -16,8 +16,8 @@ fallback = "Roboto, Helvetica, Arial, sans-serif"
 size     = 12
 
 [spacing]
-pad = 8
-gap = 16
+pad = 6
+gap = 12
 
 [window]
 border_width = 2

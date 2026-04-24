@@ -24,7 +24,7 @@ input {
 }
 
 general {
-    gaps_in = ${spacing.pad}
+    gaps_in = ${spacing.gap // 2}
     gaps_out = ${spacing.gap}
     border_size = ${window.border_width}
     col.active_border = rgba(${colors.accent[1:]}ff)
