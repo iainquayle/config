@@ -3,7 +3,6 @@
 	"reload_style_on_change": true,
 
 	"layer": "top",
-	"height": 30, // Waybar height (to be removed for auto height)
 	"spacing": ${spacing.pad}, // Gaps between modules
 	"modules-left": [
 		"niri/workspaces"

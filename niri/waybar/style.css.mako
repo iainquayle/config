@@ -23,7 +23,7 @@ window#waybar {
 
 .modules-left, .modules-right {
 	padding-top: ${spacing.gap}px;
-	padding-bottom: 0px;
+	padding-bottom: ${spacing.pad}px;
 	padding-left: ${spacing.gap}px;
 	padding-right: ${spacing.gap}px;
 }

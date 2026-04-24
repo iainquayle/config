@@ -177,9 +177,3 @@ scrollbar {
 separator {
     enabled: false;
 }
-
-listview {
-    border: 0px 0px 0px;
-    padding: 0px 0px 0px;
-    margin: 0px 0px 0px;
-}

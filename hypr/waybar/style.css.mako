@@ -8,7 +8,7 @@ def rgb(h):
 
 	border: none;
 
-  color: ${colors.fg};
+	color: ${colors.fg};
 
 	padding: 0;
 	margin: 0;
@@ -67,11 +67,6 @@ button:hover {
 	background: rgba(0, 0, 0, 0.2);
 }
 
-/*
- * perhaps switch to all modules having atleast a dead border, and then switch the colors on activity
- * would fit better with hyprland anyways
- * though this does seem to work despite swapping the borders instead of adding and removing, and they are the same width, so idk
- */
 #workspaces button.active {
 	box-shadow: inset 0px 0px 0px 2px ${colors.accent};
 }
