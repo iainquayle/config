@@ -43,7 +43,6 @@
     alacritty
     kitty
 
-    #freecad
     #renderdoc
 
     ncspot # this should be elsewhere?

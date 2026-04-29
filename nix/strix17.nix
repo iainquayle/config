@@ -19,6 +19,7 @@
     ./modules/file-share.nix
     ./modules/can.nix
     ./modules/security.nix
+    ./modules/cad.nix
   ];
   
   hardware.nvidia = {
