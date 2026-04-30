@@ -6,6 +6,7 @@
     glibc
     binutils 
     libGL 
+    expat
     libGLU 
     zlib
 
