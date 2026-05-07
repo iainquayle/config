@@ -45,5 +45,7 @@
     "typescript-lsp@claude-plugins-official": true
   },
   "effortLevel": "high",
-  "notifications": "off"
+  "notifications": "off",
+  "theme": "dark-ansi",
+  "editorMode": "vim"
 }
