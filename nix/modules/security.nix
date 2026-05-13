@@ -27,7 +27,7 @@
         exit 1
       fi
       out="''${2:-.}"
-      age -d -p < "$src" | zstd -d -T0 --long | tar x -C "$out"
+      age -d < "$src" | zstd -d -T0 --long | tar x -C "$out"
     '')
   ];
 }
