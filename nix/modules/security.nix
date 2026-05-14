@@ -18,7 +18,7 @@
     '')
     (writeShellScriptBin "decrypt-archive" ''
       if [ $# -lt 1 ]; then
-        echo "Usage: decrypt-archive <input> [output-dir]" >&2
+        echo "Usage: decrypt-archive <input>" >&2
         exit 1
       fi
       src="$1"
@@ -27,7 +27,7 @@
         exit 1
       fi
       out="''${2:-.}"
-      age -d < "$src" | zstd -d -T0 --long | tar x -C "$out"
+      age -d < "$src" | zstd -d -T0 --long | tar -xv -f -
     '')
   ];
 }
