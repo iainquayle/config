@@ -33,6 +33,9 @@ general {
     layout = dwindle
 }
 
+layerrule = blur, waybar
+layerrule = ignorezero, waybar
+
 decoration {
     rounding = ${window.radius}
 
