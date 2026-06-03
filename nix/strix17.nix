@@ -40,6 +40,7 @@
   services = {
     caddy = { 
       enable = true; 
+      # ollama
       virtualHosts."http://strix.netbird.cloud:21339" = {
         extraConfig = ''
           reverse_proxy http://localhost:11434 {
@@ -47,6 +48,7 @@
           }
         '';
       };
+      # webdav
       virtualHosts."http://strix.netbird.cloud:21340" = {
         extraConfig = ''
           reverse_proxy http://localhost:6065 {
