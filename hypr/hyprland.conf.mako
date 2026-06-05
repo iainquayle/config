@@ -68,7 +68,7 @@ animations {
 }
 
 dwindle {
-    pseudotile = false # master switch for pseudotiling. Enabling is bound to mod + P in the keybinds section below
+    # pseudotile = false # master switch for pseudotiling. Enabling is bound to mod + P in the keybinds section below
     force_split = 2 # 2 right or bottom, 1 left or top, 0 follow mouse
     preserve_split = true # split orientations are preserved, wont randomly change
 }
@@ -84,7 +84,7 @@ gestures {
 
 misc {
     force_default_wallpaper = 0
-    vfr = true
+    # vfr = true
 }
 
 # Example per-device config
