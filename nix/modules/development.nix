@@ -16,6 +16,7 @@
 
     python3
     pyright
+    uv
 
     #rustup
     cargo
