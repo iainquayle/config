@@ -7,6 +7,10 @@ source = ~/.config/hypr/bindings.conf
 #env = XCURSOR_THEME,breeze
 env = XCURSOR_SIZE,28
 
+cursor {
+	no_warps = true
+}
+
 input {
     kb_layout = us
     kb_variant =

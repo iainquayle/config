@@ -20,6 +20,7 @@
     ./modules/can.nix
     ./modules/security.nix
     ./modules/cad.nix
+    #./modules/xmpp.nix
   ];
   
   hardware.nvidia = {
@@ -69,8 +70,8 @@
     };
   };
   networking.firewall.extraInputRules = ''
-    # WebDAV and ollama restrictions.
-    ip saddr 100.65.0.0/16 tcp dport { 21338, 21339, 21340 } accept
+    # WebDAV, ollama, XMPP, nostr restrictions.
+    ip saddr 100.65.0.0/16 tcp dport { 21338, 21339, 21340, 5222, 5269, 5280, 7777 } accept
 
     # KDE connect restrictions
     ip saddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 } tcp dport 1714-1764 accept
