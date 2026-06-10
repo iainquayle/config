@@ -9,6 +9,7 @@
       "wheel" 
       "video"
       "render"
+      "dialout"
       #"v4l2loopback"
     ]; # maybe can remove networkmanager?
   };
