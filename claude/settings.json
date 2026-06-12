@@ -16,7 +16,6 @@
       "Write"
     ]
   },
-  "model": "opusplan",
   "hooks": {
     "Notification": [
       {
@@ -45,7 +44,7 @@
     "typescript-lsp@claude-plugins-official": true
   },
   "effortLevel": "high",
-  "notifications": "off",
   "theme": "dark-ansi",
-  "editorMode": "vim"
+  "editorMode": "vim",
+  "notifications": "off"
 }

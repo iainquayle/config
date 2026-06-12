@@ -61,6 +61,8 @@
     #ruby-lsp
   ];
 
+  virtualisation.docker.enable = true;
+
   environment.shellAliases = {
     opencode-authed = "OPENROUTER_API_KEY=$(secret-tool lookup api-key openrouter) CHUTES_API_KEY=$(secret-tool lookup api-key chutes) opencode -c";
     cuda-env = "nix-shell ~/.config/nix/shells/cuda-fhs.nix";
