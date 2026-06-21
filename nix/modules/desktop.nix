@@ -38,10 +38,12 @@
     bibata-cursors
 
     #vieb
-    qutebrowser
+    #qutebrowser
 
     alacritty
     kitty
+
+    libreoffice
 
     #renderdoc
 
