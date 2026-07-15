@@ -33,11 +33,14 @@
     #libllvm
     clang-tools # should have clangd and all necessities
 
+    zig
+    zls
+
     arduino-cli
 
-    elixir
+    beamPackages.elixir
+    beamPackages.erlang
     elixir-ls
-    erlang
 
     nodejs
     #nodePackages.parcel
