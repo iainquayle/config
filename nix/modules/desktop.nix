@@ -57,8 +57,8 @@
 
     pcmanfm # file manager
 
-    rose-pine-gtk-theme
-    rose-pine-icon-theme
+    #rose-pine-gtk-theme
+    #rose-pine-icon-theme
 
     #gruvbox-gtk-theme
     #gruvbox-plus-icons
