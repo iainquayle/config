@@ -1,9 +1,31 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	branch = "main",
 	lazy = false,
 	event = {"BufReadPre", "BufNewFile"},
 	build = ":TSUpdate",
 	config = function()
+		--[[
+		vim.api.nvim_create_autocmd("FileType", {
+			callback = function(ev)
+				local lang = vim.treesitter.language.get_lang(ev.match)
+				if lang and pcall(vim.treesitter.language.add, lang) then
+					vim.treesitter.start(ev.buf, lang)
+				end
+			end,
+		})
+		]]--
+		vim.api.nvim_create_autocmd('FileType', {
+		  callback = function(ev)
+			if vim.bo[ev.buf].buftype ~= '' then return end   -- skip terminal/prompt/nofile
+			local lang = vim.treesitter.language.get_lang(ev.match)
+			if not lang then return end
+			local ok, added = pcall(vim.treesitter.language.add, lang)
+			if not ok or not added then return end
+			pcall(vim.treesitter.start, ev.buf, lang)
+		  end,
+		})
+	--[[
 		local treesitter = require("nvim-treesitter.configs")
 		treesitter.setup({
 			highlight = {
@@ -48,5 +70,6 @@ return {
 				},
 			},
 		})
+		]]--
 	end,
 }
