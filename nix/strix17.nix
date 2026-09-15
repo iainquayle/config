@@ -13,7 +13,7 @@
     ./modules/nvidia.nix
     ./modules/qmk.nix
     ./modules/stream.nix
-    ./modules/ollama.nix
+    #./modules/ollama.nix
     ./modules/netbird.nix
     ./modules/trading.nix
     ./modules/file-share.nix
