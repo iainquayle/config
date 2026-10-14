@@ -47,7 +47,7 @@
     #nodePackages.tailwindcss
     #tailwindcss
     typescript
-    typescript-language-server
+    #typescript-language-server
 
     vscode-langservers-extracted #html, css
 

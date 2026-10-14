@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  imports = [ ./theme.nix ];
+
   programs = {
     niri = {
       enable = true;

@@ -103,3 +103,5 @@ propagate/venv/bin/python3 propagate/propagate.py render
 ```
 
 Template files (`*.mako`) are git-tracked. Rendered outputs are gitignored.
+
+Hyprland is not templated: `nix/modules/theme.nix` exports values as `THEME_<SECTION>_<KEY>` session vars, read at runtime by `hypr/hyprland.lua` via `os.getenv`. Needs `nixos-rebuild switch` + relog to apply.
