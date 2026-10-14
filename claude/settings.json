@@ -11,11 +11,16 @@
       "Bash(grep *)",
       "Bash(wc *)",
       "Bash(ls *)",
+      "Bash(npx vercel api:*)",
+      "Bash(npx vercel env ls:*)",
+      "Bash(npx vercel env rm:*)",
+      "Bash(npx vercel env run:*)",
       "Read",
       "Edit",
       "Write"
     ]
   },
+  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -41,11 +46,54 @@
   },
   "enabledPlugins": {
     "ruby-lsp@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true
+    "typescript-lsp@claude-plugins-official": true,
+    "vercel@claude-plugins-official": true
   },
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
+  "modelSettings": {
+    "claude-opus-5": {
+      "effortLevel": "high"
+    },
+    "claude-sonnet-5": {
+      "effortLevel": "high"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    },
+    "claude-sonnet-5-5": {
+      "effortLevel": "high"
+    }
+  },
+  "skipWorkflowUsageWarning": true,
   "theme": "dark-ansi",
   "editorMode": "vim",
-  "notifications": "off",
-  "model": "sonnet"
+  "autoMode": {
+    "environment": [
+      "### Org-wide",
+      "**Organization**: None configured",
+      "**Cloud provider(s)**: None configured",
+      "**Repository visibility**: Private — Automatai-Integrations/kourai (confirmed via gh)",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+      "**Secrets management**: None configured",
+      "**Default / protected branches**: Default branch master; no classic protected branches listed (rulesets not queryable here — do not assume unprotected)",
+      "**CI/CD deploy targets**: None configured",
+      "**Network posture**: None configured",
+      "**Host containment**: None configured — assume Claude Code runs on an ordinary developer machine or CI runner with open internet",
+      "**Source control**: The trusted repo (Automatai-Integrations/kourai) and its origin remote only (no additional orgs configured)",
+      "**Trusted internal domains**: None configured",
+      "**Trusted cloud buckets**: None configured",
+      "**Key internal services**: None configured",
+      "**Internal package registry**: None configured",
+      "**Sensitive data locations & audiences**: any file or store holding personal data, confidential business data, credentials, regulated data, or similarly sensitive material; preserve exact handles when known and share only with audiences cleared at the [named+specifics] bar — note: .env, deploy/.env.example, auth/src/store/secret.rs, libs/execution/src/secret.rs, integration-tests/test/secret-auth.test.ts are repo-flagged sensitive-looking paths",
+      "**Data retention / declassification**: None configured",
+      "**Sensitive remote targets**: any namespace, host, or container whose name carries `prod` or `production` as a whole word or name segment",
+      "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development",
+      "**Trusted repo**: /home/iainq/automatai/kourai (github.com/Automatai-Integrations/kourai, private) — confidential material is fine here; nothing ported in from outside this session's repo should be treated as this repo's own work",
+      "**Org-specific CLIs**: None configured"
+    ]
+  },
+  "notifications": "off"
 }

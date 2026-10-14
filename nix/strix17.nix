@@ -19,7 +19,7 @@
     ./modules/file-share.nix
     ./modules/can.nix
     ./modules/security.nix
-    ./modules/cad.nix
+    #./modules/cad.nix
     #./modules/xmpp.nix
   ];
   
