@@ -3,6 +3,7 @@
     chromium.enable = false;
     kdeconnect.enable = true;
     firefox.enable = true;
+    seahorse.enable = true; # gui secret manager
     dconf = {
       enable = true;
       profiles.user.databases = [{
@@ -40,14 +41,14 @@
     #vieb
     #qutebrowser
 
-    alacritty
+    #alacritty
     kitty
 
     libreoffice
 
     #renderdoc
 
-    ncspot # this should be elsewhere?
+    #ncspot # this should be elsewhere?
 
     mpv # media player
     imv # image viewer

@@ -1,16 +1,20 @@
 -- theme values come from THEME_* session vars (nix/modules/theme.nix <- propagate/values.toml)
+-- /etc/set-environment read first: current generation, even if launched from a stale tty env
 -- unset vars yield nil, which leaves that option at hyprland's default
-local function theme(key) return os.getenv("THEME_" .. key) end
+local env = {}
+local f = io.open("/etc/set-environment")
+if f then for k, v in f:read("a"):gmatch('export THEME_([%w_]+)="([^"]*)"') do env[k] = v end; f:close() end
+local function theme(key) return env[key] or os.getenv("THEME_" .. key) end
 local function num(key) local v = theme(key); return v and tonumber(v) end
 local function rgba(key) local v = theme(key); return v and ("rgba(" .. v:sub(2) .. "ff)") end
 
 if not theme("COLORS_ACCENT") then
-    hl.notification.create({ text = "THEME_* env vars missing: rebuild nixos and relog", timeout = 10000 })
+    hl.notification.create({ text = "THEME_* vars missing: rebuild nixos", timeout = 10000 })
 end
 
 local gap = num("SPACING_GAP")
 
-hl.monitor({ output = "", mode = "preferred", position = "auto", scale = 1 })
+hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "auto" })
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("killall waybar || waybar -c $HOME/.config/hypr/waybar/config.jsonc -s $HOME/.config/hypr/waybar/style.css & ~/.config/swww/set-wallpaper '~/.wallpapers/2.gif'")

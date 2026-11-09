@@ -52,6 +52,6 @@
   ];
 
   environment.shellAliases = {
-    monitors-home = "hyprctl keyword monitor DP-2,preferred,auto,1,transform,3";
+    monitors-home = "hyprctl eval 'hl.monitor({ output = \"DP-2\", mode = \"preferred\", position = \"auto\", scale = 1, transform = 3 })'";
   };
 }
