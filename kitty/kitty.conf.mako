@@ -13,6 +13,7 @@ hide_window_decorations yes
 window_padding_width ${spacing.pad}
 
 confirm_os_window_close -1
+enable_audio_bell no
 
 # BEGIN_KITTY_THEME
 # Gruvbox Dark Hard

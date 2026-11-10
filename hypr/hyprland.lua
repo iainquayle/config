@@ -95,4 +95,6 @@ hl.animation({ leaf = "workspaces",  enabled = true, speed = 4,  bezier = "sig",
 
 hl.device({ name = "epic-mouse-v1", sensitivity = -0.5 })
 
+hl.window_rule({ name = "suppress-maximize", match = { class = ".*" }, suppress_event = "maximize" })
+
 require("bindings")
