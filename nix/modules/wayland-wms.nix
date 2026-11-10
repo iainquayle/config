@@ -9,9 +9,6 @@
       enable = true;
       xwayland.enable = true;
     };
-    waybar = {
-      enable = true;
-    };
   };
 
   xdg.portal = {
@@ -35,6 +32,7 @@
     #kanshi #wayland output auto config
 
     #dunst # notification daemon
+    waybar # started by hypr/hyprland.lua; programs.waybar would add a second, default-config bar via systemd
     mako # notification daemon
     libnotify # notification library
 
