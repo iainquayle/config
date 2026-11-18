@@ -14,7 +14,7 @@ end
 
 local gap = num("SPACING_GAP")
 
-hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "auto" })
+hl.monitor({ output = "", mode = "preferred", position = "auto", scale = 1 })
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("killall waybar || waybar -c $HOME/.config/hypr/waybar/config.jsonc -s $HOME/.config/hypr/waybar/style.css & ~/.config/swww/set-wallpaper '~/.wallpapers/10.gif'")
